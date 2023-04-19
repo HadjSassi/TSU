@@ -985,7 +985,6 @@
 		if (plugins.buttonWinona.length && !isNoviBuilder && !isIos && !isMac) {
 			initWinonaButtons(plugins.buttonWinona);
 		}
-
 		function initWinonaButtons(buttons) {
 			for (var i = 0; i < buttons.length; i++) {
 				var $button = $(buttons[i]),
