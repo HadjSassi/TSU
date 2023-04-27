@@ -1,3 +1,8 @@
+<?php
+
+//$user = json_decode($_SESSION['user']);
+//var_dump($user);
+echo '
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 <head>
@@ -36,6 +41,8 @@
         display: block;
     }</style>
 </head>
+';
+    echo '
 <body>
 <!--
 <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
@@ -68,26 +75,39 @@
                                 <ul class="rd-navbar-nav">
                                     <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">About TSU</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">About TSU</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.html">Gallery</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.php">Gallery</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.php">Contacts</a>
                                     </li>
                                 </ul>
                             </div>
                             <!-- RD Navbar Search-->
-                            <div class="rd-navbar-search">
-                                <a class="nav-icon" href="#">
-                                    <span class="ml-xl-2 mt-lg-2 icon icon-md mdi mdi-settings text-gray-700"></span>
-                                </a>
+                            <div class="rd-navbar-search dropdown">
+                                <div class="rd-navbar-search dropdown">
+                                <p class="mr-3 mt-2" id="nomCourant"></p>
+                                <div class="btn btn-secondary dropdown-toggle nav-icon" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="icon icon-md mdi mdi-settings text-gray-700" style="margin-left: -50%;"></span>
+                                </div>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="" id="notConnected">
+                                    <a class="dropdown-item" href="Loging.php?login">Sign In</a>
+                                    <a class="dropdown-item" href="Loging.php">Sign Up</a>
+                                </div>
+                                    <a class="dropdown-item"  id="Connected"
+                                    onclick="sessionStorage.removeItem(\'user\'); window.location.reload();"
+                                    style="cursor:pointer;">Log out</a>
+                                </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </nav>
         </div>
+        
+        ';
+    echo'
     </header>
     <!-- Overlapping Screen-->
     <section class="section section-overlap bg-decorate">
@@ -104,15 +124,17 @@
                                      width="1366" alt="">
                             </h4>
                         </div>
-                        <div class="wow-outer button-outer"><a
+                        <div class="wow-outer button-outer" id="JoingUss"><a
                                 class="button button-lg button-primary button-winona wow slideInUp"
-                                style="margin-left: 30%;" href="#"
+                                style="margin-left: 30%;" href="Loging.php"
                                 data-wow-delay=".3s">Join Us</a></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    ';
+    echo'
     <!-- Projects - Modern Layout-->
     <section class="section section-lg bg-default">
         <div class="container">
@@ -249,6 +271,8 @@
                                     <div class="thumbnail-corporate-dummy"></div>
                                 </article>
                             </div>
+                            ';
+    echo'
                             <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
                                 <!-- Thumbnail Corporate-->
                                 <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInDown"><img
@@ -317,11 +341,13 @@
             </div>
         </div>
     </section>
+    ';
+    echo'
     <!-- Advantages and Achievements-->
     <section class="section section-lg text-center bg-default">
         <div class="container">
             <h3 class="section-title wow-outer"><span class="wow slideInUp">About Tunis Sports University</span></h3>
-            <p class="wow-outer"><span class="text-width-1 wow slideInDown">Since 2017, Organisation d'événements sportifs à caractère social et humanitaire.</span>
+            <p class="wow-outer"><span class="text-width-1 wow slideInDown">Since 2017, Organisation d\'événements sportifs à caractère social et humanitaire.</span>
             </p>
             <div class="row row-50">
                 <div class="col-6 col-md-3 wow-outer">
@@ -367,6 +393,8 @@
             </div>
         </div>
     </section>
+    ';
+    echo'
     <!-- Testimonials-->
     <section class="section section-lg bg-gray-100 text-center">
         <div class="container">
@@ -433,7 +461,7 @@
                         <!-- Quote Light 2-->
                         <blockquote class="quote-light">
                             <cite class="quote-light-cite">Hadj Sassi Ezzedine</cite>
-                            <p class="quote-light-caption">Sup'Com Student</p>
+                            <p class="quote-light-caption">Sup\'Com Student</p>
                             <div class="quote-light-text">
                                 <p>I was so happy with the pictures Jonathan took. He was very kind and patient with my
                                     two-month old and my energetic 6 y.o. children. I will be going to Jonathan from now
@@ -493,7 +521,9 @@
             </div>
         </div>
     </section>
-    <section class="section section-xs bg-gray-700 text-center">
+    ';
+    echo '
+    <section class="section section-xs bg-gray-700 text-center" id="sectionConnected">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-sm-10 col-md-12">
@@ -501,7 +531,7 @@
                         <h4 class="wow-outer"><span class="wow slideInRight">Looking for  <span class="text-italic">Honorable Actions?</span> </span>
                         </h4>
                         <div class="wow-outer button-outer"><a
-                                class="button button-primary button-winona wow slideInLeft" href="#">Join Us</a>
+                                class="button button-primary button-winona wow slideInLeft" href="Loging.php">Join Us</a>
                         </div>
                     </div>
                 </div>
@@ -550,9 +580,11 @@
                 </div>
             </div>
         </div>
+        ';
+    echo'
         <script>
             $(document).ready(function () {
-                $('#partner-slider').slick({
+                $(\'#partner-slider\').slick({
                     autoplay: true, // Enable autoplay
                     autoplaySpeed: 300, // Set the autoplay speed in milliseconds
                     dots: false, // Disable the dots navigation
@@ -579,7 +611,7 @@
         </script>
     </section>
     <!-- Page Footer-->
-    <footer class="section footer-standard ">
+    <footer class="section footer-standard text-justify">
         <div class="footer-standard-main">
             <div class="container">
                 <div class="row row-50">
@@ -616,7 +648,7 @@
                                 It brings together people interested in sharing their knowledge and helping each other
                                 in IT. It welcomes both beginners and experts. It aims to deepen your knowledge
                                 necessary in IT to be able to succeed in the professional field and allow students to
-                                use today's technology to prepare for the future </p>
+                                use today\'s technology to prepare for the future </p>
                         </div>
                     </div>
                 </div>
@@ -647,5 +679,27 @@
 <!-- Javascript-->
 <script src="js/core.min.js"></script>
 <script src="js/script.js"></script>
+<script>
+    var user = sessionStorage.getItem("user");
+    var connectede = document.getElementById("Connected");
+    var connectedesd = document.getElementById("sectionConnected");
+    var connectedess = document.getElementById("JoingUss");
+    var notconnectede = document.getElementById("notConnected");
+    if (user != null && user.split(",")[1].length > 0) {
+        var pElement = document.getElementById("nomCourant");
+        pElement.textContent = user.split(",")[1];
+        connectede.style.display = "block";
+        connectedess.style.display = "none";
+        connectedesd.style.display = "none";
+        notconnectede.style.display = "none";
+    }else if (user == null){
+       connectede.style.display = "none";
+       connectedess.style.display = "block";
+       connectedesd.style.display = "block";
+       notconnectede.style.display = "block";
+    }
+</script>
 </body>
 </html>
+';
+?>

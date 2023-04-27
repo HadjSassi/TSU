@@ -56,20 +56,20 @@
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span>
                   </button>
-                  <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.html"><img
+                  <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.php"><img
                         src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                 </div>
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Home</a>
                       </li>
                       <li class="rd-nav-item active"><a class="rd-nav-link" href="about.html">About TSU</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.html">Gallery</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.php">Gallery</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.php">Contacts</a>
                       </li>
                     </ul>
                   </div>
@@ -95,7 +95,7 @@
               <h1 class="breadcrumbs-custom-title">About TSU</h1>
             </div>
             <ul class="breadcrumbs-custom-path">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="index.php">Home</a></li>
               <li class="active">About TSU</li>
             </ul>
           </div>
@@ -126,7 +126,7 @@
                          style="width: 100%; height: 100%; object-fit: cover;"/>
                   </div>
                   </a>
-                  <h3><a href="#">Mahdi Ben Abdallah</a></h3>
+                  <h3><a href="#">Mehdi Ben Abdallah</a></h3>
                   <!--
                         &lt;!&ndash; Linear progress bar&ndash;&gt;
                         <article class="progress-linear">
@@ -292,7 +292,7 @@
         </div>
       </section>
       <!-- Page Footer-->
-      <footer class="section footer-standard ">
+      <footer class="section footer-standard text-justify">
         <div class="footer-standard-main">
           <div class="container">
             <div class="row row-50">
@@ -336,7 +336,7 @@
           </div>
         </div>
         <div class="container">
-          <div class="footer-standard-aside"><a class="brand" href="index.html"><img
+          <div class="footer-standard-aside"><a class="brand" href="index.php"><img
                   src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
             <!-- Rights-->
             <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span><br
