@@ -1,3 +1,5 @@
+<?php
+echo '
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 <head>
@@ -36,6 +38,8 @@
     display: block;
   }</style>
 </head>
+';
+echo'
   <body>
     <div class="page">
       <!-- Page Header-->
@@ -74,11 +78,22 @@
                     </ul>
                   </div>
                   <!-- RD Navbar Search-->
-                  <div class="rd-navbar-search">
-                    <a class="nav-icon" href="#">
-                      <span class="ml-xl-2 mt-lg-2 icon icon-md mdi mdi-settings text-gray-700"></span>
-                    </a>
-                  </div>
+                    <div class="rd-navbar-search dropdown">
+                        <div class="rd-navbar-search dropdown">
+                        <p class="mr-3 mt-2" id="nomCourant"></p>
+                        <div class="btn btn-secondary dropdown-toggle nav-icon" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="icon icon-md mdi mdi-settings text-gray-700" style="margin-left: -50%;"></span>
+                        </div>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="" id="notConnected">
+                            <a class="dropdown-item" href="Loging.php?login">Sign In</a>
+                            <a class="dropdown-item" href="Loging.php">Sign Up</a>
+                        </div>
+                            <a class="dropdown-item"  id="Connected"
+                            onclick="sessionStorage.removeItem(\'user\'); window.location.reload();"
+                            style="cursor:pointer;">Log out</a>
+                        </div>
+                    </div>
 
                 </div>
               </div>
@@ -86,6 +101,8 @@
           </nav>
         </div>
       </header>
+      ';
+echo'
       <!-- Breadcrumbs-->
       <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/gyymn.jpg);">
         <div class="breadcrumbs-custom-inner">
@@ -161,11 +178,13 @@
           </article>
         </div>
       </section>
+      ';
+echo'
       <!-- Nathan’s Projects-->
         <section class="section section-lg text-center bg-default">
             <div class="container">
                 <h3 class="section-title wow-outer"><span class="wow slideInUp">Tunis Sports University with numbers</span></h3>
-                <p class="wow-outer"><span class="text-width-1 wow slideInDown">Since 2017, Organisation d'événements sportifs à caractère social et humanitaire.</span>
+                <p class="wow-outer"><span class="text-width-1 wow slideInDown">Since 2017, Organisation d\'événements sportifs à caractère social et humanitaire.</span>
                 </p>
                 <div class="row row-50">
                     <div class="col-6 col-md-3 wow-outer">
@@ -211,6 +230,8 @@
                 </div>
             </div>
         </section>
+        ';
+echo '
       <!-- Nathan’s Blog Posts-->
       <section class="section section-lg bg-gray-100">
         <div class="container">
@@ -329,7 +350,7 @@
                     It brings together people interested in sharing their knowledge and helping each other
                     in IT. It welcomes both beginners and experts. It aims to deepen your knowledge
                     necessary in IT to be able to succeed in the professional field and allow students to
-                    use today's technology to prepare for the future </p>
+                    use today\'s technology to prepare for the future </p>
                 </div>
               </div>
             </div>
@@ -360,5 +381,25 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+    var user = sessionStorage.getItem("user");
+    var connectede = document.getElementById("Connected");
+    var buttonAdd = document.getElementById("btnAddEvent");
+    var notconnectede = document.getElementById("notConnected");
+    if (user != null && user.split(",")[1].length > 0) {
+        var pElement = document.getElementById("nomCourant");
+        pElement.textContent = user.split(",")[1];
+        connectede.style.display = "block";
+        notconnectede.style.display = "none";
+        buttonAdd.style.display = "block";
+    }else if (user == null){
+       connectede.style.display = "none";
+       notconnectede.style.display = "block";
+       buttonAdd.style.display = "none";
+    }
+</script>
   </body>
 </html>
+  
+  ';
+?>

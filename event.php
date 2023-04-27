@@ -1,3 +1,53 @@
+<?php
+
+$dbh = new PDO('mysql:host=localhost;port=3306;dbname=TSU', 'root', 'Magali_1984');
+try {
+    $currentEvent = $_GET['event'];
+    $stmt = $dbh->prepare("SELECT * FROM event WHERE titleEvent = ?");
+    $stmt->execute(array($currentEvent));
+    $listeEvent = $stmt->fetchAll();
+    $lastEvent = end($listeEvent);
+    $date = date('Y-m-d H:i:s');
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    if (isset($_POST['submit'])) {
+        $eventName = $_GET['event'];
+        $folderPath = "events/$eventName"; // Assuming that the 'uploads' folder is in the same directory as this PHP script
+
+        $assetFiles = $_FILES['assets']['tmp_name']; // Assuming that 'assets' is the name of the input field that contains the asset files
+        if (is_array($assetFiles)) {
+            foreach ($assetFiles as $index => $tmpName) {
+                $assetPath = "$folderPath/img/asset$date$index.jpg"; // Assuming that you want to save each asset file as 'asset0.jpg', 'asset1.jpg', etc. in the folder
+                if (move_uploaded_file($tmpName, $assetPath)) {
+                    // File uploaded successfully
+                } else {
+                    $error = error_get_last();
+                    // Handle the error here
+                }
+            }
+        }
+        $videoFiles = $_FILES['videos']['tmp_name']; // Add this to handle the 'videos' input field
+        if (is_array($videoFiles)) {
+            foreach ($videoFiles as $index => $tmpName) {
+                $fileExtension = pathinfo($_FILES['videos']['name'][$index], PATHINFO_EXTENSION);
+                $videoPath = "$folderPath/vid/video$date$index.$fileExtension"; // Save the video file in the 'vid' folder with the correct extension
+                if (move_uploaded_file($tmpName, $videoPath)) {
+                    // File uploaded successfully
+                } else {
+                    $error = error_get_last();
+                    // Handle the error here
+                }
+            }
+        }
+//        echo '
+//            <script>
+//            window.location.reload();
+//            </script>
+//            ';
+    }
+
+    echo '
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 <head>
@@ -22,20 +72,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
     <style>.ie-panel {
-        display: none;
-        background: #212121;
-        padding: 10px 0;
-        box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
-        clear: both;
-        text-align: center;
-        position: relative;
-        z-index: 1;
-    }
+            display: none;
+            background: #212121;
+            padding: 10px 0;
+            box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
+            clear: both;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
 
-    html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
-        display: block;
-    }</style>
+        html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
+            display: block;
+        }</style>
 </head>
+';
+    echo '
 <body>
 
 <div class="page">
@@ -58,7 +110,7 @@
                             <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span>
                             </button>
                             <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.php"><img
-                                src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
+                                    src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                         </div>
                         <div class="rd-navbar-main-element">
                             <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
@@ -75,10 +127,21 @@
                                 </ul>
                             </div>
                             <!-- RD Navbar Search-->
-                            <div class="rd-navbar-search">
-                                <a class="nav-icon" href="#">
-                                    <span class="ml-xl-2 mt-lg-2 icon icon-md mdi mdi-settings text-gray-700"></span>
-                                </a>
+                            <div class="rd-navbar-search dropdown">
+                                <div class="rd-navbar-search dropdown">
+                                <p class="mr-3 mt-2" id="nomCourant"></p>
+                                <div class="btn btn-secondary dropdown-toggle nav-icon" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="icon icon-md mdi mdi-settings text-gray-700" style="margin-left: -50%;"></span>
+                                </div>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="" id="notConnected">
+                                    <a class="dropdown-item" href="Loging.php?login">Sign In</a>
+                                    <a class="dropdown-item" href="Loging.php">Sign Up</a>
+                                </div>
+                                    <a class="dropdown-item"  id="Connected"
+                                    onclick="sessionStorage.removeItem(\'user\'); window.location.reload();"
+                                    style="cursor:pointer;">Log out</a>
+                                </div>
                             </div>
 
                         </div>
@@ -87,41 +150,79 @@
             </nav>
         </div>
     </header>
+    ';
+    echo '
     <!-- Overlapping Screen-->
     <section class="section section-sm">
         <div class="container">
             <div class="row">
                 <div class="col col">
-                    <h6>Ensit Rowing Day</h6>
+                    <h6>
+                    ';
+    echo $lastEvent['titleEvent'];
+    echo '
+                    </h6>
                     <div class="row row-30">
                         <div class="col"><img id="affichageEvent" src="" alt=""/>
                         </div>
                         <div class="col text-justify">
-                            <p>Curabitur non metus aliquam, tincidunt nisl non, laoreet turpis. Donec dignissim, mauris
-                                ac congue cursus, arcu nisl ultrices dolor, ac viverra mi est a mi. In nec iaculis urna,
-                                id porta augue. Vestibulum sit amet ex a mauris ornare rhoncus in in libero.
-                                Pellentesque habitant morbi tristique senectus et netus turpis egestas.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid beatae fugit impedit
-                                quae unde. At delectus doloremque ex, maiores non officiis pariatur perferendis quaerat
-                                quam quidem quisquam repellat vel velit.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo molestias nesciunt
-                                obcaecati omnis quam quo repellat. Delectus, dolorum explicabo iure labore maiores saepe
-                                voluptatem! Eos libero porro similique tenetur voluptas.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem blanditiis
-                                consequatur dolore earum eveniet iste laudantium minus perferendis perspiciatis, quaerat
-                                quia, quidem reiciendis repellendus voluptate? Consequuntur delectus incidunt natus.</p>
+                        <a id="modifyEvent" href="modifyEvent.php?eventId=';echo $lastEvent['idEvent'].'" class="mb-2 button button-primary-outline">Modify Event</a>
+                        <h3>Event Type : 
+                        ';
+    echo $lastEvent['typeEvent'];
+    echo '
+                        </h3>
+                         <h4>Starting Date : 
+                        ';
+    echo $lastEvent['startingDate'];
+    echo '</h4>';
+    if (strlen($lastEvent['endingDate']) != 0) {
+        echo '<h4>Ending Date : ';
+        echo $lastEvent['endingDate'];
+        echo '</h4>';
+    }
+    echo '
+                            <p>
+                                ';
+    echo $lastEvent['descriptions'];
+    echo '
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+';
+    echo '
     <!-- Projects - Modern Layout-->
     <section class="section section-lg bg-default">
         <div class="container">
             <div class="row row-50">
                 <div class="col-12 text-center">
+                <div id="fadit">
+                    <form class="mb-5" enctype="multipart/form-data" action="event.php?event=';echo $_GET['event'].'" method="post">
+                        <div class="row ml-5">
+                                <div  class="col">
+                                    <label for="MultipleFile" class="col">File Pictures</label>
+                                    <input class="form-control col" name="assets[]" accept="image/*" type="file" multiple
+                                           id="MultipleFile">
+                                </div>
+                                <div class="col">
+                                    <label for="MultipleFileVid" class="col">File Videos</label>
+                                    <input class="form-control col" name="videos[]" accept="video/mp4" type="file" multiple
+                                           id="MultipleFileVid">
+                                </div>
+                        </div>
+                        <div class="row">
+                                <input class="mx-auto button button-primary-outline" type="submit" name="submit"
+                                       value="Add Assets">
+                            </div>
+                            <p class="mx-auto text-danger">
+                                    Try to not upload too much sized files at once, upload file By file if it\'s necessary !
+                                </p>
+                        </form>
+                        </div>
                     <h3 class="section-title wow-outer"><span class="wow slideInUp" id="EventName"></span></h3>
                     <nav class="navbar navbar-expand-lg navbar-light bg-ligh ">
                         <div class=" navbar-collapse" id="navbarSupportedContent">
@@ -139,7 +240,8 @@
                         </div>
                     </nav>
                 </div>
-
+';
+    echo '
                 <div class="col-12 ">
                     <div class="isotope offset-top-2" data-isotope-layout="masonry" data-lightgallery="group"
                          data-lg-thumbnail="false">
@@ -177,53 +279,56 @@
                             </div>
                         </div>
                         <div id="video-gallery" class="row row-30"></div>
+                        ';
+    echo '
                         <script>
                             const urlParams = new URLSearchParams(window.location.search);
-                            const eventName = urlParams.get('event');
+                            const eventName = urlParams.get(\'event\');
 
                             // Update the text content of the HTML element with the extracted value
-                            const eventNameElement = document.getElementById('EventName');
+                            const eventNameElement = document.getElementById(\'EventName\');
                             eventNameElement.textContent = eventName;
 
                             const imageUrl = `events/${eventName}/${eventName}.jpg`;
-                            const eventImageElement = document.getElementById('affichageEvent');
+                            const eventImageElement = document.getElementById(\'affichageEvent\');
                             eventImageElement.src = imageUrl;
+                            
                             // Wait for all the videos to load
                             function openVid() {
-                                $('#image-gallery').css('display', 'none');
-                                $('#video-gallery').css('display', 'block');
-                                $('#liImages').removeClass('active');
-                                $('#liVideos').addClass('active');
+                                $(\'#image-gallery\').css(\'display\', \'none\');
+                                $(\'#video-gallery\').css(\'display\', \'block\');
+                                $(\'#liImages\').removeClass(\'active\');
+                                $(\'#liVideos\').addClass(\'active\');
 
                             }
 
                             function openImg() {
-                                $('#video-gallery').css('display', 'none');
-                                $('#image-gallery').css('display', 'block');
-                                $('#liVideos').removeClass('active');
-                                $('#liImages').addClass('active');
+                                $(\'#video-gallery\').css(\'display\', \'none\');
+                                $(\'#image-gallery\').css(\'display\', \'block\');
+                                $(\'#liVideos\').removeClass(\'active\');
+                                $(\'#liImages\').addClass(\'active\');
                             }
 
                             function playVideo(videoSrc) {
-                                var videoModal = $('#videoModal');
-                                videoModal.find('.modal-video source').attr('src', videoSrc);
-                                videoModal.modal('show');
-                                videoModal.find('.modal-video')[0].load();
-                                videoModal.find('.modal-video')[0].play();
-                                videoModal.on('click', function (event) {
+                                var videoModal = $(\'#videoModal\');
+                                videoModal.find(\'.modal-video source\').attr(\'src\', videoSrc);
+                                videoModal.modal(\'show\');
+                                videoModal.find(\'.modal-video\')[0].load();
+                                videoModal.find(\'.modal-video\')[0].play();
+                                videoModal.on(\'click\', function (event) {
                                     if (event.target === this) {
                                         closeVideo();
                                     }
                                 });
                             }
                             function openPic(imgsrc) {
-                                $('#modalImage').attr('src', imgsrc);
-                                $('#imageModal').modal('show');
+                                $(\'#modalImage\').attr(\'src\', imgsrc);
+                                $(\'#imageModal\').modal(\'show\');
 
                             }
 
                             function closeVideo() {
-                                var video = $('#thevideo');
+                                var video = $(\'#thevideo\');
                                 console.log(video.get(0));
                                 video.get(0).pause();
                             }
@@ -248,7 +353,7 @@
                                             const div = document.createElement("div");
                                             div.classList.add("col-12", "col-sm-6", "col-lg-4", "isotope-item");
                                             div.innerHTML = `
-                                            <a class="" data-toggle="modal"  onclick="openPic('events/${eventName}/img/${fileName}')" data-lightgallery="item">
+                                            <a class="" data-toggle="modal"  onclick="openPic(\'events/${eventName}/img/${fileName}\')" data-lightgallery="item">
                                                 <article class="thumbnail-corporate wow fadeIn"><img
                                                         class="thumbnail-corporate-image" src="events/${eventName}/img/${fileName}"
                                                         alt="" width="370" height="256"/>
@@ -263,8 +368,8 @@
 
                                         // Trigger the Isotope layout
                                         new Isotope(imageGallery, {
-                                            itemSelector: '.isotope-item',
-                                            layoutMode: 'fitRows'
+                                            itemSelector: \'.isotope-item\',
+                                            layoutMode: \'fitRows\'
                                         });
                                         document.getElementById("numPic").textContent = numberPic;
                                     });
@@ -280,7 +385,7 @@
                                             const div = document.createElement("div");
                                             div.classList.add("col-12", "col-sm-6", "col-lg-4", "isotope-item");
                                             div.innerHTML = `
-                                        <a class=""  onclick="playVideo('events/${eventName}/vid/${fileName}')" data-lightgallery="item">
+                                        <a class=""  onclick="playVideo(\'events/${eventName}/vid/${fileName}\')" data-lightgallery="item">
                                             <article class="thumbnail-corporate wow fadeIn">
                                                 <video class="thumbnail-corporate-image" width="370" height="256" loop muted>
                                                     <source src="events/${eventName}/vid/${fileName}" type="video/mp4">
@@ -295,8 +400,8 @@
 
                                         // Trigger the Isotope layout
                                         new Isotope(videoGallery, {
-                                            itemSelector: '.isotope-item',
-                                            layoutMode: 'fitRows'
+                                            itemSelector: \'.isotope-item\',
+                                            layoutMode: \'fitRows\'
                                         });
                                         document.getElementById("numVid").textContent = numberVid;
                                     });
@@ -309,7 +414,8 @@
             </div>
         </div>
     </section>
-
+';
+    echo '
     <!-- Page Footer-->
     <footer class="section footer-standard text-justify">
         <div class="footer-standard-main">
@@ -330,7 +436,7 @@
                                 <li class="object-inline"><span
                                         class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
                                         class="link-default" href="#">ENSIT <br> Avenue Taha Hussein Montfleury, 1008
-                                    Tunis</a></li>
+                                        Tunis</a></li>
                                 <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a
                                         class="link-default" href="tel:#">+216 22 545 454 </a></li>
                                 <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a
@@ -348,7 +454,7 @@
                                 It brings together people interested in sharing their knowledge and helping each other
                                 in IT. It welcomes both beginners and experts. It aims to deepen your knowledge
                                 necessary in IT to be able to succeed in the professional field and allow students to
-                                use today's technology to prepare for the future </p>
+                                use today\'s technology to prepare for the future </p>
                         </div>
                     </div>
                 </div>
@@ -356,7 +462,7 @@
         </div>
         <div class="container">
             <div class="footer-standard-aside"><a class="brand" href="index.php"><img
-                    src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
+                        src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                 <!-- Rights-->
                 <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span><br
                         class="d-sm-none"/>
@@ -365,7 +471,7 @@
         </div>
     </footer>
 </div>
-<div class="preloader">
+<!--<div class="preloader">
     <div class="preloader-logo"><img src="images/loading%20tsu.png" alt="" width="" height=""/>
     </div>
     <div class="preloader-body">
@@ -373,11 +479,39 @@
             <div class="loadingProgressG" style="background: #138a91" id="loadingProgressG_1"></div>
         </div>
     </div>
-</div>
+</div>-->
 <!-- Global Mailform Output-->
 <div class="snackbars" id="form-output-global"></div>
 <!-- Javascript-->
 <script src="js/core.min.js"></script>
 <script src="js/script.js"></script>
+
+<script>
+    var user = sessionStorage.getItem("user");
+    var connectede = document.getElementById("Connected");
+    var buttonModify = document.getElementById("modifyEvent");
+    var formms = document.getElementById("fadit");
+    var notconnectede = document.getElementById("notConnected");
+    if (user != null && user.split(",")[1].length > 0) {
+        var pElement = document.getElementById("nomCourant");
+        pElement.textContent = user.split(",")[1];
+        connectede.style.display = "block";
+        notconnectede.style.display = "none";
+        buttonModify.style.display = "block";
+        formms.style.display = "block";
+    }else if (user == null){
+       formms.style.display = "none";
+       connectede.style.display = "none";
+       notconnectede.style.display = "block";
+       buttonModify.style.display = "none";
+       formms.style.display = "none";
+    }
+</script>
 </body>
 </html>
+    ';
+
+} catch (PDOException $PDOException) {
+    echo $PDOException->getMessage();
+}
+?>

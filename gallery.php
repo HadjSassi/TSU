@@ -1,6 +1,17 @@
 <?php
 
-echo '
+
+$dbh = new PDO('mysql:host=localhost;port=3306;dbname=TSU', 'root', 'Magali_1984');
+try {
+    $i = 0;
+    $listeEvent = [];
+    $sql = "select * from event";
+    foreach ($dbh->query($sql) as $item) {
+        $listeEvent[$i++] = $item;
+    }
+
+
+    echo '
 
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
@@ -41,7 +52,7 @@ echo '
     }</style>
 </head>
 ';
-echo '
+    echo '
 <body>
 <div class="page">
     <header class="section page-header">
@@ -105,7 +116,7 @@ echo '
         </div>
     </header>
     ';
-echo '
+    echo '
     <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/equi.jpg);">
         <div class="breadcrumbs-custom-inner">
             <div class="container breadcrumbs-custom-container">
@@ -121,48 +132,49 @@ echo '
         </div>
     </section>
 ';
-echo '
+    echo '
     <section class="section section-lg bg-default">
         <button class="mx-auto btn btn-primary" onclick="window.location.href=\'http://localhost/TSU/addEvent.php\';" id="btnAddEvent">Add Event</button>
         <div class="container">
             <div class="row row-50">
                 <div class="col-12 text-center">
-                    <h3 class="section-title wow-outer"><span class="wow slideInUp">TSU Events</span></h3>
+                    <h3 class="section-title wow-outer"><span class="wow slideInUp">TSU Event</span></h3>
                 </div>
                 <div class="col-12 isotope-wrap">
                     <div class="isotope offset-top-2" data-isotope-layout="masonry" data-lightgallery="group"
                          data-lg-thumbnail="false">
                         <div class="row row-30">
-                            <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
-                                <!-- Thumbnail Corporate-->
-                                <article class="thumbnail-corporate  wow slideInDown" style="cursor: pointer;" onclick=\'window.location.href = `event.php?event=Aviron`;\'><img
-                                        class="thumbnail-corporate-image" src="images/aviron.jpg"
-                                        alt="" width="370" height="256"/>
-                                    <div class="thumbnail-corporate-caption">
-                                        <p class="thumbnail-corporate-title"><a href="#">ENSIT Rowing Day</a></p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur
-                                            dolore et facere.
-                                        </p>
-                                    </div>
-                                    <div class="thumbnail-corporate-dummy"></div>
-                                </article>
-                            </div>
-                            <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
-                                <!-- Thumbnail Corporate-->
-                                <article class="thumbnail-corporate  wow slideInDown"  style="cursor: pointer;" onclick=\'window.location.href = `event.php?event=Swimming`;\'><img
-                                        class="thumbnail-corporate-image" src="images/swimming.jpg"
-                                        alt="" width="370" height="256"/>
-                                    <div class="thumbnail-corporate-caption">
-                                        <p class="thumbnail-corporate-title"><a href="#">Swiming Day</a></p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur
-                                            dolore et facere.
-                                        </p>
-                                    </div>
-                                    <div class="thumbnail-corporate-dummy"></div>
-                                </article>
-                            </div>
+                        ';
+
+    foreach ($listeEvent as $item) {
+        echo '
+        <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
+            <!-- Thumbnail Corporate-->
+            <article class="thumbnail-corporate  wow slideInDown" style="cursor: pointer;" onclick=\'window.location.href = `event.php?event=';
+            echo $item['titleEvent'];
+            echo '`;\'><img
+                    class="thumbnail-corporate-image" src="events/';
+                    echo $item['titleEvent'].'/'.$item['titleEvent'].'.jpg"';
+                    echo '
+                    alt="" width="370" height="256"/>
+                <div class="thumbnail-corporate-caption">
+                    <p class="thumbnail-corporate-title"><a href="#">';
+                    echo $item['titleEvent'];
+                    echo '
+                    </a></p>
+                    <h5>';
+                    echo 'Event Type : '.$item['typeEvent'].'<br>';
+                    echo 'Starting Date : '.$item['startingDate'].'<br>';
+                    echo'
+                    </p>
+                </div>
+                <div class="thumbnail-corporate-dummy"></div>
+            </article>
+        </div>
+        ';
+    }
+
+    echo '
                         </div>
                     </div>
                 </div>
@@ -170,7 +182,7 @@ echo '
         </div>
     </section>
 ';
-echo '
+    echo '
     <footer class="section footer-standard text-justify">
         <div class="footer-standard-main">
             <div class="container">
@@ -260,4 +272,8 @@ echo '
     }
 </script>
 ';
-    ?>
+
+} catch (PDOException $PDOException) {
+    echo $PDOException->getMessage();
+}
+?>
