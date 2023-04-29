@@ -2,13 +2,16 @@
 
 namespace Model;
 
-class Users{
+class Users
+{
     public $maiUser;
     public $username;
     public $pass;
     public $functionality;
     public $tel;
-    public $location;
+    public $firstName;
+    public $lastName;
+    public $job;
 
     /**
      * @param $maiUser
@@ -16,16 +19,20 @@ class Users{
      * @param $pass
      * @param $functionality
      * @param $tel
-     * @param $location
+     * @param $firstName
+     * @param $lastName
+     * @param $job
      */
-    public function __construct($maiUser, $username, $pass, $functionality, $tel, $location)
+    public function __construct($maiUser, $username, $pass, $functionality, $tel, $firstName, $lastName, $job)
     {
         $this->maiUser = $maiUser;
         $this->username = $username;
         $this->pass = $pass;
         $this->functionality = $functionality;
         $this->tel = $tel;
-        $this->location = $location;
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+        $this->job = $job;
     }
 
     /**
@@ -111,18 +118,51 @@ class Users{
     /**
      * @return mixed
      */
-    public function getLocation()
+    public function getFirstName()
     {
-        return $this->location;
+        return $this->firstName;
     }
 
     /**
-     * @param mixed $location
+     * @param mixed $firstName
      */
-    public function setLocation($location)
+    public function setFirstName($firstName)
     {
-        $this->location = $location;
+        $this->firstName = $firstName;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * @param mixed $lastName
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getJob()
+    {
+        return $this->job;
+    }
+
+    /**
+     * @param mixed $job
+     */
+    public function setJob($job)
+    {
+        $this->job = $job;
+    }
+
 
 
 

@@ -194,7 +194,7 @@ echo '
                     <h1 class="breadcrumbs-custom-title">Add Event</h1>
                 </div>
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="gallery.php">Gallery</a></li>
                     <li class="active">Add Event</li>
                 </ul>
             </div>

@@ -152,6 +152,7 @@ try {
                                     <a class="dropdown-item" href="Loging.php?login">Sign In</a>
                                     <a class="dropdown-item" href="Loging.php">Sign Up</a>
                                 </div>
+                                <a class="dropdown-item" id="profile" style="color: #505050;" href="profile.php">My Profile</a>
                                     <a class="dropdown-item"  id="Connected"
                                     onclick="sessionStorage.removeItem(\'user\'); window.location.reload();"
                                     style="cursor:pointer;">Log out</a>
@@ -332,9 +333,7 @@ try {
                                         if (xhr.status === 200) {
                                             console.log(xhr.responseText);
                                             console.log("event.php?event=';echo $lastEvent['titleEvent']; echo'");
-                                            window.location.href = "/TSU/event.php?event=';echo $lastEvent['titleEvent']; echo'";
-
-                                        } else {   
+                                            window.location.href = "/TSU/event.php?event=';echo $lastEvent['titleEvent']; echo'";} else {   
                                             console.error(xhr.statusText);
                                         }
                                     }
@@ -395,9 +394,10 @@ try {
             </div>
             <div class="thumbnail-corporate-dummy"></div>
         </article>
-    </a>
-    <div class="close-btn" ondblclick="supprimer(\'events/${eventName}/img/${fileName}\')" style="display: ${sessionStorage.getItem("user").split(",")[2] === "admin" ? "block" : "none"}">&times;</div>
-`;
+    </a>';
+                                            echo'
+    <div class="close-btn" ondblclick="supprimer(\'events/${eventName}/img/${fileName}\')" 
+    style=\'display: ${sessionStorage.getItem("user")!== null && sessionStorage.getItem("user").split(",")[2] === "admin" ? "block" : "none"}\'>&times;</div>`;
                                             imageGallery.appendChild(div);
 
                                         });
@@ -431,7 +431,9 @@ try {
                                                 <div class="thumbnail-corporate-dummy"></div>
                                             </article>
                                         </a>
-                                            <div class="close-btn" ondblclick="supprimer(\'events/${eventName}/vid/${fi}\')" style="display: ${sessionStorage.getItem("user").split(",")[2] === "admin" ? "block" : "none"}">&times;</div>
+                                            <div class="close-btn" ondblclick="supprimer(\'events/${eventName}/vid/${fi}\')" 
+                                            style=\'display: ${sessionStorage.getItem("user") !== null && sessionStorage.getItem("user").split(",")[2] === "admin" ? "block" : "none"}\'
+                                            >&times;</div>
 
                                         `;
                                             videoGallery.appendChild(div);
@@ -529,11 +531,14 @@ try {
     var connectede = document.getElementById("Connected");
     var buttonModify = document.getElementById("modifyEvent");
     var formms = document.getElementById("fadit");
+    var profile = document.getElementById("profile");
     var notconnectede = document.getElementById("notConnected");
     if (user != null && user.split(",")[1].length > 0) {
         var pElement = document.getElementById("nomCourant");
         pElement.textContent = user.split(",")[1];
         connectede.style.display = "block";
+        profile.style.display = "block";
+        profile.href = "profile.php?mail="+user.split(",")[0];
         notconnectede.style.display = "none";
         if (user.split(",")[2] === "admin")
             buttonModify.style.display = "block";
@@ -547,6 +552,7 @@ try {
         
     }else if (user == null){
        formms.style.display = "none";
+       profile.style.display = "none";
        connectede.style.display = "none";
        notconnectede.style.display = "block";
        buttonModify.style.display = "none";

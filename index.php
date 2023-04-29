@@ -104,6 +104,7 @@ echo '
                                     <a class="dropdown-item" href="Loging.php?login">Sign In</a>
                                     <a class="dropdown-item" href="Loging.php">Sign Up</a>
                                 </div>
+                                    <a class="dropdown-item" id="profile"  style="color: #505050;" href="profile.php">My Profile</a>
                                     <a class="dropdown-item"  id="Connected"
                                     onclick="sessionStorage.removeItem(\'user\'); window.location.reload();"
                                     style="cursor:pointer;">Log out</a>
@@ -691,6 +692,7 @@ echo '
 <script>
     var user = sessionStorage.getItem("user");
     var connectede = document.getElementById("Connected");
+    var profile = document.getElementById("profile");
     var connectedesd = document.getElementById("sectionConnected");
     var connectedess = document.getElementById("JoingUss");
     var notconnectede = document.getElementById("notConnected");
@@ -698,11 +700,14 @@ echo '
         var pElement = document.getElementById("nomCourant");
         pElement.textContent = user.split(",")[1];
         connectede.style.display = "block";
+        profile.style.display = "block";
+        profile.href = "profile.php?mail="+user.split(",")[0];
         connectedess.style.display = "none";
         connectedesd.style.display = "none";
         notconnectede.style.display = "none";
     }else if (user == null){
        connectede.style.display = "none";
+       profile.style.display = "none";
        connectedess.style.display = "block";
        connectedesd.style.display = "block";
        notconnectede.style.display = "block";

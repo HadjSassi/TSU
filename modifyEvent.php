@@ -243,7 +243,7 @@ try {
     echo $lastEvent['titleEvent'] . '</h1>
                 </div>
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="gallery.php">Gallery</a></li>
                     <li class="active">Modify Event</li>
                 </ul>
             </div>

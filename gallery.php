@@ -102,6 +102,7 @@ try {
                                     <a class="dropdown-item" href="Loging.php?login">Sign In</a>
                                     <a class="dropdown-item" href="Loging.php">Sign Up</a>
                                 </div>
+                                <a class="dropdown-item" id="profile"  style="color: #505050;" href="profile.php">My Profile</a>
                                     <a class="dropdown-item"  id="Connected"
                                     onclick="sessionStorage.removeItem(\'user\'); window.location.reload();"
                                     style="cursor:pointer;">Log out</a>
@@ -258,18 +259,23 @@ try {
     var user = sessionStorage.getItem("user");
     var connectede = document.getElementById("Connected");
     var buttonAdd = document.getElementById("btnAddEvent");
+    var profile = document.getElementById("profile");
     var notconnectede = document.getElementById("notConnected");
     if (user != null && user.split(",")[1].length > 0) {
         var pElement = document.getElementById("nomCourant");
         pElement.textContent = user.split(",")[1];
         connectede.style.display = "block";
+        profile.style.display = "block";
+        profile.href = "profile.php?mail="+user.split(",")[0];
         notconnectede.style.display = "none";
         if (user.split(",")[2] === "admin")
             buttonAdd.style.display = "block";
         else 
             buttonAdd.style.display = "none";
+        
     }else if (user == null){
        connectede.style.display = "none";
+       profile.style.display = "none";
        notconnectede.style.display = "block";
        buttonAdd.style.display = "none";
     }

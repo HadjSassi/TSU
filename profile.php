@@ -1,5 +1,57 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 echo '
+<script>
+var user = sessionStorage.getItem("user");
+if(user === null ||user.split(",")[1].length === 0){
+    window.location.href="404.php";
+}
+</script>
+
+';
+$dbh = new PDO('mysql:host=localhost;port=3306;dbname=TSU', 'root', 'Magali_1984');
+try {
+    $mail = $_GET['mail'];
+    $stmt = $dbh->prepare("SELECT * FROM users WHERE mailUser = ?");
+    $stmt->execute(array($mail));
+    $User = $stmt->fetchAll();
+    $User = end($User);
+    try{
+        if (isset($_POST['user'])) {
+            $username = $_POST['username'];
+            $firstName = $_POST['firstNme'];
+            $lastName = $_POST['lastNme'];
+            $phone = $_POST['phonee'];
+            $job = $_POST['functionss'];
+            $pass = $_POST['passs'];
+            $email = $_GET['mail'];
+
+            $sql = "UPDATE users SET 
+          username = '$username', 
+          firstName = '$firstName',
+          lastName = '$lastName',
+          tel = '$phone',
+          job = '$job',
+          pass = '$pass'
+        WHERE mailUser = '$email'";
+
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute();
+            $user = [$email,$username,$User['functionality']];
+            $user_json = json_encode($user);
+            echo '
+            <script>
+            sessionStorage.setItem("user",' . $user_json . ');      
+            window.location.href="http://localhost/TSU/";
+            </script>
+            ';
+        }
+    }catch (PDOException $PDOException){
+        echo $PDOException->getMessage();
+    }
+    echo '
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 <head>
@@ -39,7 +91,7 @@ echo '
   }</style>
 </head>
 ';
-echo'
+    echo '
   <body>
     <div class="page">
       <!-- Page Header-->
@@ -73,7 +125,7 @@ echo'
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.php">Gallery</a>
                       </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="contacts.php">Contacts</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.php">Contacts</a>
                       </li>
                     </ul>
                   </div>
@@ -103,94 +155,89 @@ echo'
         </div>
       </header>
       ';
-echo'
+    echo '
       <!-- Breadcrumbs-->
-      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/couverturecontact.jpg);">
+      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/prof.jpg);">
         <div class="breadcrumbs-custom-inner">
           <div class="container breadcrumbs-custom-container">
             <div class="breadcrumbs-custom-main">
-              <h6 class="breadcrumbs-custom-subtitle title-decorated">Contacts</h6>
-              <h1 class="breadcrumbs-custom-title">Contacts</h1>
+              <h6 class="breadcrumbs-custom-subtitle title-decorated">Settings</h6>
+              <h1 class="breadcrumbs-custom-title">My Profile</h1>
             </div>
             <ul class="breadcrumbs-custom-path">
-              <li><a href="index.php">Home</a></li>
-              <li class="active">Contacts</li>
+              <li><a href="index.php">Settings</a></li>
+              <li class="active">My Profile</li>
             </ul>
           </div>
         </div>
       </section>
-      <section class="section section-sm">
-        <div class="container">
-          <div class="layout-bordered">
-            <div class="layout-bordered-item wow-outer">
-              <div class="layout-bordered-item-inner wow slideInUp">
-                <div class="icon icon-lg mdi mdi-phone text-primary"></div>
-                <ul class="list-0">
-                  <li><a class="link-default" href="tel:#">+216 22 545 454</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="layout-bordered-item wow-outer">
-              <div class="layout-bordered-item-inner wow slideInUp">
-                <div class="icon icon-lg mdi mdi-email text-primary"></div><a class="link-default" href="mailto:#">benabdallahmehdi1920@gmail.com</a>
-              </div>
-            </div>
-            <div class="layout-bordered-item wow-outer">
-              <div class="layout-bordered-item-inner wow slideInUp">
-                <div class="icon icon-lg mdi mdi-map-marker text-primary"></div><a class="link-default" href="#">ENSIT
-                Avenue Taha Hussein Montfleury, 1008 Tunis</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <section class="section bg-gray-100">
-        <div class="range justify-content-xl-between">
-          <div class="cell-xl-6 align-self-center container">
+        <div class="range text-center">
+          <div class="cell align-self-center container">
             <div class="row">
-              <div class="col-lg-9 cell-inner">
+              <div class="col cell-inner">
                 <div class="section-lg">
-                  <h3 class="wow-outer"><span class="wow slideInDown">Contact Us</span></h3>
+                  <h3 class="wow-outer"><span class="wow slideInDown">Hello ';
+    echo $User['username'];
+    echo '!</span></h3>
+
                   <!-- RD Mailform-->
-                  <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                  <form class="rd-form " action="profile.php?mail='; echo $User['mailUser'];  echo '" method="post" >
                     <div class="row row-10">
                       <div class="col-md-6 wow-outer">
                         <div class="form-wrap wow fadeSlideInUp">
+                          <label class="form-label-outside" for="contact-user-name">User Name</label>
+                          <input class="form-input" id="contact-user-name" name="username" onkeyup="userNames()" required value="';     echo $User['username'];echo '" type="text" data-constraints="@Required">
+                        </div>
+                      </div>
+                      <div class="col-md-6 wow-outer">
+                        <div class="form-wrap wow fadeSlideInUp">
+                          <label class="form-label-outside" for="contact-email">E-mail <em>(Contact Administrator to modify it)</em></label>
+                          <input class="form-input" id="contact-email"  name="email" type="email" disabled  data-constraints="@Required @Email" value="'; echo $User['mailUser'];  echo '">
+                        </div>
+                      </div>
+                      <div class="col-md-6 wow-outer">
+                        <div class="form-wrap wow fadeSlideInUp">
                           <label class="form-label-outside" for="contact-first-name">First Name</label>
-                          <input class="form-input" id="contact-first-name" type="text" name="name" data-constraints="@Required">
+                          <input class="form-input" id="contact-first-name" name="firstNme" onkeyup="firstNames()" required  type="text"  data-constraints="@Required" value="'; echo $User['firstName']; echo '">
                         </div>
                       </div>
                       <div class="col-md-6 wow-outer">
                         <div class="form-wrap wow fadeSlideInUp">
                           <label class="form-label-outside" for="contact-last-name">Last Name</label>
-                          <input class="form-input" id="contact-last-name" type="text" name="name" data-constraints="@Required">
-                        </div>
-                      </div>
-                      <div class="col-md-6 wow-outer">
-                        <div class="form-wrap wow fadeSlideInUp">
-                          <label class="form-label-outside" for="contact-email">E-mail</label>
-                          <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Required @Email">
+                          <input class="form-input" id="contact-last-name" name="lastNme" value="'; echo $User['lastName']; echo '" type="text"  >
                         </div>
                       </div>
                       <div class="col-md-6 wow-outer">
                         <div class="form-wrap wow fadeSlideInUp">
                           <label class="form-label-outside" for="contact-phone">Phone</label>
-                          <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Required @PhoneNumber">
+                          <input class="form-input" id="contact-phone" onkeyup="phones()" name="phonee" required type="text"  data-constraints="@Required @PhoneNumber"  value ='; echo $User['tel'];  echo ' >
                         </div>
                       </div>
-                      <div class="col-12 wow-outer">
+                      <div class="col-md-6 wow-outer">
                         <div class="form-wrap wow fadeSlideInUp">
-                          <label class="form-label-outside" for="contact-message">Your Message</label>
-                          <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
+                          <label class="form-label-outside" for="contact-function">Function</label>
+                          <input class="form-input" name="functionss" id="contact-function" type="text" value ='; echo $User['job']; echo '  >
+                        </div>
+                      </div>
+                      <div class="col-md-6 wow-outer">
+                        <div class="form-wrap wow fadeSlideInUp">
+                          <label class="form-label-outside" for="contact-pass">Password</label>
+                          <input class="form-input" name="passs" id="contact-pass" onkeyup="passsed()" type="password" value="';echo $User['pass']; echo '"  data-constraints="@Required">
+                        </div>
+                      </div>
+                      <div class="col-md-6 wow-outer">
+                        <div class="form-wrap wow fadeSlideInUp">
+                          <label class="form-label-outside" for="contact-pass2">Confirmation Password </label>
+                          <input class="form-input" id="contact-pass2" placeholder="Please Confirm the password!" type="password" onkeyup="passsed()" name="phone" data-constraints="@Required">
                         </div>
                       </div>
                     </div>
-                    <div class="group group-middle">
-                      <div class="wow-outer">
-                        <button class="button button-primary button-winona wow slideInRight" type="submit">Send Message</button>
-                      </div>
-                      <p>or use</p>
-                      <div class="wow-outer"><a class="button button-primary-outline button-icon button-icon-left button-winona wow slideInLeft" href="#"><span class="icon text-primary mdi mdi-whatsapp"></span>Whatsapp</a></div>
+                    <div class="text-center mt-5">
+                        <h5 class="wow slideInUp text-danger mb-3" id="error"></h5>
+                        <div class="wow">
+                            <input type="submit" class="btn button-primary wow slideInUp"  value="Update Profile" id="usersubmit" name="user"/> 
+                        </div>
                     </div>
                   </form>
                 </div>
@@ -198,7 +245,6 @@ echo'
             </div>
           </div>
           <div class="cell-xl-5 height-fill wow fadeIn">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.41859161098!2d10.175937224651019!3d36.78451297225153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd340576fc1a05%3A0x25fc1aa869f8cfb6!2s%C3%89cole%20nationale%20sup%C3%A9rieure%20d&#39;ing%C3%A9nieurs%20de%20Tunis%20(ENSIT)!5e0!3m2!1sen!2stn!4v1681577032192!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>          </div>
         </div>
       </section>
       <!-- Page Footer-->
@@ -257,7 +303,7 @@ echo'
       </footer>
     </div>
     ';
-echo'
+    echo '
     <div class="preloader">
       <div class="preloader-logo"><img src="images/loading%20tsu.png" alt="" width="" height=""/>
       </div>
@@ -268,15 +314,51 @@ echo'
       </div>
     </div>
     <!-- Global Mailform Output-->
-    <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
     
 <script>
+var diUserName = false;
+var difirName = false;
+var diphone = false;
+var dipass = true;
+var disabledd = document.getElementById("usersubmit");
+disabledd.disabled = (diUserName || difirName || diphone || dipass);
+function userNames() {
+    var contact = document.getElementById("contact-user-name");
+    diUserName = (contact.value.length === 0);
+    disabledd.disabled = diUserName || difirName || diphone || dipass;
+}
+
+function firstNames() {
+    var contact = document.getElementById("contact-first-name");
+    difirName = (contact.value.length === 0);
+    disabledd.disabled = (diUserName || difirName || diphone || dipass);
+}
+
+function phones() {
+    var contact = document.getElementById("contact-phone");
+    diphone = (contact.value.length === 0);
+    disabledd.disabled = (diUserName || difirName || diphone || dipass);
+}
+
+function passsed() {
+    var contact = document.getElementById("contact-pass");
+    var contact2 = document.getElementById("contact-pass2");
+    dipass = (contact.value !== contact2.value);
+    if (dipass){
+        document.getElementById("error").textContent = "Please Verify your password!";
+    } else {
+        document.getElementById("error").textContent = "";
+    }
+    disabledd.disabled = (diUserName || difirName || diphone || dipass);
+}
+
+</script>
+<script>
     var user = sessionStorage.getItem("user");
     var connectede = document.getElementById("Connected");
-    var buttonAdd = document.getElementById("btnAddEvent");
     var profile = document.getElementById("profile");
     var notconnectede = document.getElementById("notConnected");
     if (user != null && user.split(",")[1].length > 0) {
@@ -286,14 +368,15 @@ echo'
         profile.style.display = "block";
         profile.href = "profile.php?mail="+user.split(",")[0];
         notconnectede.style.display = "none";
-        buttonAdd.style.display = "block";
     }else if (user == null){
        connectede.style.display = "none";
        profile.style.display = "none";
        notconnectede.style.display = "block";
-       buttonAdd.style.display = "none";
     }
 </script>
   </body>
 </html>';
+} catch (PDOException $PDOException) {
+    echo $PDOException->getMessage();
+}
 ?>
