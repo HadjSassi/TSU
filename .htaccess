@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /TSU/
+
+# Redirect to 404.php if the requested URL does not exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /TSU/404.php [L]
+

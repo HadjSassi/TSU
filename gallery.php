@@ -164,7 +164,7 @@ try {
                     </a></p>
                     <h5>';
                     echo 'Event Type : '.$item['typeEvent'].'<br>';
-                    echo 'Starting Date : '.$item['startingDate'].'<br>';
+                    echo 'Date : '.$item['startingDate'].'<br>';
                     echo'
                     </p>
                 </div>

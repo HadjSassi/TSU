@@ -1,4 +1,5 @@
 <?php
+$errorMessage = "";
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -8,71 +9,77 @@ if (isset($_POST['submit'])) {
     $stDAte = $_POST['stDate'];
     $enDate = $_POST['enDate'];
     $description = $_POST['descriptionEvent'];
+    if ($enDate == null || strtotime($stDAte) <= strtotime($enDate)) {
+        $folderPath = "events/$eventName";
+        if (is_dir($folderPath)) {
+            // the folder already exists, show an error message to the user
+            $errorMessage = "Event name Already Exist ! ";
+        } else {
+            $dbh = new PDO('mysql:host=localhost;port=3306;dbname=TSU', 'root', 'Magali_1984');
+            try {
+                $i = 0;
+                $listeEvent = [];
+                $stmt = $dbh->prepare("Insert into event(titleEvent, typeEvent, descriptions, startingDate, endingDate) values(?,?,?,?,?)");
+                $stmt->bindParam(1, $eventName);
+                $stmt->bindParam(2, $eventType);
+                $stmt->bindParam(3, $description);
+                $stmt->bindParam(4, $stDAte);
+                if ($enDate != null)
+                    $stmt->bindParam(5, $enDate);
+                else
+                    $stmt->bindParam(5, $stDAte);
+                $stmt->execute();
+                // Assuming that the 'uploads' folder is in the same directory as this PHP script
+                mkdir($folderPath); // Create the folder
+                chmod($folderPath, 0777);
+                mkdir("$folderPath/img"); // Create the 'img' folder inside the event folder
+                mkdir("$folderPath/vid"); // Create the 'vid' folder inside the event folder
 
-    $folderPath = "events/$eventName";
-    if (is_dir($folderPath)) {
-        // the folder already exists, show an error message to the user
-        echo "<h1 class='text-center mx-auto' style='color: red'>Event name Already Exist ! </h1>";
-    } else {
-        $dbh = new PDO('mysql:host=localhost;port=3306;dbname=TSU', 'root', 'Magali_1984');
-        try {
-            $i = 0;
-            $listeEvent = [];
-            $stmt = $dbh->prepare("Insert into event(titleEvent, typeEvent, descriptions, startingDate, endingDate) values(?,?,?,?,?)");
-            $stmt->bindParam(1, $eventName);
-            $stmt->bindParam(2, $eventType);
-            $stmt->bindParam(3, $description);
-            $stmt->bindParam(4, $stDAte);
-            $stmt->bindParam(5, $enDate);
-            $stmt->execute();
-            // Assuming that the 'uploads' folder is in the same directory as this PHP script
-            mkdir($folderPath); // Create the folder
-            chmod($folderPath, 0777);
-            mkdir("$folderPath/img"); // Create the 'img' folder inside the event folder
-            mkdir("$folderPath/vid"); // Create the 'vid' folder inside the event folder
-
-            // Move the uploaded poster file to the folder
-            $posterFile = $_FILES['poster']['tmp_name']; // Assuming that 'poster' is the name of the input field that contains the poster file
-            $posterPath = "$folderPath/$eventName.jpg"; // Assuming that you want to save the poster file as 'poster.jpg' in the folder
-            move_uploaded_file($posterFile, $posterPath); // Move the file to the folder
-            // Move the uploaded asset files to the folder
-            $assetFiles = $_FILES['assets']['tmp_name']; // Assuming that 'assets' is the name of the input field that contains the asset files
-            if (is_array($assetFiles)) {
-                foreach ($assetFiles as $index => $tmpName) {
-                    $assetPath = "$folderPath/img/asset$index.jpg"; // Assuming that you want to save each asset file as 'asset0.jpg', 'asset1.jpg', etc. in the folder
-                    if (move_uploaded_file($tmpName, $assetPath)) {
-                        // File uploaded successfully
-                    } else {
-                        $error = error_get_last();
-                        // Handle the error here
+                // Move the uploaded poster file to the folder
+                $posterFile = $_FILES['poster']['tmp_name']; // Assuming that 'poster' is the name of the input field that contains the poster file
+                $posterPath = "$folderPath/$eventName.jpg"; // Assuming that you want to save the poster file as 'poster.jpg' in the folder
+                move_uploaded_file($posterFile, $posterPath); // Move the file to the folder
+                // Move the uploaded asset files to the folder
+                /*$assetFiles = $_FILES['assets']['tmp_name']; // Assuming that 'assets' is the name of the input field that contains the asset files
+                if (is_array($assetFiles)) {
+                    foreach ($assetFiles as $index => $tmpName) {
+                        $assetPath = "$folderPath/img/asset$index.jpg"; // Assuming that you want to save each asset file as 'asset0.jpg', 'asset1.jpg', etc. in the folder
+                        if (move_uploaded_file($tmpName, $assetPath)) {
+                            // File uploaded successfully
+                        } else {
+                            $error = error_get_last();
+                            // Handle the error here
+                        }
                     }
                 }
-            }
-            $videoFiles = $_FILES['videos']['tmp_name']; // Add this to handle the 'videos' input field
-            if (is_array($videoFiles)) {
-                foreach ($videoFiles as $index => $tmpName) {
-                    $fileExtension = pathinfo($_FILES['videos']['name'][$index], PATHINFO_EXTENSION);
-                    $videoPath = "$folderPath/vid/video$index.$fileExtension"; // Save the video file in the 'vid' folder with the correct extension
-                    if (move_uploaded_file($tmpName, $videoPath)) {
-                        // File uploaded successfully
-                    } else {
-                        $error = error_get_last();
-                        // Handle the error here
+                $videoFiles = $_FILES['videos']['tmp_name']; // Add this to handle the 'videos' input field
+                if (is_array($videoFiles)) {
+                    foreach ($videoFiles as $index => $tmpName) {
+                        $fileExtension = pathinfo($_FILES['videos']['name'][$index], PATHINFO_EXTENSION);
+                        $videoPath = "$folderPath/vid/video$index.$fileExtension"; // Save the video file in the 'vid' folder with the correct extension
+                        if (move_uploaded_file($tmpName, $videoPath)) {
+                            // File uploaded successfully
+                        } else {
+                            $error = error_get_last();
+                            // Handle the error here
+                        }
                     }
-                }
-            }
-            echo '
+                }*/
+                echo '
             <script>
             window.location.href="http://localhost/TSU/gallery.php";
             </script>
             ';
-        } catch (PDOException $PDOException) {
-            echo $PDOException->getMessage();
+            } catch (PDOException $PDOException) {
+                echo $PDOException->getMessage();
+            }
         }
+    } else {
+        $errorMessage = "Ending Date can't be before the Starting Date!<br>Please get Back And start from the first.";
     }
 }
 
-?>
+echo '
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 <head>
@@ -110,7 +117,8 @@ if (isset($_POST['submit'])) {
         html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
             display: block;
         }</style>
-</head>
+</head>';
+echo '
 <body>
 
 <div class="page">
@@ -162,6 +170,8 @@ if (isset($_POST['submit'])) {
             </nav>
         </div>
     </header>
+    ';
+echo '
     <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/AddEvent3.jpg);">
         <div class="breadcrumbs-custom-inner">
             <div class="container breadcrumbs-custom-container">
@@ -181,18 +191,26 @@ if (isset($_POST['submit'])) {
     <section class="section section-lg bg-default">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
+                <div class="col-12 text-center">';
+if (strlen($errorMessage) != 0) {
+    echo "<h3 class='text-center mx-auto' style='color: red'>$errorMessage</h3>";
+    echo "<button class=\"mx-auto button button-primary-outline\" onclick='window.location.href=\"addEvent.php\"'; >Recreate the Event</button>";
+}
+else {
+    echo '
                     <h3 class="" style="margin-top: -5%; margin-bottom: 5%;">Please Fill This Form!</h3><br>
                     <form action="addEvent.php" method="post" enctype="multipart/form-data"
                           class="ml-xl-5 mr-xl-5 px-5">
                         <div class="row">
                             <label class="col">Event Title</label>
-                            <input class="col form-input" required name="title" placeholder="Please write the event name here!"
+                            <input class="col form-input" required name="title"
+                                   placeholder="Please write the event name here!"
                                    type="text">
                         </div>
                         <div class="row">
                             <label class="col">Event Type</label>
-                            <input class="col form-input" required name="type" placeholder="Please write the event type here!"
+                            <input class="col form-input" required name="type"
+                                   placeholder="Please write the event type here!"
                                    type="text">
                         </div>
                         <div class="row">
@@ -208,13 +226,13 @@ if (isset($_POST['submit'])) {
                             <textarea class="col form-input" name="descriptionEvent"
                                       placeholder="Please Write the Event Description here !" rows="5"></textarea>
                         </div>
-                        <div class="row ml-5">
-                            <div class="col pl-5 ml-xl-5">
+                        <div class="mt-5">
+                            <div class="row">
                                 <label for="DefaultFile" class="col">File Poster</label>
                                 <input class="form-control col" required accept="image/*" name="poster" type="file"
                                        id="DefaultFile">
                             </div>
-                            <div class="col">
+                            <!--<div class="col">
                                 <label for="MultipleFile" class="col">File Pictures</label>
                                 <input class="form-control col" name="assets[]" accept="image/*" type="file" multiple
                                        id="MultipleFile">
@@ -223,21 +241,19 @@ if (isset($_POST['submit'])) {
                                 <label for="MultipleFileVid" class="col">File Videos</label>
                                 <input class="form-control col" name="videos[]" accept="video/mp4" type="file" multiple
                                        id="MultipleFileVid">
-                            </div>
+                            </div>-->
                         </div>
                         <div class="row">
                             <input class="mx-auto button button-primary-outline" type="submit" name="submit"
                                    value="Create Event">
-                            <p class="mx-auto text-danger">
-                                Try to not upload too much sized files,just the File Poster is necessary, you can add the other assets later on!
-                            </p>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
+';}
+    echo '
 
     <!-- Page Footer-->
     <footer class="section footer-standard text-justify">
@@ -277,7 +293,7 @@ if (isset($_POST['submit'])) {
                                 It brings together people interested in sharing their knowledge and helping each other
                                 in IT. It welcomes both beginners and experts. It aims to deepen your knowledge
                                 necessary in IT to be able to succeed in the professional field and allow students to
-                                use today's technology to prepare for the future </p>
+                                use today\'s technology to prepare for the future </p>
                         </div>
                     </div>
                 </div>
@@ -310,4 +326,5 @@ if (isset($_POST['submit'])) {
 <script src="js/script.js"></script>
 </body>
 </html>
-
+';
+?>

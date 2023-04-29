@@ -1,4 +1,33 @@
 <?php
+
+function deleteDirectory($dirPath)
+{
+    if (is_dir($dirPath)) {
+        // Delete all files and subdirectories in the directory
+        $files = scandir($dirPath);
+        foreach ($files as $file) {
+            if ($file != "." && $file != "..") {
+                $filePath = $dirPath . "/" . $file;
+                if (is_dir($filePath)) {
+                    // Recursively delete subdirectories
+                    deleteDirectory($filePath);
+                } else {
+                    // Delete file
+                    unlink($filePath);
+                }
+            }
+        }
+        // Delete the directory itself
+        rmdir($dirPath);
+    }
+    echo '
+                                <script>
+                                window.location.href="http://localhost/TSU/gallery.php";
+                                </script>
+                                ';
+}
+
+$errorMessage = "";
 $dbh = new PDO('mysql:host=localhost;port=3306;dbname=TSU', 'root', 'Magali_1984');
 try {
     $currentEvent = $_GET['eventId'];
@@ -10,6 +39,7 @@ try {
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
+
     if (isset($_POST['submit'])) {
         $eventName = $_POST['title'];
         $eventType = $_POST['type'];
@@ -18,72 +48,84 @@ try {
         $description = $_POST['descriptionEvent'];
         $oldFolderPath = "events/" . $lastEvent['titleEvent'];
         $folderPath = "events/$eventName";
-        if (is_dir($folderPath) && $folderPath != $oldFolderPath) {
-            // the folder already exists, show an error message to the user
-            echo "<h1 class='text-center mx-auto' style='color: red'>Event name Already Exist ! </h1>";
-        } else {
+        if ($enDate == null || strtotime($stDAte) <= strtotime($enDate)) {
+            if (is_dir($folderPath) && $folderPath != $oldFolderPath) {
+                // the folder already exists, show an error message to the user
+                $errorMessage = "Event name Already Exist ! ";
+            } else {
 
-            $stmt = $dbh->prepare("update event set titleEvent = ?, typeEvent = ?, descriptions= ?, startingDate = ?, endingDate = ? where idEvent = ?");
-            $stmt->bindParam(1, $eventName);
-            $stmt->bindParam(2, $eventType);
-            $stmt->bindParam(3, $description);
-            $stmt->bindParam(4, $stDAte);
-            $stmt->bindParam(5, $enDate);
-            $stmt->bindParam(6, $currentEvent);
-            $stmt->execute();
-            if (is_dir($oldFolderPath)) {
-                if (rename($oldFolderPath, $folderPath)) {
-                    $oldFilePath = "events/" . $eventName . "/" . $lastEvent['titleEvent'] . ".jpg";
-                    $newFilePath = "events/" . $eventName . "/" . $eventName . ".jpg";
-                    if (file_exists($oldFilePath)) {
-                        if (rename($oldFilePath, $newFilePath)) {
-                            $posterFile = $_FILES['poster']['tmp_name']; // Assuming that 'poster' is the name of the input field that contains the poster file
-                            $posterPath = "$folderPath/$eventName.jpg"; // Assuming that you want to save the poster file as 'poster.jpg' in the folder
-                            move_uploaded_file($posterFile, $posterPath); // Move the file to the folder
-                            $assetFiles = $_FILES['assets']['tmp_name']; // Assuming that 'assets' is the name of the input field that contains the asset files
-                            if (is_array($assetFiles)) {
-                                foreach ($assetFiles as $index => $tmpName) {
-                                    $assetPath = "$folderPath/img/asset$date$index.jpg"; // Assuming that you want to save each asset file as 'asset0.jpg', 'asset1.jpg', etc. in the folder
-                                    if (move_uploaded_file($tmpName, $assetPath)) {
-                                        // File uploaded successfully
-                                    } else {
-                                        $error = error_get_last();
-                                        // Handle the error here
+                $stmt = $dbh->prepare("update event set titleEvent = ?, typeEvent = ?, descriptions= ?, startingDate = ?, endingDate = ? where idEvent = ?");
+                $stmt->bindParam(1, $eventName);
+                $stmt->bindParam(2, $eventType);
+                $stmt->bindParam(3, $description);
+                $stmt->bindParam(4, $stDAte);
+                $stmt->bindParam(5, $enDate);
+                $stmt->bindParam(6, $currentEvent);
+                $stmt->execute();
+                if (is_dir($oldFolderPath)) {
+                    if (rename($oldFolderPath, $folderPath)) {
+                        $oldFilePath = "events/" . $eventName . "/" . $lastEvent['titleEvent'] . ".jpg";
+                        $newFilePath = "events/" . $eventName . "/" . $eventName . ".jpg";
+                        if (file_exists($oldFilePath)) {
+                            if (rename($oldFilePath, $newFilePath)) {
+                                $posterFile = $_FILES['poster']['tmp_name']; // Assuming that 'poster' is the name of the input field that contains the poster file
+                                $posterPath = "$folderPath/$eventName.jpg"; // Assuming that you want to save the poster file as 'poster.jpg' in the folder
+                                move_uploaded_file($posterFile, $posterPath); // Move the file to the folder
+                                /*$assetFiles = $_FILES['assets']['tmp_name']; // Assuming that 'assets' is the name of the input field that contains the asset files
+                                if (is_array($assetFiles)) {
+                                    foreach ($assetFiles as $index => $tmpName) {
+                                        $assetPath = "$folderPath/img/asset$date$index.jpg"; // Assuming that you want to save each asset file as 'asset0.jpg', 'asset1.jpg', etc. in the folder
+                                        if (move_uploaded_file($tmpName, $assetPath)) {
+                                            // File uploaded successfully
+                                        } else {
+                                            $error = error_get_last();
+                                            // Handle the error here
+                                        }
                                     }
                                 }
-                            }
-                            $videoFiles = $_FILES['videos']['tmp_name']; // Add this to handle the 'videos' input field
-                            if (is_array($videoFiles)) {
-                                foreach ($videoFiles as $index => $tmpName) {
-                                    $fileExtension = pathinfo($_FILES['videos']['name'][$index], PATHINFO_EXTENSION);
-                                    $videoPath = "$folderPath/vid/video$date$index.$fileExtension"; // Save the video file in the 'vid' folder with the correct extension
-                                    if (move_uploaded_file($tmpName, $videoPath)) {
-                                        // File uploaded successfully
-                                    } else {
-                                        $error = error_get_last();
-                                        // Handle the error here
+                                $videoFiles = $_FILES['videos']['tmp_name']; // Add this to handle the 'videos' input field
+                                if (is_array($videoFiles)) {
+                                    foreach ($videoFiles as $index => $tmpName) {
+                                        $fileExtension = pathinfo($_FILES['videos']['name'][$index], PATHINFO_EXTENSION);
+                                        $videoPath = "$folderPath/vid/video$date$index.$fileExtension"; // Save the video file in the 'vid' folder with the correct extension
+                                        if (move_uploaded_file($tmpName, $videoPath)) {
+                                            // File uploaded successfully
+                                        } else {
+                                            $error = error_get_last();
+                                            // Handle the error here
+                                        }
                                     }
-                                }
-                            }
-                            echo '
+                                }*/
+                                echo '
                                 <script>
                                 window.location.href="http://localhost/TSU/gallery.php";
                                 </script>
                                 ';
-                            echo "<h1 class='text-green'>Please close this tab!</h1>";
+                            } else {
+                                echo "Unable to rename file.";
+                            }
                         } else {
-                            echo "Unable to rename file.";
+                            echo "File not found.";
                         }
                     } else {
-                        echo "File not found.";
+                        echo "Unable to rename folder.";
                     }
                 } else {
-                    echo "Unable to rename folder.";
+                    echo "Folder not found.";
                 }
-            } else {
-                echo "Folder not found.";
             }
+        } else {
+            $errorMessage = "Ending Date can't be before the Starting Date!<br>Please get Back And start from the first.";
         }
+
+    } else if (isset($_POST['delete'])) {
+        //delete from the databse
+        $stmt = $dbh->prepare("delete from event where idEvent = ?");
+        $stmt->bindParam(1, $currentEvent);
+        $stmt->execute();
+        //delete the folder
+        $dirPath = "events/" . $lastEvent['titleEvent'];
+        deleteDirectory($dirPath);
 
     }
     echo '
@@ -187,11 +229,12 @@ try {
             <div class="container breadcrumbs-custom-container">
                 <div class="breadcrumbs-custom-main">
                     <h6 class="breadcrumbs-custom-subtitle title-decorated">Gallery</h6>
-                    <h1 class="breadcrumbs-custom-title">Add Event</h1>
+                    <h1 class="breadcrumbs-custom-title">Modify ';
+    echo $lastEvent['titleEvent'] . '</h1>
                 </div>
                 <ul class="breadcrumbs-custom-path">
                     <li><a href="index.php">Home</a></li>
-                    <li class="active">Add Event</li>
+                    <li class="active">Modify Event</li>
                 </ul>
             </div>
         </div>
@@ -202,37 +245,43 @@ try {
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
+                ';
+    if (strlen($errorMessage) != 0) {
+        echo "<h3 class='text-center mx-auto' style='color: red'>$errorMessage</h3>";
+        echo "<button class=\"mx-auto button button-primary-outline\" onclick='window.location.href=\"modifyEvent.php?eventId=$currentEvent\"'; >Recreate the Event</button>";
+    } else {
+        echo '
                     <h3 class="" style="margin-top: -5%; margin-bottom: 5%;">Please Fill This Form!</h3><br>
                     <form action="modifyEvent.php?eventId=';
-    echo $lastEvent['idEvent'] . '" method="post" enctype="multipart/form-data"
+        echo $lastEvent['idEvent'] . '" method="post" enctype="multipart/form-data"
                           class="ml-xl-5 mr-xl-5 px-5">
                         <div class="row">
                             <label class="col">Event Title</label>
                             <input class="col form-input" required name="title" value="';
-    echo $lastEvent['titleEvent'] . '"
+        echo $lastEvent['titleEvent'] . '"
                                    type="text">
                         </div>
                         <div class="row">
                             <label class="col">Event Type</label>
                             <input class="col form-input" required name="type" value="';
-    echo $lastEvent['typeEvent'] . '"
+        echo $lastEvent['typeEvent'] . '"
                                    type="text">
                         </div>
                         <div class="row">
                             <label class="col">Starting Date</label>
                             <input class="col form-input" required name="stDate" type="date" value="';
-    echo $lastEvent['startingDate'] . '">
+        echo $lastEvent['startingDate'] . '">
                         </div>
                         <div class="row">
                             <label class="col">Ending Date</label>
                             <input class="col form-input" name="enDate" type="date" value="';
-    echo $lastEvent['endingDate'] . '">
+        echo $lastEvent['endingDate'] . '">
                         </div>
                         <div class="row">
                             <label class="col">Event Description</label>
                             <textarea class="col form-input" name="descriptionEvent"
                                       rows="5">';
-    echo $lastEvent['descriptions'] . '</textarea>
+        echo $lastEvent['descriptions'] . '</textarea>
                         </div>
                         <div class="row ml-5">
                             <div class="col pl-5 ml-xl-5">
@@ -240,30 +289,33 @@ try {
                                 <input class="form-control col"  accept="image/*" name="poster" type="file"
                                        id="DefaultFile">
                             </div>
-                            <div class="col">
+                            <!--<div class="col">
                                 <label for="MultipleFile" class="col">File Pictures</label>
-                                <input class="form-control col" name="assets[]" accept="image/*" type="file" multiple
+                                <input class="form-control col" name="assets[]" accept="image/*" type="file" multiple max="20"
                                        id="MultipleFile">
                             </div>
                             <div class="col">
                                 <label for="MultipleFileVid" class="col">File Videos</label>
-                                <input class="form-control col" name="videos[]" accept="video/mp4" type="file" multiple
+                                <input class="form-control col" name="videos[]" accept="video/mp4" type="file"
                                        id="MultipleFileVid">
-                            </div>
+                            </div>-->
                         </div>
                         <div class="row">
                             <input class="mx-auto button button-primary-outline" type="submit" name="submit"
                                    value="Update Event">
-                            <p class="mx-auto text-danger">
-                                Try to not upload too much sized files,just the File Poster is necessary, you can add the other assets later on!
-                            </p>
                         </div>
-                    </form>
-                </div>
+                    
+                    <div class="mx-auto mt-5">
+                    <label>Confirm Deleting</label>
+                    <input type="checkbox" class="" id="confirmDeleteBut" onclick="toggleDeleteButton()">
+                    </div>
+                    <input id="deleteeBut" type="submit" name="delete" class="mx-auto btn button-primary" disabled value="Delete Event" >
+               </form> </div>
             </div>
         </div>
     </section>
 ';
+    }
     echo ' 
 
     <!-- Page Footer-->
@@ -337,6 +389,14 @@ try {
 <!-- Javascript-->
 <script src="js/core.min.js"></script>
 <script src="js/script.js"></script>
+<script>
+function toggleDeleteButton() {
+  const checkbox = document.getElementById(\'confirmDeleteBut\');
+  const deleteButton = document.getElementById(\'deleteeBut\');
+  deleteButton.disabled = !checkbox.checked;
+}
+</script>
+
 </body>
 </html>
 ';

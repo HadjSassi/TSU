@@ -170,23 +170,23 @@ try {
                         <h3>Event Type : 
                         ';
     echo $lastEvent['typeEvent'];
-    echo '
-                        </h3>
-                         <h4>Starting Date : 
-                        ';
-    echo $lastEvent['startingDate'];
-    echo '</h4>';
-    if (strlen($lastEvent['endingDate']) != 0) {
-        echo '<h4>Ending Date : ';
+    echo '</h3>';
+    if ($lastEvent['endingDate'] == $lastEvent['startingDate']) {
+        echo '<h4>Date : ';
         echo $lastEvent['endingDate'];
         echo '</h4>';
     }
-    echo '
-                            <p>
-                                ';
+    else {
+        echo '<h4>Starting Date :';
+        echo $lastEvent['startingDate'];
+        echo '</h4>';
+        echo '<h4>Ending Date :';
+        echo $lastEvent['endingDate'];
+        echo '</h4>';
+    }
+    echo '<p>';
     echo $lastEvent['descriptions'];
-    echo '
-                            </p>
+    echo '                 </p>
                         </div>
                     </div>
                 </div>
@@ -205,12 +205,12 @@ try {
                         <div class="row ml-5">
                                 <div  class="col">
                                     <label for="MultipleFile" class="col">File Pictures</label>
-                                    <input class="form-control col" name="assets[]" accept="image/*" type="file" multiple
+                                    <input class="form-control col" name="assets[]" accept="image/*" type="file" multiple max="20"
                                            id="MultipleFile">
                                 </div>
                                 <div class="col">
                                     <label for="MultipleFileVid" class="col">File Videos</label>
-                                    <input class="form-control col" name="videos[]" accept="video/mp4" type="file" multiple
+                                    <input class="form-control col" name="videos[]" accept="video/mp4" type="file" 
                                            id="MultipleFileVid">
                                 </div>
                         </div>
@@ -220,6 +220,7 @@ try {
                             </div>
                             <p class="mx-auto text-danger">
                                     Try to not upload too much sized files at once, upload file By file if it\'s necessary !
+                                    <br> Videos need to be uploaded one by one.
                                 </p>
                         </form>
                         </div>
