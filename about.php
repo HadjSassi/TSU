@@ -69,7 +69,7 @@ echo'
                     <ul class="rd-navbar-nav">
                       <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Home</a>
                       </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="about.html">About TSU</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="about.php">About TSU</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.php">Gallery</a>
                       </li>

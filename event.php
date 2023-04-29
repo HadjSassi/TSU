@@ -1,5 +1,4 @@
 <?php
-
 $dbh = new PDO('mysql:host=localhost;port=3306;dbname=TSU', 'root', 'Magali_1984');
 try {
     $currentEvent = $_GET['event'];
@@ -7,7 +6,7 @@ try {
     $stmt->execute(array($currentEvent));
     $listeEvent = $stmt->fetchAll();
     $lastEvent = end($listeEvent);
-    $date = date('Y-m-d H:i:s');
+    $date = date('Y-m-d_H:i:s');
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
@@ -70,6 +69,8 @@ try {
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
     <style>.ie-panel {
             display: none;
@@ -81,7 +82,20 @@ try {
             position: relative;
             z-index: 1;
         }
-
+        .close-btn {
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 20px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            cursor: pointer;
+        }
         html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
             display: block;
         }</style>
@@ -310,6 +324,26 @@ try {
                                 $(\'#liImages\').addClass(\'active\');
                             }
 
+                            function supprimer(path){
+                                console.log(path);
+                                var xhr = new XMLHttpRequest();
+                                xhr.onreadystatechange = function() {
+                                    if (xhr.readyState === 4) {
+                                        if (xhr.status === 200) {
+                                            console.log(xhr.responseText);
+                                            console.log("event.php?event=';echo $lastEvent['titleEvent']; echo'");
+                                            window.location.href = "/TSU/event.php?event=';echo $lastEvent['titleEvent']; echo'";
+
+                                        } else {   
+                                            console.error(xhr.statusText);
+                                        }
+                                    }
+                                };
+                                xhr.open(\'POST\', \'supprimerAsset.php\', true);
+                                xhr.setRequestHeader(\'Content-Type\', \'application/x-www-form-urlencoded\');
+                                xhr.send(\'path=\' + encodeURIComponent(path));
+                            }
+                            
                             function playVideo(videoSrc) {
                                 var videoModal = $(\'#videoModal\');
                                 videoModal.find(\'.modal-video source\').attr(\'src\', videoSrc);
@@ -353,16 +387,17 @@ try {
                                         fileNames.forEach((fileName) => {
                                             const div = document.createElement("div");
                                             div.classList.add("col-12", "col-sm-6", "col-lg-4", "isotope-item");
-                                            div.innerHTML = `
-                                            <a class="" data-toggle="modal"  onclick="openPic(\'events/${eventName}/img/${fileName}\')" data-lightgallery="item">
-                                                <article class="thumbnail-corporate wow fadeIn"><img
-                                                        class="thumbnail-corporate-image" src="events/${eventName}/img/${fileName}"
-                                                        alt="" width="370" height="256"/>
-                                                    <div class="thumbnail-corporate-caption" style="cursor: pointer"></div>
-                                                    <div class="thumbnail-corporate-dummy"></div>
-                                                </article>
-                                            </a>
-                                        `;
+                                             div.innerHTML = `
+    <a href="events/${eventName}/img/${fileName}" data-lightbox="image-gallery">
+        <article class="thumbnail-corporate wow fadeIn">
+            <img class="thumbnail-corporate-image" src="events/${eventName}/img/${fileName}" alt="" width="370" height="256"/>
+            <div class="thumbnail-corporate-caption" style="cursor: pointer">
+            </div>
+            <div class="thumbnail-corporate-dummy"></div>
+        </article>
+    </a>
+    <div class="close-btn" ondblclick="supprimer(\'events/${eventName}/img/${fileName}\')" style="display: ${sessionStorage.getItem("user").split(",")[2] === "admin" ? "block" : "none"}">&times;</div>
+`;
                                             imageGallery.appendChild(div);
 
                                         });
@@ -383,6 +418,7 @@ try {
                                         numberVid = fileNames.length;
                                         // Loop through each video file and create a div with the corresponding HTML code
                                         fileNames.forEach((fileName) => {
+                                            var fi = fileName.substring(2);
                                             const div = document.createElement("div");
                                             div.classList.add("col-12", "col-sm-6", "col-lg-4", "isotope-item");
                                             div.innerHTML = `
@@ -395,6 +431,8 @@ try {
                                                 <div class="thumbnail-corporate-dummy"></div>
                                             </article>
                                         </a>
+                                            <div class="close-btn" ondblclick="supprimer(\'events/${eventName}/vid/${fi}\')" style="display: ${sessionStorage.getItem("user").split(",")[2] === "admin" ? "block" : "none"}">&times;</div>
+
                                         `;
                                             videoGallery.appendChild(div);
                                         });
@@ -408,7 +446,6 @@ try {
                                     });
                             };
                         </script>
-
 
                     </div>
                 </div>
@@ -498,14 +535,23 @@ try {
         pElement.textContent = user.split(",")[1];
         connectede.style.display = "block";
         notconnectede.style.display = "none";
-        buttonModify.style.display = "block";
-        formms.style.display = "block";
+        if (user.split(",")[2] === "admin")
+            buttonModify.style.display = "block";
+        else 
+            buttonModify.style.display = "none";
+        if (user.split(",")[2] === "admin" ||user.split(",")[2] === "employer"  )
+            formms.style.display = "block";
+        else 
+            formms.style.display = "none";
+        
+        
     }else if (user == null){
        formms.style.display = "none";
        connectede.style.display = "none";
        notconnectede.style.display = "block";
        buttonModify.style.display = "none";
        formms.style.display = "none";
+       
     }
 </script>
 </body>

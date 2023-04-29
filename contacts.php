@@ -73,7 +73,7 @@ echo'
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.php">Gallery</a>
                       </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="contacts.html">Contacts</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="contacts.php">Contacts</a>
                       </li>
                     </ul>
                   </div>

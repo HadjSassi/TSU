@@ -84,7 +84,7 @@ try {
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">About TSU</a>
                                     </li>
                                     <li class="rd-nav-item active"><a class="rd-nav-link"
-                                                                      href="gallery.html">Gallery</a>
+                                                                      href="gallery.php">Gallery</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.php">Contacts</a>
                                     </li>
@@ -264,7 +264,10 @@ try {
         pElement.textContent = user.split(",")[1];
         connectede.style.display = "block";
         notconnectede.style.display = "none";
-        buttonAdd.style.display = "block";
+        if (user.split(",")[2] === "admin")
+            buttonAdd.style.display = "block";
+        else 
+            buttonAdd.style.display = "none";
     }else if (user == null){
        connectede.style.display = "none";
        notconnectede.style.display = "block";

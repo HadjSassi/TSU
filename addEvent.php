@@ -1,4 +1,18 @@
 <?php
+
+echo '
+
+<script>
+var user = sessionStorage.getItem("user");
+if(user.split(",")[2] !== "admin"){
+    window.location.href="404.php";
+}
+
+</script>
+
+';
+
+
 $errorMessage = "";
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);

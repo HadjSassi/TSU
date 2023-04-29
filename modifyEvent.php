@@ -1,5 +1,15 @@
 <?php
+echo '
 
+<script>
+var user = sessionStorage.getItem("user");
+if(user.split(",")[2] !== "admin"){
+    window.location.href="404.php";
+}
+
+</script>
+
+';
 function deleteDirectory($dirPath)
 {
     if (is_dir($dirPath)) {

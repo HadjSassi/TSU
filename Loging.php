@@ -8,18 +8,19 @@ $dbh = new PDO('mysql:host=localhost;port=3306;dbname=TSU', 'root', 'Magali_1984
 
 if (isset($_POST['login_submit'])) {
     try {
-        $exists = $dbh->prepare("select pass,username from users where mailUser = ?");
+        $exists = $dbh->prepare("select pass,username,functionality from users where mailUser = ?");
         $exists->bindParam(1, $_POST['email']);
         $exists->execute();
         $result = $exists->fetch();
         $thePass = $result[0];
         $usernames = "$result[1]";
+        $function = $result[2];
         if ($thePass == '') {
             $signinmessage = "Account Not Found";
         } else if ($thePass != $_POST['pswd']) {
             $signinmessage = "Wrong Password";
         } else {
-            $user = [$_POST['email'],$usernames];
+            $user = [$_POST['email'],$usernames,$function];
             $user_json = json_encode($user);
             echo "$user_json";
             echo '
@@ -47,12 +48,12 @@ if (isset($_POST['login_submit'])) {
         if ($isExists) {
             $signupmessage = "Account Exist";
         } else {
-            $stmt = $dbh->prepare("Insert into users(mailUser,username,pass) values(?,?,?)");
+            $stmt = $dbh->prepare("Insert into users(mailUser,username,pass,functionality) values(?,?,?,'visitor')");
             $stmt->bindParam(1, $_POST['email']);
             $stmt->bindParam(2, $_POST['txt']);
             $stmt->bindParam(3, $_POST['pswd']);
             $stmt->execute();
-            $user = [$_POST['email'],$_POST['txt']];
+            $user = [$_POST['email'],$_POST['txt'],"visitor"];
             $user_json = json_encode($user);
             echo '
             <script>

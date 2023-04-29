@@ -215,7 +215,7 @@ echo '
                                         </div>
                                     </div>
                                     <div class="thumbnail-corporate-dummy"></div>
-                                </article>
+                                </article>';echo'
                             </div>
                             <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
                                 <!-- Thumbnail Corporate-->
