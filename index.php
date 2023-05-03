@@ -138,6 +138,10 @@ echo '
                                 class="button button-lg button-primary button-winona wow slideInUp"
                                 style="margin-left: 30%;" href="Loging.php"
                                 data-wow-delay=".3s">Join Us</a></div>
+                        <div class="wow-outer button-outer" id="members"><a
+                                class="button button-lg button-primary button-winona wow slideInUp"
+                                style="margin-left: 30%;" href="members.php"
+                                data-wow-delay=".3s">Members</a></div>
                     </div>
                 </div>
             </div>
@@ -696,6 +700,7 @@ echo '
     var connectedesd = document.getElementById("sectionConnected");
     var connectedess = document.getElementById("JoingUss");
     var notconnectede = document.getElementById("notConnected");
+    var members = document.getElementById("members");
     if (user != null && user.split(",")[1].length > 0) {
         var pElement = document.getElementById("nomCourant");
         pElement.textContent = user.split(",")[1];
@@ -705,9 +710,13 @@ echo '
         connectedess.style.display = "none";
         connectedesd.style.display = "none";
         notconnectede.style.display = "none";
+        members.style.display = "none";
+        if (user.split(",")[2] === "admin")
+            members.style.display = "block";
     }else if (user == null){
        connectede.style.display = "none";
        profile.style.display = "none";
+       members.style.display = "none";
        connectedess.style.display = "block";
        connectedesd.style.display = "block";
        notconnectede.style.display = "block";
