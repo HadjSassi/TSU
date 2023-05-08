@@ -363,7 +363,22 @@ try {
     <section class="section section-lg text-center bg-default">
         <div class="container">
             <h3 class="section-title wow-outer"><span class="wow slideInUp">À propos Tunis Sports University</span></h3>
-            <p class="wow-outer"><span class="text-width-1 wow slideInDown">Depuis 2017, Organisation d\'événements sportifs à caractère social et humanitaire.</span>
+            <p class="wow-outer"><span class="text-width-1 wow slideInDown text-justify">
+            Jouissant d’une <b>expérience de plus de 45 ans</b> dans le domaine du sport civil et 
+            de <b>plus de 20 ans dans celui du sport universitaire</b>, nous nous sommes lancés dans le cadre
+             de notre profession en tant qu’enseignant d’éducation physique et sportive dans l’organisation 
+             d’événements sportifs depuis la saison universitaire <b>2017/18 à l’Ecole Nationale Supérieure d’Ingénieurs de Tunis (ENSIT).</b>
+            Depuis la saison universitaire <b>2018/19</b> nous avons choisi de nous spécialiser dans les 
+            <b>événements sportifs à caractère social et humanitaire</b> et cette expérience s’est poursuivie l
+            ors de <b>la saison universitaire 2019/20 à l’IHEC Carthage</b> puis à <b>l’ENAU Sidi-Bou-SaÏd</b>
+             en <b>2020/21</b> puis de nouveau à <b>l’ENSIT</b> depuis <b>Décembre 2022</b> où nous avons été 
+             respectivement affectés.
+             Depuis la saison écoulée nous avons également introduit en plus des événements sportifs à caractère
+              social et humanitaire, une journée <b>d’initiation au simulateur de pilotage avion</b> et des <b>Master Class</b>
+               en pâtisserie & <b>Cooking Class</b> avec l’équipe des chefs ayant représenté la Tunisie aux derniers 
+               <b>Bocuse d’Or 202</b>.
+
+            </span>
             </p>
             <div class="row row-50">
                 <div class="col-6 col-md-3 wow-outer">

@@ -182,12 +182,27 @@ echo'
       ';
 echo'
       <!-- Nathan’s Projects-->
-        <section class="section section-lg text-center bg-default">
-            <div class="container">
-                <h3 class="section-title wow-outer"><span class="wow slideInUp">À propos Tunis Sports University</span></h3>
-                <p class="wow-outer"><span class="text-width-1 wow slideInDown">Depuis 2017, Organisation d\'événements sportifs à caractère social et humanitaire.</span>
-                </p>
-                <div class="row row-50">
+    <section class="section section-lg text-center bg-default">
+        <div class="container">
+            <h3 class="section-title wow-outer"><span class="wow slideInUp">À propos Tunis Sports University</span></h3>
+            <p class="wow-outer"><span class="text-width-1 wow slideInDown text-justify">
+            Jouissant d’une <b>expérience de plus de 45 ans</b> dans le domaine du sport civil et 
+            de <b>plus de 20 ans dans celui du sport universitaire</b>, nous nous sommes lancés dans le cadre
+             de notre profession en tant qu’enseignant d’éducation physique et sportive dans l’organisation 
+             d’événements sportifs depuis la saison universitaire <b>2017/18 à l’Ecole Nationale Supérieure d’Ingénieurs de Tunis (ENSIT).</b>
+            Depuis la saison universitaire <b>2018/19</b> nous avons choisi de nous spécialiser dans les 
+            <b>événements sportifs à caractère social et humanitaire</b> et cette expérience s’est poursuivie l
+            ors de <b>la saison universitaire 2019/20 à l’IHEC Carthage</b> puis à <b>l’ENAU Sidi-Bou-SaÏd</b>
+             en <b>2020/21</b> puis de nouveau à <b>l’ENSIT</b> depuis <b>Décembre 2022</b> où nous avons été 
+             respectivement affectés.
+             Depuis la saison écoulée nous avons également introduit en plus des événements sportifs à caractère
+              social et humanitaire, une journée <b>d’initiation au simulateur de pilotage avion</b> et des <b>Master Class</b>
+               en pâtisserie & <b>Cooking Class</b> avec l’équipe des chefs ayant représenté la Tunisie aux derniers 
+               <b>Bocuse d’Or 202</b>.
+
+            </span>
+            </p>
+            <div class="row row-50">
                 <div class="col-6 col-md-3 wow-outer">
                     <!-- Counter Minimal-->
                     <article class="counter-minimal wow slideInUp" data-wow-delay=".1s">
@@ -229,8 +244,53 @@ echo'
                     </article>
                 </div>
             </div>
-            </div>
-        </section>
+        </div>
+    </section>
+    <section class="section section-lg text-center bg-default">
+        <div class="container">
+            <h3 class="section-title wow-outer"><span class="wow slideInUp">Présentation du concept</span></h3>
+            <div class="row row-30">
+                <div class="col-md-6"><img src="images/addEvent3.jpg" alt="" width="400" height="456"/>
+                </div>
+                <div class="col-md-6">
+                    <p class="wow-outer"><span class="text-width-1 wow slideInDown text-justify">
+                    Lors de nos <b>évènements à caractère social et humanitaire</b>, nous commençons par choisir une 
+                    <b>activité innovante</b> pour nos étudiants et nos invités ainsi qu’un <b>cadre attrayant</b>
+                     pour sa pratique.
+        
+                    Nous sélectionnons par la suite <b>20 de nos étudiants</b> les plus motivés qui seront chacun 
+                    <b>parrain ou marraine des 20 enfants</b> (d’une association, d’une école primaire d’une zone 
+                    défavorisée ou autres…) que nous invitons lors de chaque évènement.
+                    
+                    Nous formons ainsi des binômes (étudiant-enfant) qui seront <b>ensemble tout le long de l’évènement</b>
+                     s’achevant par une réception au cours de laquelle chaque étudiant offrira un cadeau et une 
+                     <b>médaille commémorative à l’enfant</b> qu’il a parrainé.
+        
+                    </span>
+                        </div>
+                      </div>
+                    </p>
+                </div>
+    </section>
+    <section class="section section-lg text-center bg-default">
+        <div class="container">
+            <h3 class="section-title wow-outer "><span class="wow slideInUp">Nos Objectifs</span></h3>
+            <div class="row row-30 flex-md-row-reverse">
+                <div class="col-md-6"><img src="images/AddEvent.jpg" alt="" width="770" height="456"/>
+                </div>
+                <div class="col-md-6">
+                    <ul class="wow-outer text-justify list list-marked">
+                        <li class="text-width-1 wow slideInUp">Responsabiliser nos étudiants et les initier à la vie associative.</li>
+                        <li class="text-width-1 wow slideInUp">Présenter à nos étudiants les différentes associations s’occupant d’enfants à besoins spécifiques.</li>
+                        <li class="text-width-1 wow slideInUp">Tisser des liens d’amitié entre les enfants des différentes associations et nos étudiants afin que ces derniers, futurs cadres de la Tunisie de demain, ne portent plus de préjugés sur les enfants à besoins spécifiques.</li>
+                        <li class="text-width-1 wow slideInUp">Combattre toute forme d’extrémisme par l’utilisation efficiente du temps libre de nos étudiants à travers le sport et le volontariat.</li>
+                        <li class="text-width-1 wow slideInUp">Former de futurs bons citoyens tunisiens.</li>
+                    </ul>
+                </div>
+              </div>
+            
+        </div>
+    </section>
         ';
 echo '
       <!-- Nathan’s Blog Posts-->
@@ -313,6 +373,77 @@ echo '
           </div>
         </div>
       </section>
+      <section class="section section-lg bg-gray-100 text-center">
+        <div class="container">
+            <h3 class="section-title wow-outer"><span class="wow slideInDown">Les partenaires</span></h3>
+            <div class="row row-50" id="partner-slider">
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/HyundaiLogoStacked_4cblk-1024x659.gif" alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#">Huyndai</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/amiassurances-new-logo.png" alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#">Ami Assurance</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/Kfc_logo.png" alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#">KFC</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/download.png" alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#">Académie des chefs</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/logo-geeks.png" alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#">Geeks Clubs</a></h4>
+                    </article>
+                </div>
+            </div>
+        </div>
+        ';
+echo '
+        <script>
+            $(document).ready(function () {
+                $(\'#partner-slider\').slick({
+                    autoplay: true, // Enable autoplay
+                    autoplaySpeed: 300, // Set the autoplay speed in milliseconds
+                    dots: false, // Disable the dots navigation
+                    infinite: true, // Enable infinite loop
+                    speed: 3000, // Set the transition speed in milliseconds
+                    slidesToShow: 3, // Set the number of images to show at a time
+                    slidesToScroll: 1, // Set the number of images to scroll at a time
+                    responsive: [
+                        {
+                            breakpoint: 768, // Apply the settings below 768px viewport width
+                            settings: {
+                                slidesToShow: 2 // Show 2 images at a time
+                            }
+                        },
+                        {
+                            breakpoint: 576, // Apply the settings below 576px viewport width
+                            settings: {
+                                slidesToShow: 1 // Show 1 image at a time
+                            }
+                        }
+                    ]
+                });
+            });
+        </script>
+    </section>
       <!-- Page Footer-->
     <footer class="section footer-standard text-justify">
         <div class="footer-standard-main">
@@ -364,6 +495,8 @@ echo '
         </div>
     </footer>
     </div>
+    ';
+echo'
     <div class="preloader">
       <div class="preloader-logo"><img src="images/loading%20tsu.png" alt="" width="" height=""/>
       </div>
