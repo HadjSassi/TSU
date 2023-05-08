@@ -67,11 +67,11 @@ echo'
                   <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Home</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Acceuil</a>
                       </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="about.php">About TSU</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="about.php">À propos  TSU</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.php">Gallery</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.php">Galerie</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.php">Contacts</a>
                       </li>
@@ -86,13 +86,13 @@ echo'
                         </div>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <div class="" id="notConnected">
-                            <a class="dropdown-item" href="Loging.php?login">Sign In</a>
-                            <a class="dropdown-item" href="Loging.php">Sign Up</a>
+                            <a class="dropdown-item" href="Loging.php?login">S\'identifier</a>
+                            <a class="dropdown-item" href="Loging.php">S\'inscrire</a>
                         </div>
-                        <a class="dropdown-item"  id="profile" style="color: #505050;" href="profile.php">My Profile</a>
+                        <a class="dropdown-item"  id="profile" style="color: #505050;" href="profile.php">Mon profil</a>
                             <a class="dropdown-item"  id="Connected"
                             onclick="sessionStorage.removeItem(\'user\'); window.location.reload();"
-                            style="cursor:pointer;">Log out</a>
+                            style="cursor:pointer;">Se déconnecter</a>
                         </div>
                     </div>
 
@@ -109,12 +109,12 @@ echo'
         <div class="breadcrumbs-custom-inner">
           <div class="container breadcrumbs-custom-container">
             <div class="breadcrumbs-custom-main">
-              <h6 class="breadcrumbs-custom-subtitle title-decorated">About TSU</h6>
-              <h1 class="breadcrumbs-custom-title">About TSU</h1>
+              <h6 class="breadcrumbs-custom-subtitle title-decorated">À propos TSU</h6>
+              <h1 class="breadcrumbs-custom-title">À propos TSU</h1>
             </div>
             <ul class="breadcrumbs-custom-path">
-              <li><a href="index.php">Home</a></li>
-              <li class="active">About TSU</li>
+              <li><a href="index.php">Acceuil</a></li>
+              <li class="active">À propos TSU</li>
             </ul>
           </div>
         </div>
@@ -184,51 +184,51 @@ echo'
       <!-- Nathan’s Projects-->
         <section class="section section-lg text-center bg-default">
             <div class="container">
-                <h3 class="section-title wow-outer"><span class="wow slideInUp">Tunis Sports University with numbers</span></h3>
-                <p class="wow-outer"><span class="text-width-1 wow slideInDown">Since 2017, Organisation d\'événements sportifs à caractère social et humanitaire.</span>
+                <h3 class="section-title wow-outer"><span class="wow slideInUp">À propos Tunis Sports University</span></h3>
+                <p class="wow-outer"><span class="text-width-1 wow slideInDown">Depuis 2017, Organisation d\'événements sportifs à caractère social et humanitaire.</span>
                 </p>
                 <div class="row row-50">
-                    <div class="col-6 col-md-3 wow-outer">
-                        <!-- Counter Minimal-->
-                        <article class="counter-minimal wow slideInUp" data-wow-delay=".1s">
-                            <div class="counter-minimal-icon linearicons-loading3"></div>
-                            <div class="counter-minimal-main">
-                                <div class="counter">50</div>
-                            </div>
-                            <h5 class="counter-minimal-title">Event</h5>
-                        </article>
-                    </div>
-                    <div class="col-6 col-md-3 wow-outer">
-                        <!-- Counter Minimal-->
-                        <article class="counter-minimal wow slideInUp" data-wow-delay=".1s">
-                            <div class="counter-minimal-icon linearicons-history"></div>
-                            <div class="counter-minimal-main">
-                                <div class="counter">2017</div>
-                            </div>
-                            <h5 class="counter-minimal-title">Years</h5>
-                        </article>
-                    </div>
-                    <div class="col-6 col-md-3 wow-outer">
-                        <!-- Counter Minimal-->
-                        <article class="counter-minimal wow slideInUp" data-wow-delay=".1s">
-                            <div class="counter-minimal-icon linearicons-man-woman"></div>
-                            <div class="counter-minimal-main">
-                                <div class="counter">100</div>
-                            </div>
-                            <h5 class="counter-minimal-title">Student Members</h5>
-                        </article>
-                    </div>
-                    <div class="col-6 col-md-3 wow-outer">
-                        <!-- Counter Minimal -->
-                        <article class="counter-minimal wow slideInUp" data-wow-delay=".1s">
-                            <div class="counter-minimal-icon linearicons-basketball"></div>
-                            <div class="counter-minimal-main">
-                                <div class="counter">392</div>
-                            </div>
-                            <h5 class="counter-minimal-title">Sports</h5>
-                        </article>
-                    </div>
+                <div class="col-6 col-md-3 wow-outer">
+                    <!-- Counter Minimal-->
+                    <article class="counter-minimal wow slideInUp" data-wow-delay=".1s">
+                        <div class="counter-minimal-icon linearicons-loading3"></div>
+                        <div class="counter-minimal-main">
+                            <div class="counter">50</div>
+                        </div>
+                        <h5 class="counter-minimal-title">Événement</h5>
+                    </article>
                 </div>
+                <div class="col-6 col-md-3 wow-outer">
+                    <!-- Counter Minimal-->
+                    <article class="counter-minimal wow slideInUp" data-wow-delay=".1s">
+                        <div class="counter-minimal-icon linearicons-history"></div>
+                        <div class="counter-minimal-main">
+                            <div class="counter">2017</div>
+                        </div>
+                        <h5 class="counter-minimal-title">Années</h5>
+                    </article>
+                </div>
+                <div class="col-6 col-md-3 wow-outer">
+                    <!-- Counter Minimal-->
+                    <article class="counter-minimal wow slideInUp" data-wow-delay=".1s">
+                        <div class="counter-minimal-icon linearicons-man-woman"></div>
+                        <div class="counter-minimal-main">
+                            <div class="counter">100</div>
+                        </div>
+                        <h5 class="counter-minimal-title">Membres étudiants</h5>
+                    </article>
+                </div>
+                <div class="col-6 col-md-3 wow-outer">
+                    <!-- Counter Minimal -->
+                    <article class="counter-minimal wow slideInUp" data-wow-delay=".1s">
+                        <div class="counter-minimal-icon linearicons-basketball"></div>
+                        <div class="counter-minimal-main">
+                            <div class="counter">392</div>
+                        </div>
+                        <h5 class="counter-minimal-title">Sports</h5>
+                    </article>
+                </div>
+            </div>
             </div>
         </section>
         ';
@@ -236,14 +236,14 @@ echo '
       <!-- Nathan’s Blog Posts-->
       <section class="section section-lg bg-gray-100">
         <div class="container">
-          <h3 class="wow-outer section-title text-center"><span class="wow slideInUp">Testimonials & Video</span></h3>
+          <h3 class="wow-outer section-title text-center"><span class="wow slideInUp">Témoignages & Vidéo</span></h3>
           <div class="row row-50 justify-content-center justify-content-lg-between">
             <div class="col-md-10 col-lg-5 wow-outer">
               <div class="owl-carousel wow slideInLeft" data-items="1" data-dots="true" data-nav="false" data-loop="true" data-margin="30" data-stage-padding="0" data-mouse-drag="false">
                 <blockquote class="quote-modern">
                   <span class="icon quote-modern-mark linearicons-quote-open"></span>
                   <div class="quote-modern-text">
-                    <p>Just received my beautiful pictures today and I am in awe of how handsome my son looks in the pictures! Thank you so much for such great memories!  I will recommend you to my friends.</p>
+                    <p>Je viens juste de recevoir mes magnifiques photos aujourd\'hui et je suis émerveillé(e) de voir à quel point mon fils est beau sur les photos ! Merci beaucoup pour ces souvenirs exceptionnels ! Je vous recommanderai à mes amis.</p>
                   </div>
                   <span class="icon quote-modern-mark linearicons-quote-close"></span>
                   <div class="quote-modern-meta">
@@ -306,7 +306,7 @@ echo '
                 </div>
                 <div class="thumbnail-video__overlay video-overlay" style="background-image: url(images/interview.jpg)">
                   <div class="button-video"></div>
-                  <h5>Show Testimonial Video</h5>
+                  <h5>Montrer la vidéo de témoignages</h5>
                 </div>
               </div>
             </div>
@@ -314,59 +314,55 @@ echo '
         </div>
       </section>
       <!-- Page Footer-->
-      <footer class="section footer-standard text-justify">
+    <footer class="section footer-standard text-justify">
         <div class="footer-standard-main">
-          <div class="container">
-            <div class="row row-50">
-              <div class="col-lg-4">
-                <div class="inset-right-1">
-                  <h4>About TSU</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, dignissimos
-                    doloribus, ipsum labore magni maiores necessitatibus non omnis placeat ratione sapiente
-                    suscipit velit voluptatem? Ex iusto natus qui ut veniam.</p>
+            <div class="container">
+                <div class="row row-50">
+                    <div class="col-lg-4">
+                        <div class="inset-right-1">
+                            <h4>À propos TSU</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, dignissimos
+                                doloribus, ipsum labore magni maiores necessitatibus non omnis placeat ratione sapiente
+                                suscipit velit voluptatem? Ex iusto natus qui ut veniam.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-5 col-lg-4">
+                        <div class="box-1">
+                            <h4>Coordonnées</h4>
+                            <ul class="list-sm">
+                                <li class="object-inline"><span
+                                        class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
+                                        class="link-default" href="#">ENSIT <br> Avenue Taha Hussein Montfleury, 1008
+                                    Tunis</a></li>
+                                <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a
+                                        class="link-default" href="tel:#">+216 22 545 454 </a></li>
+                                <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a
+                                        class="link-default" href="mailto:#">benabdallahmehdi1920@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-7 col-lg-4">
+                        <h4>Alimenté par Geeks Ensit Club</h4>
+                        <div class="">
+                            <a href="https://www.ensitgeeksclub.com" style="float: left;" target="_blank"><img
+                                    src="images/logo-geeks.png" class="" width="100" alt=""></a>
+                            <!-- RD Mailform-->
+                            <p>L\'ENSIT Geeks Club a été fondé en 2021 par Nizar Essid à l\'Ecole Nationale Supérieure de Tunis. Il regroupe des personnes intéressées à partager leurs connaissances et à s\'entraider en informatique. Il accueille aussi bien les débutants que les experts. Il vise à approfondir vos connaissances nécessaires en informatique pour pouvoir réussir dans le domaine professionnel et permettre aux étudiants d\'utiliser la technologie d\'aujourd\'hui pour préparer l\'avenir</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-sm-6 col-md-5 col-lg-4">
-                <div class="box-1">
-                  <h4>Contact Information</h4>
-                  <ul class="list-sm">
-                    <li class="object-inline"><span
-                            class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
-                            class="link-default" href="#">ENSIT <br> Avenue Taha Hussein Montfleury, 1008
-                      Tunis</a></li>
-                    <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a
-                            class="link-default" href="tel:#">+216 22 545 454 </a></li>
-                    <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a
-                            class="link-default" href="mailto:#">benabdallahmehdi1920@gmail.com</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-7 col-lg-4">
-                <h4>Powered By Geeks Ensit Club</h4>
-                <div class="">
-                  <a href="https://www.ensitgeeksclub.com" style="float: left;" target="_blank"><img
-                          src="images/logo-geeks.png" class="" width="100" alt=""></a>
-                  <!-- RD Mailform-->
-                  <p>ENSIT Geeks Club was founded in 2021 by Nizar Essid at the National High School of Tunis.
-                    It brings together people interested in sharing their knowledge and helping each other
-                    in IT. It welcomes both beginners and experts. It aims to deepen your knowledge
-                    necessary in IT to be able to succeed in the professional field and allow students to
-                    use today\'s technology to prepare for the future </p>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
         <div class="container">
-          <div class="footer-standard-aside"><a class="brand" href="index.php"><img
-                  src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
-            <!-- Rights-->
-            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span><br
-                    class="d-sm-none"/>
-            </p>
-          </div>
+            <div class="footer-standard-aside"><a class="brand" href="index.php"><img
+                    src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
+                <!-- Rights-->
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Tous les droits sont réservés.</span><span>&nbsp;</span><br
+                        class="d-sm-none"/>
+                </p>
+            </div>
         </div>
-      </footer>
+    </footer>
     </div>
     <div class="preloader">
       <div class="preloader-logo"><img src="images/loading%20tsu.png" alt="" width="" height=""/>

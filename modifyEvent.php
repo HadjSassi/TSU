@@ -183,7 +183,7 @@ try {
 
 <div class="page">
     <!-- Page Header-->
-    <header class="section page-header">
+<header class="section page-header">
         <!-- RD Navbar-->
         <div class="rd-navbar-wrap">
             <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
@@ -201,36 +201,49 @@ try {
                             <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span>
                             </button>
                             <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.php"><img
-                                    src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
+                                src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                         </div>
                         <div class="rd-navbar-main-element">
                             <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Home</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Acceuil</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">About TSU</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">À propos TSU</a>
                                     </li>
-                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="gallery.php">Gallery</a>
+                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="gallery.php">Galerie</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.php">Contacts</a>
                                     </li>
                                 </ul>
                             </div>
                             <!-- RD Navbar Search-->
-                            <div class="rd-navbar-search">
-                                <a class="nav-icon" href="#">
-                                    <span class="ml-xl-2 mt-lg-2 icon icon-md mdi mdi-settings text-gray-700"></span>
-                                </a>
+                            <div class="rd-navbar-search dropdown">
+                                <div class="rd-navbar-search dropdown">
+                                <p class="mr-3 mt-2" id="nomCourant"></p>
+                                <div class="btn btn-secondary dropdown-toggle nav-icon" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="icon icon-md mdi mdi-settings text-gray-700" style="margin-left: -50%;"></span>
+                                </div>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="" id="notConnected">
+                                    <a class="dropdown-item" href="Loging.php?login">S\'identifier</a>
+                                    <a class="dropdown-item" href="Loging.php">S\'inscrire</a>
+                                </div>
+                                    <a class="dropdown-item" id="profile"  style="color: #505050;" href="profile.php">Mon profil</a>
+                                    <a class="dropdown-item"  id="Connected"
+                                    onclick="sessionStorage.removeItem(\'user\'); window.location.reload();"
+                                    style="cursor:pointer;">Se déconnecter</a>
+                                </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </nav>
         </div>
-    </header>
-    ';
+        
+        ';
+    echo '
+    </header>    ';
     echo '
     <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(events/';
     echo $lastEvent['titleEvent'] . '/';
@@ -238,13 +251,13 @@ try {
         <div class="breadcrumbs-custom-inner">
             <div class="container breadcrumbs-custom-container">
                 <div class="breadcrumbs-custom-main">
-                    <h6 class="breadcrumbs-custom-subtitle title-decorated">Gallery</h6>
-                    <h1 class="breadcrumbs-custom-title">Modify ';
+                    <h6 class="breadcrumbs-custom-subtitle title-decorated">Galerie</h6>
+                    <h1 class="breadcrumbs-custom-title">Modifier Événement : ';
     echo $lastEvent['titleEvent'] . '</h1>
                 </div>
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="gallery.php">Gallery</a></li>
-                    <li class="active">Modify Event</li>
+                    <li><a href="gallery.php">Galerie</a></li>
+                    <li class="active">Modifier Événement</li>
                 </ul>
             </div>
         </div>
@@ -258,44 +271,44 @@ try {
                 ';
     if (strlen($errorMessage) != 0) {
         echo "<h3 class='text-center mx-auto' style='color: red'>$errorMessage</h3>";
-        echo "<button class=\"mx-auto button button-primary-outline\" onclick='window.location.href=\"modifyEvent.php?eventId=$currentEvent\"'; >Recreate the Event</button>";
+        echo "<button class=\"mx-auto button button-primary-outline\" onclick='window.location.href=\"modifyEvent.php?eventId=$currentEvent\"'; >Recréer l\'événement</button>";
     } else {
         echo '
-                    <h3 class="" style="margin-top: -5%; margin-bottom: 5%;">Please Fill This Form!</h3><br>
+                    <h3 class="" style="margin-top: -5%; margin-bottom: 5%;">Veuillez remplir ce formulaire!</h3><br>
                     <form action="modifyEvent.php?eventId=';
         echo $lastEvent['idEvent'] . '" method="post" enctype="multipart/form-data"
                           class="ml-xl-5 mr-xl-5 px-5">
                         <div class="row">
-                            <label class="col">Event Title</label>
+                            <label class="col">Titre de l\'événement</label>
                             <input class="col form-input" required name="title" value="';
         echo $lastEvent['titleEvent'] . '"
                                    type="text">
                         </div>
                         <div class="row">
-                            <label class="col">Event Type</label>
+                            <label class="col">Type d\'événement</label>
                             <input class="col form-input" required name="type" value="';
         echo $lastEvent['typeEvent'] . '"
                                    type="text">
                         </div>
                         <div class="row">
-                            <label class="col">Starting Date</label>
+                            <label class="col">Date de début</label>
                             <input class="col form-input" required name="stDate" type="date" value="';
         echo $lastEvent['startingDate'] . '">
                         </div>
                         <div class="row">
-                            <label class="col">Ending Date</label>
+                            <label class="col">Date de fin</label>
                             <input class="col form-input" name="enDate" type="date" value="';
         echo $lastEvent['endingDate'] . '">
                         </div>
                         <div class="row">
-                            <label class="col">Event Description</label>
+                            <label class="col">Description de l\'événement</label>
                             <textarea class="col form-input" name="descriptionEvent"
                                       rows="5">';
         echo $lastEvent['descriptions'] . '</textarea>
                         </div>
                         <div class="row ml-5">
                             <div class="col pl-5 ml-xl-5">
-                                <label for="DefaultFile" class="col">File Poster</label>
+                                <label for="DefaultFile" class="col">Affiche de l\'événement</label>
                                 <input class="form-control col"  accept="image/*" name="poster" type="file"
                                        id="DefaultFile">
                             </div>
@@ -312,14 +325,14 @@ try {
                         </div>
                         <div class="row">
                             <input class="mx-auto button button-primary-outline" type="submit" name="submit"
-                                   value="Update Event">
+                                   value="Mise à jour de l\'événement">
                         </div>
                     
                     <div class="mx-auto mt-5">
-                    <label>Confirm Deleting</label>
+                    <label>Confirmer la suppression</label>
                     <input type="checkbox" class="" id="confirmDeleteBut" onclick="toggleDeleteButton()">
                     </div>
-                    <input id="deleteeBut" type="submit" name="delete" class="mx-auto btn button-primary" disabled value="Delete Event" >
+                    <input id="deleteeBut" type="submit" name="delete" class="mx-auto btn button-primary" disabled value="Supprimer l\'événement" >
                </form> </div>
             </div>
         </div>
@@ -329,13 +342,13 @@ try {
     echo ' 
 
     <!-- Page Footer-->
-    <footer class="section footer-standard text-justify">
+        <footer class="section footer-standard text-justify">
         <div class="footer-standard-main">
             <div class="container">
                 <div class="row row-50">
                     <div class="col-lg-4">
                         <div class="inset-right-1">
-                            <h4>About TSU</h4>
+                            <h4>À propos TSU</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, dignissimos
                                 doloribus, ipsum labore magni maiores necessitatibus non omnis placeat ratione sapiente
                                 suscipit velit voluptatem? Ex iusto natus qui ut veniam.</p>
@@ -343,12 +356,12 @@ try {
                     </div>
                     <div class="col-sm-6 col-md-5 col-lg-4">
                         <div class="box-1">
-                            <h4>Contact Information</h4>
+                            <h4>Coordonnées</h4>
                             <ul class="list-sm">
                                 <li class="object-inline"><span
                                         class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
                                         class="link-default" href="#">ENSIT <br> Avenue Taha Hussein Montfleury, 1008
-                                        Tunis</a></li>
+                                    Tunis</a></li>
                                 <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a
                                         class="link-default" href="tel:#">+216 22 545 454 </a></li>
                                 <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a
@@ -357,28 +370,22 @@ try {
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-7 col-lg-4">
-                        <h4>Powered By Geeks Ensit Club</h4>
+                        <h4>Alimenté par Geeks Ensit Club</h4>
                         <div class="">
                             <a href="https://www.ensitgeeksclub.com" style="float: left;" target="_blank"><img
                                     src="images/logo-geeks.png" class="" width="100" alt=""></a>
                             <!-- RD Mailform-->
-                            <p>ENSIT Geeks Club was founded in 2021 by Nizar Essid at the National High School of Tunis.
-                                It brings together people interested in sharing their knowledge and helping each other
-                                in IT. It welcomes both beginners and experts. It aims to deepen your knowledge
-                                necessary in IT to be able to succeed in the professional field and allow students to
-                                use today\'s technology to prepare for the future </p>
+                            <p>L\'ENSIT Geeks Club a été fondé en 2021 par Nizar Essid à l\'Ecole Nationale Supérieure de Tunis. Il regroupe des personnes intéressées à partager leurs connaissances et à s\'entraider en informatique. Il accueille aussi bien les débutants que les experts. Il vise à approfondir vos connaissances nécessaires en informatique pour pouvoir réussir dans le domaine professionnel et permettre aux étudiants d\'utiliser la technologie d\'aujourd\'hui pour préparer l\'avenir</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        ';
-    echo '
         <div class="container">
             <div class="footer-standard-aside"><a class="brand" href="index.php"><img
-                        src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
+                    src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                 <!-- Rights-->
-                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span><br
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Tous les droits sont réservés.</span><span>&nbsp;</span><br
                         class="d-sm-none"/>
                 </p>
             </div>

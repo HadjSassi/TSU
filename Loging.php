@@ -2,8 +2,8 @@
 
 use Model\Users;
 
-$signupmessage = "Sign Up";
-$signinmessage = "Log In";
+$signupmessage = "Inscription";
+$signinmessage = "Se connecter";
 $dbh = new PDO('mysql:host=localhost;port=3306;dbname=TSU', 'root', 'Magali_1984');
 
 if (isset($_POST['login_submit'])) {
@@ -16,9 +16,9 @@ if (isset($_POST['login_submit'])) {
         $usernames = "$result[1]";
         $function = $result[2];
         if ($thePass == '') {
-            $signinmessage = "Account Not Found";
+            $signinmessage = "Compte non trouvé";
         } else if ($thePass != $_POST['pswd']) {
-            $signinmessage = "Wrong Password";
+            $signinmessage = "Mauvais mot de passe";
         } else {
             $user = [$_POST['email'],$usernames,$function];
             $user_json = json_encode($user);
@@ -46,7 +46,7 @@ if (isset($_POST['login_submit'])) {
         $exists->execute();
         $isExists = ($exists->fetch()[0] != 0);
         if ($isExists) {
-            $signupmessage = "Account Exist";
+            $signupmessage = "Compte existant";
         } else {
             $stmt = $dbh->prepare("Insert into users(mailUser,username,pass,functionality) values(?,?,?,'visitor')");
             $stmt->bindParam(1, $_POST['email']);
@@ -206,10 +206,10 @@ echo '<!DOCTYPE html>
     <div class="signup">
         <form action="Loging.php" method="post">
             <label for="chk" aria-hidden="true">' . $signupmessage . '</label>
-            <input type="text" name="txt" placeholder="User name" required="">
+            <input type="text" name="txt" placeholder="Nom Utilisateur" required="">
             <input type="email" name="email" placeholder="Email" required="">
-            <input type="password" name="pswd" placeholder="Password" required="">
-            <input class="butt" type="submit" name="signup_submit" value="Sign Up"/>
+            <input type="password" name="pswd" placeholder="Mot de passe" required="">
+            <input class="butt" type="submit" name="signup_submit" value="Inscription"/>
         </form>
     </div>
 
@@ -217,8 +217,8 @@ echo '<!DOCTYPE html>
         <form action="Loging.php" method="post">
             <label for="chk" aria-hidden="true">' . $signinmessage . '</label>
             <input type="email" name="email" placeholder="Email" required="">
-            <input type="password" name="pswd" placeholder="Password" required="">
-            <input class="butt" type="submit" name="login_submit" value="Log In"/>
+            <input type="password" name="pswd" placeholder="Mot de passe" required="">
+            <input class="butt" type="submit" name="login_submit" value="Se connecter"/>
         </form>
     </div>
 </div>

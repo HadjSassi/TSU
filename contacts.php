@@ -46,38 +46,38 @@ echo'
       <header class="section page-header">
         <!-- RD Navbar-->
         <div class="rd-navbar-wrap">
-          <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
-               data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed"
-               data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed"
-               data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static"
-               data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static"
-               data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px"
-               data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-            <div class="rd-navbar-main-outer">
-              <div class="rd-navbar-main">
-                <!-- RD Navbar Panel-->
-                <div class="rd-navbar-panel">
-                  <!-- RD Navbar Toggle-->
-                  <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span>
-                  </button>
-                  <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.php"><img
-                        src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
-                </div>
-                <div class="rd-navbar-main-element">
-                  <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
-                    <!-- RD Navbar Nav-->
-                    <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item "><a class="rd-nav-link" href="index.php">Home</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">About TSU</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.php">Gallery</a>
-                      </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="contacts.php">Contacts</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <!-- RD Navbar Search-->
+            <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+                 data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed"
+                 data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed"
+                 data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static"
+                 data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static"
+                 data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px"
+                 data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                <div class="rd-navbar-main-outer">
+                    <div class="rd-navbar-main">
+                        <!-- RD Navbar Panel-->
+                        <div class="rd-navbar-panel">
+                            <!-- RD Navbar Toggle-->
+                            <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span>
+                            </button>
+                            <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.php"><img
+                                src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
+                        </div>
+                        <div class="rd-navbar-main-element">
+                            <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                                <!-- RD Navbar Nav-->
+                                <ul class="rd-navbar-nav">
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Acceuil</a>
+                                    </li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">À propos TSU</a>
+                                    </li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.php">Galerie</a>
+                                    </li>
+                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="contacts.php">Contacts</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- RD Navbar Search-->
                             <div class="rd-navbar-search dropdown">
                                 <div class="rd-navbar-search dropdown">
                                 <p class="mr-3 mt-2" id="nomCourant"></p>
@@ -86,22 +86,24 @@ echo'
                                 </div>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="" id="notConnected">
-                                    <a class="dropdown-item" href="Loging.php?login">Sign In</a>
-                                    <a class="dropdown-item" href="Loging.php">Sign Up</a>
+                                    <a class="dropdown-item" href="Loging.php?login">S\'identifier</a>
+                                    <a class="dropdown-item" href="Loging.php">S\'inscrire</a>
                                 </div>
-                                <a class="dropdown-item" id="profile" style="color: #505050;" href="profile.php">My Profile</a>
+                                    <a class="dropdown-item" id="profile"  style="color: #505050;" href="profile.php">Mon profil</a>
                                     <a class="dropdown-item"  id="Connected"
                                     onclick="sessionStorage.removeItem(\'user\'); window.location.reload();"
-                                    style="cursor:pointer;">Log out</a>
+                                    style="cursor:pointer;">Se déconnecter</a>
                                 </div>
                             </div>
-
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </nav>
+            </nav>
         </div>
-      </header>
+        
+        ';
+echo '
+    </header>
       ';
 echo'
       <!-- Breadcrumbs-->
@@ -113,7 +115,7 @@ echo'
               <h1 class="breadcrumbs-custom-title">Contacts</h1>
             </div>
             <ul class="breadcrumbs-custom-path">
-              <li><a href="index.php">Home</a></li>
+              <li><a href="index.php">Acceuil</a></li>
               <li class="active">Contacts</li>
             </ul>
           </div>
@@ -150,49 +152,49 @@ echo'
             <div class="row">
               <div class="col-lg-9 cell-inner">
                 <div class="section-lg">
-                  <h3 class="wow-outer"><span class="wow slideInDown">Contact Us</span></h3>
+                  <h3 class="wow-outer"><span class="wow slideInDown">Contacter Nous</span></h3>
                   <!-- RD Mailform-->
-                  <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                    <div class="row row-10">
-                      <div class="col-md-6 wow-outer">
-                        <div class="form-wrap wow fadeSlideInUp">
-                          <label class="form-label-outside" for="contact-first-name">First Name</label>
-                          <input class="form-input" id="contact-first-name" type="text" name="name" data-constraints="@Required">
+                    <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                      <div class="row row-10">
+                        <div class="col-md-6 wow-outer">
+                          <div class="form-wrap wow fadeSlideInUp">
+                            <label class="form-label-outside" for="contact-first-name">Prénom</label>
+                            <input class="form-input" id="contact-first-name" type="text" name="name" data-constraints="@Required">
+                          </div>
+                        </div>
+                        <div class="col-md-6 wow-outer">
+                          <div class="form-wrap wow fadeSlideInUp">
+                            <label class="form-label-outside" for="contact-last-name">Nom de famille</label>
+                            <input class="form-input" id="contact-last-name" type="text" name="name" data-constraints="@Required">
+                          </div>
+                        </div>
+                        <div class="col-md-6 wow-outer">
+                          <div class="form-wrap wow fadeSlideInUp">
+                            <label class="form-label-outside" for="contact-email">E-mail</label>
+                            <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Required @Email">
+                          </div>
+                        </div>
+                        <div class="col-md-6 wow-outer">
+                          <div class="form-wrap wow fadeSlideInUp">
+                            <label class="form-label-outside" for="contact-phone">Téléphone</label>
+                            <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Required @PhoneNumber">
+                          </div>
+                        </div>
+                        <div class="col-12 wow-outer">
+                          <div class="form-wrap wow fadeSlideInUp">
+                            <label class="form-label-outside" for="contact-message">Votre message</label>
+                            <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
+                          </div>
                         </div>
                       </div>
-                      <div class="col-md-6 wow-outer">
-                        <div class="form-wrap wow fadeSlideInUp">
-                          <label class="form-label-outside" for="contact-last-name">Last Name</label>
-                          <input class="form-input" id="contact-last-name" type="text" name="name" data-constraints="@Required">
+                      <div class="group group-middle">
+                        <div class="wow-outer">
+                          <button class="button button-primary button-winona wow slideInRight" type="submit">Envoyer le message</button>
                         </div>
+                        <p>ou utiliser</p>
+                        <div class="wow-outer"><a class="button button-primary-outline button-icon button-icon-left button-winona wow slideInLeft" href="#"><span class="icon text-primary mdi mdi-whatsapp"></span>Whatsapp</a></div>
                       </div>
-                      <div class="col-md-6 wow-outer">
-                        <div class="form-wrap wow fadeSlideInUp">
-                          <label class="form-label-outside" for="contact-email">E-mail</label>
-                          <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Required @Email">
-                        </div>
-                      </div>
-                      <div class="col-md-6 wow-outer">
-                        <div class="form-wrap wow fadeSlideInUp">
-                          <label class="form-label-outside" for="contact-phone">Phone</label>
-                          <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Required @PhoneNumber">
-                        </div>
-                      </div>
-                      <div class="col-12 wow-outer">
-                        <div class="form-wrap wow fadeSlideInUp">
-                          <label class="form-label-outside" for="contact-message">Your Message</label>
-                          <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="group group-middle">
-                      <div class="wow-outer">
-                        <button class="button button-primary button-winona wow slideInRight" type="submit">Send Message</button>
-                      </div>
-                      <p>or use</p>
-                      <div class="wow-outer"><a class="button button-primary-outline button-icon button-icon-left button-winona wow slideInLeft" href="#"><span class="icon text-primary mdi mdi-whatsapp"></span>Whatsapp</a></div>
-                    </div>
-                  </form>
+                    </form>
                 </div>
               </div>
             </div>
@@ -202,59 +204,55 @@ echo'
         </div>
       </section>
       <!-- Page Footer-->
-      <footer class="section footer-standard text-justify">
+    <footer class="section footer-standard text-justify">
         <div class="footer-standard-main">
-          <div class="container">
-            <div class="row row-50">
-              <div class="col-lg-4">
-                <div class="inset-right-1">
-                  <h4>About TSU</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, dignissimos
-                    doloribus, ipsum labore magni maiores necessitatibus non omnis placeat ratione sapiente
-                    suscipit velit voluptatem? Ex iusto natus qui ut veniam.</p>
+            <div class="container">
+                <div class="row row-50">
+                    <div class="col-lg-4">
+                        <div class="inset-right-1">
+                            <h4>À propos TSU</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, dignissimos
+                                doloribus, ipsum labore magni maiores necessitatibus non omnis placeat ratione sapiente
+                                suscipit velit voluptatem? Ex iusto natus qui ut veniam.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-5 col-lg-4">
+                        <div class="box-1">
+                            <h4>Coordonnées</h4>
+                            <ul class="list-sm">
+                                <li class="object-inline"><span
+                                        class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
+                                        class="link-default" href="#">ENSIT <br> Avenue Taha Hussein Montfleury, 1008
+                                    Tunis</a></li>
+                                <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a
+                                        class="link-default" href="tel:#">+216 22 545 454 </a></li>
+                                <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a
+                                        class="link-default" href="mailto:#">benabdallahmehdi1920@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-7 col-lg-4">
+                        <h4>Alimenté par Geeks Ensit Club</h4>
+                        <div class="">
+                            <a href="https://www.ensitgeeksclub.com" style="float: left;" target="_blank"><img
+                                    src="images/logo-geeks.png" class="" width="100" alt=""></a>
+                            <!-- RD Mailform-->
+                            <p>L\'ENSIT Geeks Club a été fondé en 2021 par Nizar Essid à l\'Ecole Nationale Supérieure de Tunis. Il regroupe des personnes intéressées à partager leurs connaissances et à s\'entraider en informatique. Il accueille aussi bien les débutants que les experts. Il vise à approfondir vos connaissances nécessaires en informatique pour pouvoir réussir dans le domaine professionnel et permettre aux étudiants d\'utiliser la technologie d\'aujourd\'hui pour préparer l\'avenir</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-sm-6 col-md-5 col-lg-4">
-                <div class="box-1">
-                  <h4>Contact Information</h4>
-                  <ul class="list-sm">
-                    <li class="object-inline"><span
-                            class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
-                            class="link-default" href="#">ENSIT <br> Avenue Taha Hussein Montfleury, 1008
-                      Tunis</a></li>
-                    <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a
-                            class="link-default" href="tel:#">+216 22 545 454 </a></li>
-                    <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a
-                            class="link-default" href="mailto:#">benabdallahmehdi1920@gmail.com</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-7 col-lg-4">
-                <h4>Powered By Geeks Ensit Club</h4>
-                <div class="">
-                  <a href="https://www.ensitgeeksclub.com" style="float: left;" target="_blank"><img
-                          src="images/logo-geeks.png" class="" width="100" alt=""></a>
-                  <!-- RD Mailform-->
-                  <p>ENSIT Geeks Club was founded in 2021 by Nizar Essid at the National High School of Tunis.
-                    It brings together people interested in sharing their knowledge and helping each other
-                    in IT. It welcomes both beginners and experts. It aims to deepen your knowledge
-                    necessary in IT to be able to succeed in the professional field and allow students to
-                    use today\'s technology to prepare for the future </p>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
         <div class="container">
-          <div class="footer-standard-aside"><a class="brand" href="index.php"><img
-                  src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
-            <!-- Rights-->
-            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span><br
-                    class="d-sm-none"/>
-            </p>
-          </div>
+            <div class="footer-standard-aside"><a class="brand" href="index.php"><img
+                    src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
+                <!-- Rights-->
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Tous les droits sont réservés.</span><span>&nbsp;</span><br
+                        class="d-sm-none"/>
+                </p>
+            </div>
         </div>
-      </footer>
+    </footer>
     </div>
     ';
 echo'

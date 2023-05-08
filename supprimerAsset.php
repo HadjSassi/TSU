@@ -1,12 +1,12 @@
 <?php
-$path = $_POST['path']; // get the file path from the POST data
+$path = $_POST['path']; // obtenir le chemin du fichier à partir des données POST
 if(file_exists($path)){
     if(unlink($path)){
-        echo "File deleted successfully.";
+        echo "Fichier supprimé avec succès.";
     }else{
-        echo "Error deleting file.";
+        echo "Erreur lors de la suppression du fichier.";
     }
 }else{
-    echo "File does not exist.";
+    echo "Le fichier n'existe pas.";
 }
 ?>
