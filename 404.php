@@ -21,7 +21,15 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-    <style>.ie-panel {
+    <style>
+        body {
+            background-image: url('images/TSU.png');
+            background-size: auto;
+            background-repeat: no-repeat;
+            /*background-position: center center;*/
+        }
+
+        .ie-panel {
             display: none;
             background: #212121;
             padding: 10px 0;
@@ -37,8 +45,9 @@
         }</style>
 </head>
 <body>
-<h1>404 Page Not Found</h1>
-<p>We're sorry, but the page you requested could not be found.</p>
-<p>Please check the URL and try again, or <a href="/">go to our homepage</a>.</p>
+<h1>Page 404 Non Trouvée</h1>
+<p>Nous sommes désolés, mais la page que vous avez demandée est introuvable.</p>
+<p>Veuillez vérifier l'URL et réessayer, ou <a href="/">aller sur notre page d'accueil</a>.</p>
+<a class="button button-primary" href="/TSU">Accueil</a>
 </body>
 </html>

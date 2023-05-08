@@ -3,15 +3,22 @@
 $request_url = $_SERVER['REQUEST_URI'];
 
 // Check if the requested page exists
-if (!file_exists($request_url) && $request_url!='/TSU/' && $request_url!='/TSU/index.php') {
+if (!file_exists($request_url) && $request_url != '/TSU/' && $request_url != '/TSU/index.php') {
     // Redirect to the 404 error page
     header('HTTP/1.0 404 Not Found');
     include('404.php');
     exit();
 }
+
+try {
+    $dbh = new PDO('mysql:host=localhost;port=3306;dbname=TSU', 'root', 'Magali_1984');
+    $stmt = $dbh->prepare("SELECT * FROM event order by startingDate desc limit 6");
+    $stmt->execute();
+    $listeUsers = $stmt->fetchAll();
+
 //$user = json_decode($_SESSION['user']);
 //var_dump($user);
-echo '
+    echo '
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 <head>
@@ -82,11 +89,11 @@ echo '
                             <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
-                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.php">Home</a>
+                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.php">Acceuil</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">About TSU</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">À propos TSU</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.php">Gallery</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.php">Galerie</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.php">Contacts</a>
                                     </li>
@@ -101,13 +108,13 @@ echo '
                                 </div>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="" id="notConnected">
-                                    <a class="dropdown-item" href="Loging.php?login">Sign In</a>
-                                    <a class="dropdown-item" href="Loging.php">Sign Up</a>
+                                    <a class="dropdown-item" href="Loging.php?login">S\'identifier</a>
+                                    <a class="dropdown-item" href="Loging.php">S\'inscrire</a>
                                 </div>
-                                    <a class="dropdown-item" id="profile"  style="color: #505050;" href="profile.php">My Profile</a>
+                                    <a class="dropdown-item" id="profile"  style="color: #505050;" href="profile.php">Mon profil</a>
                                     <a class="dropdown-item"  id="Connected"
                                     onclick="sessionStorage.removeItem(\'user\'); window.location.reload();"
-                                    style="cursor:pointer;">Log out</a>
+                                    style="cursor:pointer;">Se déconnecter</a>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +124,7 @@ echo '
         </div>
         
         ';
-    echo'
+    echo '
     </header>
     <!-- Overlapping Screen-->
     <section class="section section-overlap bg-decorate">
@@ -137,24 +144,24 @@ echo '
                         <div class="wow-outer button-outer" id="JoingUss"><a
                                 class="button button-lg button-primary button-winona wow slideInUp"
                                 style="margin-left: 30%;" href="Loging.php"
-                                data-wow-delay=".3s">Join Us</a></div>
+                                data-wow-delay=".3s">Rejoignez<br>nous</a></div>
                         <div class="wow-outer button-outer" id="members"><a
                                 class="button button-lg button-primary button-winona wow slideInUp"
                                 style="margin-left: 30%;" href="members.php"
-                                data-wow-delay=".3s">Members</a></div>
+                                data-wow-delay=".3s">Membres</a></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     ';
-    echo'
+    echo '
     <!-- Projects - Modern Layout-->
     <section class="section section-lg bg-default">
         <div class="container">
             <div class="row row-50">
                 <div class="col-12 text-center">
-                    <h3 class="section-title wow-outer"><span class="wow slideInUp">Portfolio</span></h3>
+                    <h3 class="section-title wow-outer"><span class="wow slideInUp">Portefeuille</span></h3>
                 </div>
                 <div class="col-12 isotope-wrap">
                     <div class="isotope offset-top-2" data-isotope-layout="masonry" data-lightgallery="group"
@@ -180,8 +187,7 @@ echo '
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="thumbnail-corporate-link" href="images/aviron.jpg"
-                                                   data-lightgallery="item">
+                                                <a class="thumbnail-corporate-link" href="event.php?event=Aviron">
                                                     <span class="icon mdi mdi-cursor-pointer"></span>
                                                     <span class="icon mdi mdi-cursor-pointer"></span>
                                                 </a>
@@ -211,8 +217,7 @@ echo '
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="thumbnail-corporate-link" href="images/swimming.jpg"
-                                                   data-lightgallery="item">
+                                                <a class="thumbnail-corporate-link" href="event.php?event=Swimming">
                                                     <span class="icon mdi mdi-cursor-pointer"></span>
                                                     <span class="icon mdi mdi-cursor-pointer"></span>
                                                 </a>
@@ -220,7 +225,8 @@ echo '
                                         </div>
                                     </div>
                                     <div class="thumbnail-corporate-dummy"></div>
-                                </article>';echo'
+                                </article>';
+    echo '
                             </div>
                             <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
                                 <!-- Thumbnail Corporate-->
@@ -242,8 +248,7 @@ echo '
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="thumbnail-corporate-link" href="images/equitation.jpg"
-                                                   data-lightgallery="item">
+                                                <a class="thumbnail-corporate-link" href="event.php?event=Swimming">
                                                     <span class="icon mdi mdi-cursor-pointer"></span>
                                                     <span class="icon mdi mdi-cursor-pointer"></span>
                                                 </a>
@@ -274,8 +279,7 @@ echo '
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="thumbnail-corporate-link" href="images/golf.jpg"
-                                                   data-lightgallery="item">
+                                                <a class="thumbnail-corporate-link" href="event.php?event=Swimming">
                                                     <span class="icon mdi mdi-cursor-pointer"></span>
                                                     <span class="icon mdi mdi-cursor-pointer"></span>
                                                 </a>
@@ -286,7 +290,7 @@ echo '
                                 </article>
                             </div>
                             ';
-    echo'
+    echo '
                             <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
                                 <!-- Thumbnail Corporate-->
                                 <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInDown"><img
@@ -307,8 +311,7 @@ echo '
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="thumbnail-corporate-link" href="images/kickbox.jpg"
-                                                   data-lightgallery="item">
+                                                <a class="thumbnail-corporate-link" href="event.php?event=Swimming">
                                                     <span class="icon mdi mdi-cursor-pointer"></span>
                                                     <span class="icon mdi mdi-cursor-pointer"></span>
                                                 </a>
@@ -338,8 +341,7 @@ echo '
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="thumbnail-corporate-link" href="images/tennis.jpg"
-                                                   data-lightgallery="item">
+                                                <a class="thumbnail-corporate-link" href="event.php?event=Swimming">
                                                     <span class="icon mdi mdi-cursor-pointer"></span>
                                                     <span class="icon mdi mdi-cursor-pointer"></span>
                                                 </a>
@@ -356,12 +358,12 @@ echo '
         </div>
     </section>
     ';
-    echo'
+    echo '
     <!-- Advantages and Achievements-->
     <section class="section section-lg text-center bg-default">
         <div class="container">
-            <h3 class="section-title wow-outer"><span class="wow slideInUp">About Tunis Sports University</span></h3>
-            <p class="wow-outer"><span class="text-width-1 wow slideInDown">Since 2017, Organisation d\'événements sportifs à caractère social et humanitaire.</span>
+            <h3 class="section-title wow-outer"><span class="wow slideInUp">À propos Tunis Sports University</span></h3>
+            <p class="wow-outer"><span class="text-width-1 wow slideInDown">Depuis 2017, Organisation d\'événements sportifs à caractère social et humanitaire.</span>
             </p>
             <div class="row row-50">
                 <div class="col-6 col-md-3 wow-outer">
@@ -371,7 +373,7 @@ echo '
                         <div class="counter-minimal-main">
                             <div class="counter">50</div>
                         </div>
-                        <h5 class="counter-minimal-title">Event</h5>
+                        <h5 class="counter-minimal-title">Événement</h5>
                     </article>
                 </div>
                 <div class="col-6 col-md-3 wow-outer">
@@ -381,7 +383,7 @@ echo '
                         <div class="counter-minimal-main">
                             <div class="counter">2017</div>
                         </div>
-                        <h5 class="counter-minimal-title">Years</h5>
+                        <h5 class="counter-minimal-title">Années</h5>
                     </article>
                 </div>
                 <div class="col-6 col-md-3 wow-outer">
@@ -391,7 +393,7 @@ echo '
                         <div class="counter-minimal-main">
                             <div class="counter">100</div>
                         </div>
-                        <h5 class="counter-minimal-title">Student Members</h5>
+                        <h5 class="counter-minimal-title">Membres étudiants</h5>
                     </article>
                 </div>
                 <div class="col-6 col-md-3 wow-outer">
@@ -408,11 +410,11 @@ echo '
         </div>
     </section>
     ';
-    echo'
+    echo '
     <!-- Testimonials-->
     <section class="section section-lg bg-gray-100 text-center">
         <div class="container">
-            <h3 class="section-title">Testimonials</h3>
+            <h3 class="section-title">Témoignages</h3>
             <div class="slick-widget-testimonials wow fadeIn">
                 <div class="slick-slider carousel-child" id="child-carousel" data-for=".carousel-parent"
                      data-arrows="true" data-loop="true" data-dots="false" data-swipe="true" data-items="1"
@@ -463,11 +465,9 @@ echo '
                         <!-- Quote Light 1-->
                         <blockquote class="quote-light">
                             <cite class="quote-light-cite">Hadj Sassi Mahdi</cite>
-                            <p class="quote-light-caption">ENSIT Student </p>
+                            <p class="quote-light-caption">ENSIT Étudiant </p>
                             <div class="quote-light-text">
-                                <p>I absolutely loved my session and all of the pictures that came from it. You have a
-                                    clear passion for what you do and it shows through your work! I highly recommend J.
-                                    Davis for any photography needs! </p>
+                                <p>J\'ai vraiment adoré ma session et toutes les photos qui en sont issues. Vous avez une passion pour ce que vous faites et cela se voit à travers votre travail !</p>
                             </div>
                         </blockquote>
                     </div>
@@ -475,11 +475,9 @@ echo '
                         <!-- Quote Light 2-->
                         <blockquote class="quote-light">
                             <cite class="quote-light-cite">Hadj Sassi Ezzedine</cite>
-                            <p class="quote-light-caption">Sup\'Com Student</p>
+                            <p class="quote-light-caption">Sup\'Com Étudiant</p>
                             <div class="quote-light-text">
-                                <p>I was so happy with the pictures Jonathan took. He was very kind and patient with my
-                                    two-month old and my energetic 6 y.o. children. I will be going to Jonathan from now
-                                    on!</p>
+                                <p>J\'étais tellement content des photos prises par Jonathan. Il était très gentil et patient avec mon enfant de deux mois et mon énergique de 6 ans. enfants. J\'irai chez Jonathan à partir de maintenant!</p>
                             </div>
                         </blockquote>
                     </div>
@@ -487,11 +485,9 @@ echo '
                         <!-- Quote Light 3-->
                         <blockquote class="quote-light">
                             <cite class="quote-light-cite">Mahdi Ezzedine</cite>
-                            <p class="quote-light-caption">Artist</p>
+                            <p class="quote-light-caption">Artiste</p>
                             <div class="quote-light-text">
-                                <p>Just received my beautiful pictures today and I am in awe of how handsome my son
-                                    looks in the pictures! Thank you so much for such great memories! I will recommend
-                                    you to my friends.</p>
+                                <p>Je viens de recevoir mes belles photos aujourd\'hui et je suis impressionné par la beauté de mon fils sur les photos! Merci beaucoup pour ces bons souvenirs ! Je te recommenderai à mes amis./p>
                             </div>
                         </blockquote>
                     </div>
@@ -501,9 +497,7 @@ echo '
                             <cite class="quote-light-cite">Ezzedine Hadj Sassi</cite>
                             <p class="quote-light-caption">Entrepreneur</p>
                             <div class="quote-light-text">
-                                <p>Jonathan is truly an outstanding photographer (and wonderful person) with an almost
-                                    mystical ability to capture the true nature of people and events. I recommend him to
-                                    anyone!</p>
+                                <p>Jonathan est vraiment un photographe exceptionnel (et une personne merveilleuse) avec une capacité presque mystique à capturer la vraie nature des gens et des événements. Je le recommande à tout le monde !</p>
                             </div>
                         </blockquote>
                     </div>
@@ -511,11 +505,9 @@ echo '
                         <!-- Quote Light 3-->
                         <blockquote class="quote-light">
                             <cite class="quote-light-cite">Mahdi Hadj Sassi Ezzedine</cite>
-                            <p class="quote-light-caption">Buisiness Man</p>
+                            <p class="quote-light-caption">Homme d\'affaire</p>
                             <div class="quote-light-text">
-                                <p>Just received my beautiful pictures today and I am in awe of how handsome my son
-                                    looks in the pictures! Thank you so much for such great memories! I will recommend
-                                    you to my friends.</p>
+                                <p>Je viens de recevoir mes belles photos aujourd\'hui et je suis impressionné par la beauté de mon fils sur les photos! Merci beaucoup pour ces bons souvenirs ! Je te recommenderai à mes amis.</p>
                             </div>
                         </blockquote>
                     </div>
@@ -523,11 +515,9 @@ echo '
                         <!-- Quote Light 5-->
                         <blockquote class="quote-light">
                             <cite class="quote-light-cite">Hadj Sassi</cite>
-                            <p class="quote-light-caption">Student</p>
+                            <p class="quote-light-caption">Étudiant</p>
                             <div class="quote-light-text">
-                                <p>I have contracted Jonathan for 3 family events and have always been 100% satisfied.
-                                    He has been available and responsive anytime I have had questions and has always had
-                                    the patience to help me.</p>
+                                <p>J\'ai engagé Jonathan pour 3 événements familiaux et j\'ai toujours été satisfait à 100%. Il a été disponible et réactif chaque fois que j\'ai eu des questions et a toujours eu la patience de m\'aider.</p>
                             </div>
                         </blockquote>
                     </div>
@@ -542,10 +532,10 @@ echo '
             <div class="row justify-content-center">
                 <div class="col-sm-10 col-md-12">
                     <div class="box-cta-thin">
-                        <h4 class="wow-outer"><span class="wow slideInRight">Looking for  <span class="text-italic">Honorable Actions?</span> </span>
+                        <h4 class="wow-outer"><span class="wow slideInRight">À la recherche des  <span class="text-italic">Actions honorables ?</span> </span>
                         </h4>
                         <div class="wow-outer button-outer"><a
-                                class="button button-primary button-winona wow slideInLeft" href="Loging.php">Join Us</a>
+                                class="button button-primary button-winona wow slideInLeft" href="Loging.php">Rejoignez-nous</a>
                         </div>
                     </div>
                 </div>
@@ -555,7 +545,7 @@ echo '
     <!-- Latest Blog Posts-->
     <section class="section section-lg bg-gray-100 text-center">
         <div class="container">
-            <h3 class="section-title wow-outer"><span class="wow slideInDown">Partners</span></h3>
+            <h3 class="section-title wow-outer"><span class="wow slideInDown">Les partenaires</span></h3>
             <div class="row row-50" id="partner-slider">
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
@@ -595,7 +585,7 @@ echo '
             </div>
         </div>
         ';
-    echo'
+    echo '
         <script>
             $(document).ready(function () {
                 $(\'#partner-slider\').slick({
@@ -631,7 +621,7 @@ echo '
                 <div class="row row-50">
                     <div class="col-lg-4">
                         <div class="inset-right-1">
-                            <h4>About TSU</h4>
+                            <h4>À propos TSU</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, dignissimos
                                 doloribus, ipsum labore magni maiores necessitatibus non omnis placeat ratione sapiente
                                 suscipit velit voluptatem? Ex iusto natus qui ut veniam.</p>
@@ -639,7 +629,7 @@ echo '
                     </div>
                     <div class="col-sm-6 col-md-5 col-lg-4">
                         <div class="box-1">
-                            <h4>Contact Information</h4>
+                            <h4>Coordonnées</h4>
                             <ul class="list-sm">
                                 <li class="object-inline"><span
                                         class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
@@ -653,16 +643,12 @@ echo '
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-7 col-lg-4">
-                        <h4>Powered By Geeks Ensit Club</h4>
+                        <h4>Alimenté par Geeks Ensit Club</h4>
                         <div class="">
                             <a href="https://www.ensitgeeksclub.com" style="float: left;" target="_blank"><img
                                     src="images/logo-geeks.png" class="" width="100" alt=""></a>
                             <!-- RD Mailform-->
-                            <p>ENSIT Geeks Club was founded in 2021 by Nizar Essid at the National High School of Tunis.
-                                It brings together people interested in sharing their knowledge and helping each other
-                                in IT. It welcomes both beginners and experts. It aims to deepen your knowledge
-                                necessary in IT to be able to succeed in the professional field and allow students to
-                                use today\'s technology to prepare for the future </p>
+                            <p>L\'ENSIT Geeks Club a été fondé en 2021 par Nizar Essid à l\'Ecole Nationale Supérieure de Tunis. Il regroupe des personnes intéressées à partager leurs connaissances et à s\'entraider en informatique. Il accueille aussi bien les débutants que les experts. Il vise à approfondir vos connaissances nécessaires en informatique pour pouvoir réussir dans le domaine professionnel et permettre aux étudiants d\'utiliser la technologie d\'aujourd\'hui pour préparer l\'avenir</p>
                         </div>
                     </div>
                 </div>
@@ -672,7 +658,7 @@ echo '
             <div class="footer-standard-aside"><a class="brand" href="index.php"><img
                     src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                 <!-- Rights-->
-                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span><br
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Tous les droits sont réservés.</span><span>&nbsp;</span><br
                         class="d-sm-none"/>
                 </p>
             </div>
@@ -725,4 +711,7 @@ echo '
 </body>
 </html>
 ';
+} catch (PDOException $exception) {
+    echo $exception->getMessage();
+}
 ?>
