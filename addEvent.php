@@ -127,6 +127,11 @@ echo '
             position: relative;
             z-index: 1;
         }
+        
+        
+  .geeks:hover{
+    transform: rotate(-5deg);
+  }
 
         html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
             display: block;
@@ -282,16 +287,14 @@ else {
     echo '
 
     <!-- Page Footer-->
-    <footer class="section footer-standard text-justify">
+<footer class="section footer-standard text-justify">
         <div class="footer-standard-main">
             <div class="container">
                 <div class="row row-50">
                     <div class="col-lg-4">
                         <div class="inset-right-1">
                             <h4>À propos TSU</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, dignissimos
-                                doloribus, ipsum labore magni maiores necessitatibus non omnis placeat ratione sapiente
-                                suscipit velit voluptatem? Ex iusto natus qui ut veniam.</p>
+                            <p>Le professeur Mehdi Ben Abdallah a créé Tunis Sports University, une institution avec plus de 45 ans d\'expérience dans les sports civils et plus de 20 ans dans les sports universitaires. L\'Université organise des événements sportifs à caractère social et humanitaire impliquant des étudiants et des enfants défavorisés pour former de futurs citoyens tunisiens responsables et lutter contre l\'extrémisme. </p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-5 col-lg-4">
@@ -299,13 +302,18 @@ else {
                             <h4>Coordonnées</h4>
                             <ul class="list-sm">
                                 <li class="object-inline"><span
-                                        class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
+                                        class="icon icon-md mdi mdi-map-marker text-gray-700"></span><span
                                         class="link-default" href="#">ENSIT <br> Avenue Taha Hussein Montfleury, 1008
-                                    Tunis</a></li>
-                                <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a
-                                        class="link-default" href="tel:#">+216 22 545 454 </a></li>
-                                <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a
-                                        class="link-default" href="mailto:#">benabdallahmehdi1920@gmail.com</a></li>
+                                    Tunis</span></li>
+                                <li class="object-inline"><a
+                                        class="link-default" href="tel:+216 22 545 454"><span class="icon icon-md mdi mdi-phone text-gray-700"></span>+216 22 545 454 </a></li>
+                                <li class="object-inline"><a
+                                        class="link-default" href="mailto:benabdallahmehdi1920@gmail.com"><span class="icon icon-md mdi mdi-email text-gray-700"></span>benabdallahmehdi1920@gmail.com</a></li>
+                                <li class="object-inline"><a
+                                        class="link-default" href="https://www.facebook.com/profile.php?id=100057545556860"><span class="icon icon-md mdi mdi-facebook text-gray-700"></span>Facebook</a></li>
+                                <li class="object-inline"><a
+                                        class="link-default" href="https://www.instagram.com/tunissportuniversity/"><span class="icon icon-md mdi mdi-instagram text-gray-700"></span>Instagram</a></li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -313,9 +321,9 @@ else {
                         <h4>Alimenté par Geeks Ensit Club</h4>
                         <div class="">
                             <a href="https://www.ensitgeeksclub.com" style="float: left;" target="_blank"><img
-                                    src="images/logo-geeks.png" class="" width="100" alt=""></a>
+                                    src="images/logo-geeks.png" class="geeks" width="100" alt=""></a>
                             <!-- RD Mailform-->
-                            <p>L\'ENSIT Geeks Club a été fondé en 2021 par Nizar Essid à l\'Ecole Nationale Supérieure de Tunis. Il regroupe des personnes intéressées à partager leurs connaissances et à s\'entraider en informatique. Il accueille aussi bien les débutants que les experts. Il vise à approfondir vos connaissances nécessaires en informatique pour pouvoir réussir dans le domaine professionnel et permettre aux étudiants d\'utiliser la technologie d\'aujourd\'hui pour préparer l\'avenir</p>
+                            <p>L\'ENSIT Geeks Club, fondé en 2021 par Nizar Essid à l\'ENSIT, rassemble des passionnés d\'informatique, débutants ou experts, souhaitant partager leurs connaissances et s\'entraider. Notre objectif est de vous aider à approfondir vos compétences en informatique pour réussir professionnellement, tout en vous préparant à l\'avenir grâce à l\'utilisation des technologies les plus actuelles.</p>
                         </div>
                     </div>
                 </div>
@@ -331,7 +339,7 @@ else {
             </div>
         </div>
     </footer>
-</div>
+    </div>
 <div class="preloader">
     <div class="preloader-logo"><img src="images/loading%20tsu.png" alt="" width="" height=""/>
     </div>

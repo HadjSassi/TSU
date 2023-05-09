@@ -18,7 +18,7 @@ echo '
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-  <link rel="stylesheet" type="text/css"
+  <link rel="s+tylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
@@ -32,6 +32,10 @@ echo '
     text-align: center;
     position: relative;
     z-index: 1;
+  }
+  
+  .geeks:hover{
+    transform: rotate(-5deg);
   }
 
   html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
@@ -129,18 +133,20 @@ echo'
                 <div class="profile-modern-header-item">
                   <h3>Tunis Sports University</h3>
                 </div>
-                <div class="profile-modern-item">
-                  <div class="group group-xs group-middle"><a class="icon icon-sm icon-creative mdi mdi-facebook" href="#"></a><a class="icon icon-sm icon-creative mdi mdi-twitter" href="#"></a><a class="icon icon-sm icon-creative mdi mdi-instagram" href="#"></a><a class="icon icon-sm icon-creative mdi mdi-google" href="#"></a><a class="icon icon-sm icon-creative mdi mdi-linkedin" href="#"></a></div>
+                <div class="profile-modern-item" style="margin-right: 15%;">
+                  <div class="group group-xs group-middle"><a class="icon icon-sm icon-creative mdi mdi-facebook" href="https://www.facebook.com/profile.php?id=100057545556860"></a><a class="icon icon-sm icon-creative mdi mdi-instagram" href="https://www.instagram.com/tunissportuniversity/"></a><a class="icon icon-sm icon-creative mdi mdi-google" href="mailto:benabdallahmehdi1920@gmail.com"></a></div>
                 </div>
               </div>
               <div class="row row-30">
                 <div class="col-lg-6">
-                  <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </p>
+                    <p class="text-justify">
+                        Le professeur Mehdi Ben Abdallah a créé le concept de Tunis Sports University, une institution avec plus de 45 ans d\'expérience dans les sports civils et plus de 20 ans dans les sports universitaires. L\'Université organise des événements sportifs à caractère social et humanitaire depuis la saison universitaire 2017/18 à l\'ENSIT, qui ont ensuite été étendus à l\'IHEC Carthage et à l\'ENAU Sidi-Bou-Saïd. Le concept consiste à associer 20 étudiants motivés avec 20 enfants issus de milieux défavorisés ou d\'associations, en créant des liens et en luttant contre l\'extrémisme à travers le sport et le bénévolat.
+                    </p>
                 </div>
                 <div class="col-lg-6 text-center">
                   <a href="#">
                   <div style="width: 200px; height: 200px; overflow: hidden; border-radius: 50%; margin-left: 22%;">
-                    <img class="wow fadeSlideInUp" src="images/mahdibenabdallah.jpg" alt=""
+                    <img class="wow fadeSlideInUp" src="images/mehdi.jpg" alt=""
                          style="width: 100%; height: 100%; object-fit: cover;"/>
                   </div>
                   </a>
@@ -208,7 +214,7 @@ echo'
                     <article class="counter-minimal wow slideInUp" data-wow-delay=".1s">
                         <div class="counter-minimal-icon linearicons-loading3"></div>
                         <div class="counter-minimal-main">
-                            <div class="counter">50</div>
+                            <div class="counter">60</div>
                         </div>
                         <h5 class="counter-minimal-title">Événement</h5>
                     </article>
@@ -238,7 +244,7 @@ echo'
                     <article class="counter-minimal wow slideInUp" data-wow-delay=".1s">
                         <div class="counter-minimal-icon linearicons-basketball"></div>
                         <div class="counter-minimal-main">
-                            <div class="counter">392</div>
+                            <div class="counter">25</div>
                         </div>
                         <h5 class="counter-minimal-title">Sports</h5>
                     </article>
@@ -250,7 +256,7 @@ echo'
         <div class="container">
             <h3 class="section-title wow-outer"><span class="wow slideInUp">Présentation du concept</span></h3>
             <div class="row row-30">
-                <div class="col-md-6"><img src="images/addEvent3.jpg" alt="" width="400" height="456"/>
+                <div class="col-md-6 wow slideInUp"><img src="images/yohoo.jpg" alt="" width="400" height="456"/>
                 </div>
                 <div class="col-md-6">
                     <p class="wow-outer"><span class="text-width-1 wow slideInDown text-justify">
@@ -276,7 +282,7 @@ echo'
         <div class="container">
             <h3 class="section-title wow-outer "><span class="wow slideInUp">Nos Objectifs</span></h3>
             <div class="row row-30 flex-md-row-reverse">
-                <div class="col-md-6"><img src="images/AddEvent.jpg" alt="" width="770" height="456"/>
+                <div class="col-md-6 wow slideInUp"><img src="images/AddEvent.jpg" alt="" width="770" height="456"/>
                 </div>
                 <div class="col-md-6">
                     <ul class="wow-outer text-justify list list-marked">
@@ -452,9 +458,7 @@ echo '
                     <div class="col-lg-4">
                         <div class="inset-right-1">
                             <h4>À propos TSU</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, dignissimos
-                                doloribus, ipsum labore magni maiores necessitatibus non omnis placeat ratione sapiente
-                                suscipit velit voluptatem? Ex iusto natus qui ut veniam.</p>
+                            <p>Le professeur Mehdi Ben Abdallah a créé Tunis Sports University, une institution avec plus de 45 ans d\'expérience dans les sports civils et plus de 20 ans dans les sports universitaires. L\'Université organise des événements sportifs à caractère social et humanitaire impliquant des étudiants et des enfants défavorisés pour former de futurs citoyens tunisiens responsables et lutter contre l\'extrémisme. </p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-5 col-lg-4">
@@ -462,13 +466,18 @@ echo '
                             <h4>Coordonnées</h4>
                             <ul class="list-sm">
                                 <li class="object-inline"><span
-                                        class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
+                                        class="icon icon-md mdi mdi-map-marker text-gray-700"></span><span
                                         class="link-default" href="#">ENSIT <br> Avenue Taha Hussein Montfleury, 1008
-                                    Tunis</a></li>
-                                <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a
-                                        class="link-default" href="tel:#">+216 22 545 454 </a></li>
-                                <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a
-                                        class="link-default" href="mailto:#">benabdallahmehdi1920@gmail.com</a></li>
+                                    Tunis</span></li>
+                                <li class="object-inline"><a
+                                        class="link-default" href="tel:+216 22 545 454"><span class="icon icon-md mdi mdi-phone text-gray-700"></span>+216 22 545 454 </a></li>
+                                <li class="object-inline"><a
+                                        class="link-default" href="mailto:benabdallahmehdi1920@gmail.com"><span class="icon icon-md mdi mdi-email text-gray-700"></span>benabdallahmehdi1920@gmail.com</a></li>
+                                <li class="object-inline"><a
+                                        class="link-default" href="https://www.facebook.com/profile.php?id=100057545556860"><span class="icon icon-md mdi mdi-facebook text-gray-700"></span>Facebook</a></li>
+                                <li class="object-inline"><a
+                                        class="link-default" href="https://www.instagram.com/tunissportuniversity/"><span class="icon icon-md mdi mdi-instagram text-gray-700"></span>Instagram</a></li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -476,9 +485,9 @@ echo '
                         <h4>Alimenté par Geeks Ensit Club</h4>
                         <div class="">
                             <a href="https://www.ensitgeeksclub.com" style="float: left;" target="_blank"><img
-                                    src="images/logo-geeks.png" class="" width="100" alt=""></a>
+                                    src="images/logo-geeks.png" class="geeks" width="100" alt=""></a>
                             <!-- RD Mailform-->
-                            <p>L\'ENSIT Geeks Club a été fondé en 2021 par Nizar Essid à l\'Ecole Nationale Supérieure de Tunis. Il regroupe des personnes intéressées à partager leurs connaissances et à s\'entraider en informatique. Il accueille aussi bien les débutants que les experts. Il vise à approfondir vos connaissances nécessaires en informatique pour pouvoir réussir dans le domaine professionnel et permettre aux étudiants d\'utiliser la technologie d\'aujourd\'hui pour préparer l\'avenir</p>
+                            <p>L\'ENSIT Geeks Club, fondé en 2021 par Nizar Essid à l\'ENSIT, rassemble des passionnés d\'informatique, débutants ou experts, souhaitant partager leurs connaissances et s\'entraider. Notre objectif est de vous aider à approfondir vos compétences en informatique pour réussir professionnellement, tout en vous préparant à l\'avenir grâce à l\'utilisation des technologies les plus actuelles.</p>
                         </div>
                     </div>
                 </div>
@@ -497,7 +506,7 @@ echo '
     </div>
     ';
 echo'
-    <div class="preloader">
+    <!--<div class="preloader">
       <div class="preloader-logo"><img src="images/loading%20tsu.png" alt="" width="" height=""/>
       </div>
       <div class="preloader-body" >
@@ -505,7 +514,7 @@ echo'
           <div class="loadingProgressG" style="background: #138a91" id="loadingProgressG_1"></div>
         </div>
       </div>
-    </div>
+    </div>-->
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
