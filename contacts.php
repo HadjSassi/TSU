@@ -143,8 +143,7 @@ echo'
             </div>
             <div class="layout-bordered-item wow-outer">
               <div class="layout-bordered-item-inner wow slideInUp">
-                <div class="icon icon-lg mdi mdi-map-marker text-primary"></div><a class="link-default" href="#">ENSIT
-                Avenue Taha Hussein Montfleury, 1008 Tunis</a>
+                <div class="icon icon-lg mdi mdi-map-marker text-primary"></div><a class="link-default" href="#">14 نهج الامام الرصاع، تونس, Tunis, Tunisia, 1073</a>
               </div>
             </div>
           </div>
@@ -156,55 +155,17 @@ echo'
             <div class="row">
               <div class="col-lg-9 cell-inner">
                 <div class="section-lg">
-                  <h3 class="wow-outer"><span class="wow slideInDown">Contacter Nous</span></h3>
-                  <!-- RD Mailform-->
-                    <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                      <div class="row row-10">
-                        <div class="col-md-6 wow-outer">
-                          <div class="form-wrap wow fadeSlideInUp">
-                            <label class="form-label-outside" for="contact-first-name">Prénom</label>
-                            <input class="form-input" id="contact-first-name" type="text" name="name" data-constraints="@Required">
-                          </div>
-                        </div>
-                        <div class="col-md-6 wow-outer">
-                          <div class="form-wrap wow fadeSlideInUp">
-                            <label class="form-label-outside" for="contact-last-name">Nom de famille</label>
-                            <input class="form-input" id="contact-last-name" type="text" name="name" data-constraints="@Required">
-                          </div>
-                        </div>
-                        <div class="col-md-6 wow-outer">
-                          <div class="form-wrap wow fadeSlideInUp">
-                            <label class="form-label-outside" for="contact-email">E-mail</label>
-                            <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Required @Email">
-                          </div>
-                        </div>
-                        <div class="col-md-6 wow-outer">
-                          <div class="form-wrap wow fadeSlideInUp">
-                            <label class="form-label-outside" for="contact-phone">Téléphone</label>
-                            <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Required @PhoneNumber">
-                          </div>
-                        </div>
-                        <div class="col-12 wow-outer">
-                          <div class="form-wrap wow fadeSlideInUp">
-                            <label class="form-label-outside" for="contact-message">Votre message</label>
-                            <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="group group-middle">
-                        <div class="wow-outer">
-                          <button class="button button-primary button-winona wow slideInRight" type="submit">Envoyer le message</button>
-                        </div>
-                        <p>ou utiliser</p>
-                        <div class="wow-outer"><a class="button button-primary-outline button-icon button-icon-left button-winona wow slideInLeft" href="#"><span class="icon text-primary mdi mdi-whatsapp"></span>Whatsapp</a></div>
-                      </div>
-                    </form>
-                </div>
+                  <h3 class="wow-outer"><span class="wow slideInDown">2022/23 saison</span></h3>
+                  <video controls width="100%" height="auto" autoplay muted>
+                    <source src="images/tsu1m.mp4" type="video/mp4">
+                    </video>
+                   </div>
               </div>
             </div>
           </div>
           <div class="cell-xl-5 height-fill wow fadeIn">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.41859161098!2d10.175937224651019!3d36.78451297225153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd340576fc1a05%3A0x25fc1aa869f8cfb6!2s%C3%89cole%20nationale%20sup%C3%A9rieure%20d&#39;ing%C3%A9nieurs%20de%20Tunis%20(ENSIT)!5e0!3m2!1sen!2stn!4v1681577032192!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>          </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.930751574466!2d10.182699774653205!3d36.820179272241404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd348911d96699%3A0x6980bc3d24f82395!2s14%20Rue%20Imam%20Rassaa%2C%20Tunis!5e0!3m2!1sfr!2stn!4v1685468657227!5m2!1sfr!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
       </section>
       <!-- Page Footer-->
@@ -225,8 +186,7 @@ echo'
                             <ul class="list-sm">
                                 <li class="object-inline"><span
                                         class="icon icon-md mdi mdi-map-marker text-gray-700"></span><span
-                                        class="link-default" href="#">ENSIT <br> Avenue Taha Hussein Montfleury, 1008
-                                    Tunis</span></li>
+                                        class="link-default" href="#">14 نهج الامام الرصاع، تونس, Tunis, Tunisia, 1073</li>
                                 <li class="object-inline"><a
                                         class="link-default" href="tel:+216 22 545 454"><span class="icon icon-md mdi mdi-phone text-gray-700"></span>+216 22 545 454 </a></li>
                                 <li class="object-inline"><a

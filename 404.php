@@ -52,7 +52,7 @@
 <body>
 <h1>Page 404 Non Trouvée</h1>
 <p>Nous sommes désolés, mais la page que vous avez demandée est introuvable.</p>
-<p>Veuillez vérifier l'URL et réessayer, ou <a href="/">aller sur notre page d'accueil</a>.</p>
-<a class="button button-primary" href="/TSU">Accueil</a>
+<p>Veuillez vérifier l'URL et réessayer, ou <a href="/TSU/index.php">aller sur notre page d'accueil</a>.</p>
+<a class="button button-primary" href="/TSU/index.php">Accueil</a>
 </body>
 </html>

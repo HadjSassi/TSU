@@ -204,8 +204,7 @@ try {
                             <ul class="list-sm">
                                 <li class="object-inline"><span
                                         class="icon icon-md mdi mdi-map-marker text-gray-700"></span><span
-                                        class="link-default" href="#">ENSIT <br> Avenue Taha Hussein Montfleury, 1008
-                                    Tunis</span></li>
+                                        class="link-default" href="#">14 نهج الامام الرصاع، تونس, Tunis, Tunisia, 1073</li>
                                 <li class="object-inline"><a
                                         class="link-default" href="tel:+216 22 545 454"><span class="icon icon-md mdi mdi-phone text-gray-700"></span>+216 22 545 454 </a></li>
                                 <li class="object-inline"><a

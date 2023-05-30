@@ -256,9 +256,12 @@ echo'
         <div class="container">
             <h3 class="section-title wow-outer"><span class="wow slideInUp">Présentation du concept</span></h3>
             <div class="row row-30">
-                <div class="col-md-6 wow slideInUp"><img src="images/yohoo.jpg" alt="" width="400" height="456"/>
+                <div class="col-md-6 wow slideInUp">
+                <video controls width="100%" height="auto" autoplay muted>
+                    <source src="images/tsu1m.mp4" type="video/mp4">
+                    </video>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6"><br>
                     <p class="wow-outer"><span class="text-width-1 wow slideInDown text-justify">
                     Lors de nos <b>évènements à caractère social et humanitaire</b>, nous commençons par choisir une 
                     <b>activité innovante</b> pour nos étudiants et nos invités ainsi qu’un <b>cadre attrayant</b>
@@ -285,12 +288,12 @@ echo'
                 <div class="col-md-6 wow slideInUp"><img src="images/AddEvent.jpg" alt="" width="770" height="456"/>
                 </div>
                 <div class="col-md-6">
-                    <ul class="wow-outer text-justify list list-marked">
-                        <li class="text-width-1 wow slideInUp">Responsabiliser nos étudiants et les initier à la vie associative.</li>
-                        <li class="text-width-1 wow slideInUp">Présenter à nos étudiants les différentes associations s’occupant d’enfants à besoins spécifiques.</li>
-                        <li class="text-width-1 wow slideInUp">Tisser des liens d’amitié entre les enfants des différentes associations et nos étudiants afin que ces derniers, futurs cadres de la Tunisie de demain, ne portent plus de préjugés sur les enfants à besoins spécifiques.</li>
-                        <li class="text-width-1 wow slideInUp">Combattre toute forme d’extrémisme par l’utilisation efficiente du temps libre de nos étudiants à travers le sport et le volontariat.</li>
-                        <li class="text-width-1 wow slideInUp">Former de futurs bons citoyens tunisiens.</li>
+                    <ul class="wow-outer text-justify list">
+                        <li class="text-width-1 wow slideInUp"><img src="images/li.png" width="50">Responsabiliser nos étudiants et les initier à la vie associative.</li>
+                        <li class="text-width-1 wow slideInUp"><img src="images/li.png" width="50">Présenter à nos étudiants les différentes associations s’occupant d’enfants à besoins spécifiques.</li>
+                        <li class="text-width-1 wow slideInUp"><img src="images/li.png" width="50">Tisser des liens d’amitié entre les enfants des différentes associations et nos étudiants afin que ces derniers, futurs cadres de la Tunisie de demain, ne portent plus de préjugés sur les enfants à besoins spécifiques.</li>
+                        <li class="text-width-1 wow slideInUp"><img src="images/li.png" width="50">Combattre toute forme d’extrémisme par l’utilisation efficiente du temps libre de nos étudiants à travers le sport et le volontariat.</li>
+                        <li class="text-width-1 wow slideInUp"><img src="images/li.png" width="50">Former de futurs bons citoyens tunisiens.</li>
                     </ul>
                 </div>
               </div>
@@ -302,7 +305,7 @@ echo '
       <!-- Nathan’s Blog Posts-->
       <section class="section section-lg bg-gray-100">
         <div class="container">
-          <h3 class="wow-outer section-title text-center"><span class="wow slideInUp">Témoignages & Vidéo</span></h3>
+          <h3 class="wow-outer section-title text-center"><span class="wow slideInUp">Passage TV & Radio</span></h3>
           <div class="row row-50 justify-content-center justify-content-lg-between">
             <div class="col-md-10 col-lg-5 wow-outer">
               <div class="owl-carousel wow slideInLeft" data-items="1" data-dots="true" data-nav="false" data-loop="true" data-margin="30" data-stage-padding="0" data-mouse-drag="false">
@@ -368,8 +371,7 @@ echo '
             <div class="col-md-10 col-lg-6 wow-outer">
               <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
                 <div class="embed-responsive embed-responsive-16by9">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/ssjjL6mthes" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
+                    <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fmosaiquefm%2Fvideos%2F282146063297329%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>                </div>
                 <div class="thumbnail-video__overlay video-overlay" style="background-image: url(images/interview.jpg)">
                   <div class="button-video"></div>
                   <h5>Montrer la vidéo de témoignages</h5>
@@ -379,52 +381,279 @@ echo '
           </div>
         </div>
       </section>
-      <section class="section section-lg bg-gray-100 text-center">
+          <section class="section section-lg bg-gray-100 text-center">
         <div class="container">
             <h3 class="section-title wow-outer"><span class="wow slideInDown">Les partenaires</span></h3>
-            <div class="row row-50" id="partner-slider">
+            <div class="row row-50" id="partner-slider1">
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
-                            src="images/HyundaiLogoStacked_4cblk-1024x659.gif" alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#">Huyndai</a></h4>
+                            src="images/amiassurances-new-logo.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Ami Assurances</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
-                            src="images/amiassurances-new-logo.png" alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#">Ami Assurance</a></h4>
+                            src="images/HyundaiLogoStacked_4cblk-1024x659.gif" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Hyundai</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
-                            src="images/Kfc_logo.png" alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#">KFC</a></h4>
+                            src="images/download.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">L\'Académie des chefs</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
-                            src="images/download.png" alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#">Académie des chefs</a></h4>
+                            src="images/indigo.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Indigo</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
-                            src="images/logo-geeks.png" alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#">Geeks Clubs</a></h4>
+                            src="images/msjus.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Ms Jus</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/logo-geeks.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Ensit Geeks Club</a></h4>
+                    </article>
+                </div>
+            </div>'.'
+            <div class="row row-50" id="partner-slider2">
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/mozaique.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Mozaïque FM</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/Express.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Express FM</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/diwen.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Diwen FM</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/Logo_négatif_avec_contour.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">IFM</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/shems-fm.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Shems FM</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/Radio_Jeunes.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Radio Jeunes</a></h4>
+                    </article>
+                </div>
+            </div>'.'
+            <div class="row row-50" id="partner-slider3">
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/AS-Marsa.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">AS Marsa</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/kendo.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Tunisian Kendo League</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/FTTT-logo-retina-300x99.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">FTTT</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/fta.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">FTA</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/Tunisian_Esports_Federation_darkmode.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">TUNESF</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/unnamed.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">FTE</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/hippoclub.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Hippo Club</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/arena.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Arena Gym Premium</a></h4>
+                    </article>
+                </div>
+            </div>'.'
+            <div class="row row-50" id="partner-slider4">
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/MondeNews-LAssociation-Tunisienne-des-Villages-dEnfants.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">SOS Villages D\'enfants Tunisie</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/rose_espoir.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Rose de l\'espoir</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/ASDD.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">ANSDA</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/downlqsdfqsdfoad.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">ATPPT21</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/atel.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">ATEL</a></h4>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <!-- Post Classic-->
+                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                            src="images/Logotype_du_ministère_de_l\'éducation_Tunisie.png" width="500"  alt=""/></a>
+                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Ministère de l\'éducation</a></h4>
                     </article>
                 </div>
             </div>
-        </div>
         ';
 echo '
         <script>
             $(document).ready(function () {
-                $(\'#partner-slider\').slick({
+                $(\'#partner-slider1\').slick({
+                    autoplay: true, // Enable autoplay
+                    autoplaySpeed: 300, // Set the autoplay speed in milliseconds
+                    dots: false, // Disable the dots navigation
+                    infinite: true, // Enable infinite loop
+                    speed: 3000, // Set the transition speed in milliseconds
+                    slidesToShow: 3, // Set the number of images to show at a time
+                    slidesToScroll: 1, // Set the number of images to scroll at a time
+                    responsive: [
+                        {
+                            breakpoint: 768, // Apply the settings below 768px viewport width
+                            settings: {
+                                slidesToShow: 2 // Show 2 images at a time
+                            }
+                        },
+                        {
+                            breakpoint: 576, // Apply the settings below 576px viewport width
+                            settings: {
+                                slidesToShow: 1 // Show 1 image at a time
+                            }
+                        }
+                    ]
+                });
+            });
+            $(document).ready(function () {
+                $(\'#partner-slider2\').slick({
+                    autoplay: true, // Enable autoplay
+                    autoplaySpeed: 300, // Set the autoplay speed in milliseconds
+                    dots: false, // Disable the dots navigation
+                    infinite: true, // Enable infinite loop
+                    speed: 3000, // Set the transition speed in milliseconds
+                    slidesToShow: 3, // Set the number of images to show at a time
+                    slidesToScroll: 1, // Set the number of images to scroll at a time
+                    responsive: [
+                        {
+                            breakpoint: 768, // Apply the settings below 768px viewport width
+                            settings: {
+                                slidesToShow: 2 // Show 2 images at a time
+                            }
+                        },
+                        {
+                            breakpoint: 576, // Apply the settings below 576px viewport width
+                            settings: {
+                                slidesToShow: 1 // Show 1 image at a time
+                            }
+                        }
+                    ]
+                });
+            });
+            $(document).ready(function () {
+                $(\'#partner-slider3\').slick({
+                    autoplay: true, // Enable autoplay
+                    autoplaySpeed: 300, // Set the autoplay speed in milliseconds
+                    dots: false, // Disable the dots navigation
+                    infinite: true, // Enable infinite loop
+                    speed: 3000, // Set the transition speed in milliseconds
+                    slidesToShow: 3, // Set the number of images to show at a time
+                    slidesToScroll: 1, // Set the number of images to scroll at a time
+                    responsive: [
+                        {
+                            breakpoint: 768, // Apply the settings below 768px viewport width
+                            settings: {
+                                slidesToShow: 2 // Show 2 images at a time
+                            }
+                        },
+                        {
+                            breakpoint: 576, // Apply the settings below 576px viewport width
+                            settings: {
+                                slidesToShow: 1 // Show 1 image at a time
+                            }
+                        }
+                    ]
+                });
+            });
+            $(document).ready(function () {
+                $(\'#partner-slider4\').slick({
                     autoplay: true, // Enable autoplay
                     autoplaySpeed: 300, // Set the autoplay speed in milliseconds
                     dots: false, // Disable the dots navigation
@@ -467,8 +696,7 @@ echo '
                             <ul class="list-sm">
                                 <li class="object-inline"><span
                                         class="icon icon-md mdi mdi-map-marker text-gray-700"></span><span
-                                        class="link-default" href="#">ENSIT <br> Avenue Taha Hussein Montfleury, 1008
-                                    Tunis</span></li>
+                                        class="link-default" href="#">14 نهج الامام الرصاع، تونس, Tunis, Tunisia, 1073</li>
                                 <li class="object-inline"><a
                                         class="link-default" href="tel:+216 22 545 454"><span class="icon icon-md mdi mdi-phone text-gray-700"></span>+216 22 545 454 </a></li>
                                 <li class="object-inline"><a
@@ -506,7 +734,7 @@ echo '
     </div>
     ';
 echo'
-    <!--<div class="preloader">
+    <div class="preloader">
       <div class="preloader-logo"><img src="images/loading%20tsu.png" alt="" width="" height=""/>
       </div>
       <div class="preloader-body" >
@@ -514,7 +742,7 @@ echo'
           <div class="loadingProgressG" style="background: #138a91" id="loadingProgressG_1"></div>
         </div>
       </div>
-    </div>-->
+    </div>
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
