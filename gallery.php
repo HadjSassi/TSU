@@ -5,7 +5,7 @@ $dbh = new PDO('mysql:host=localhost;port=3306;dbname=TSU', 'root', 'Magali_1984
 try {
     $i = 0;
     $listeEvent = [];
-    $sql = "select * from event";
+    $sql = "select * from event order by startingDate desc";
     foreach ($dbh->query($sql) as $item) {
         $listeEvent[$i++] = $item;
     }
