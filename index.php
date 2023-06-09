@@ -1,20 +1,7 @@
 <?php
 
-$request_url = $_SERVER['REQUEST_URI'];
-
-// Check if the requested page exists
-if (!file_exists($request_url) && $request_url != '/TSU/' && $request_url != '/TSU/index.php') {
-    // Redirect to the 404 error page
-    header('HTTP/1.0 404 Not Found');
-    include('404.php');
-    exit();
-}
-
 try {
-    $dbh = new PDO('mysql:host=localhost;port=3306;dbname=TSU', 'root', 'Magali_1984');
-    $stmt = $dbh->prepare("SELECT * FROM event order by startingDate desc limit 6");
-    $stmt->execute();
-    $listeUsers = $stmt->fetchAll();
+
 
 //$user = json_decode($_SESSION['user']);
 //var_dump($user);
@@ -86,14 +73,14 @@ try {
                             <!-- RD Navbar Toggle-->
                             <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span>
                             </button>
-                            <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.php"><img
+                            <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="/"><img
                                 src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                         </div>
                         <div class="rd-navbar-main-element">
                             <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
-                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.php">Acceuil</a>
+                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Acceuil</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">À propos TSU</a>
                                     </li>
@@ -153,209 +140,6 @@ try {
                                 class="button button-lg button-primary button-winona wow slideInUp"
                                 style="margin-left: 30%;" href="members.php"
                                 data-wow-delay=".3s">Membres</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    ';
-    echo '
-    <!-- Projects - Modern Layout-->
-    <section class="section section-lg bg-default">
-        <div class="container">
-            <div class="row row-50">
-                <div class="col-12 text-center">
-                    <h3 class="section-title wow-outer"><span class="wow slideInUp">Portefeuille</span></h3>
-                </div>
-                <div class="col-12 isotope-wrap">
-                    <div class="isotope offset-top-2" data-isotope-layout="masonry" data-lightgallery="group"
-                         data-lg-thumbnail="false">
-                        <div class="row row-30">
-                            <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
-                                <!-- Thumbnail Corporate-->
-                                <article class="thumbnail-corporate wow slideInDown"><img
-                                        class="thumbnail-corporate-image" src="images/aviron.jpg"
-                                        alt="" width="370" height="256"/>
-                                    <div class="thumbnail-corporate-caption">
-                                        <p class="thumbnail-corporate-title"><a href="#">ENSIT Rowing Day</a></p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur
-                                            dolore et facere.
-                                        </p>
-                                        <div class="row">
-                                            <div class="col">
-                                                <a class="thumbnail-corporate-link" href="images/aviron.jpg"
-                                                   data-lightgallery="item">
-                                                    <span class="icon mdi mdi-magnify"></span>
-                                                    <span class="icon mdi mdi-magnify"></span>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a class="thumbnail-corporate-link" href="event.php?event=Aviron">
-                                                    <span class="icon mdi mdi-cursor-pointer"></span>
-                                                    <span class="icon mdi mdi-cursor-pointer"></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="thumbnail-corporate-dummy"></div>
-                                </article>
-                            </div>
-                            <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
-                                <!-- Thumbnail Corporate-->
-                                <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInDown"><img
-                                        class="thumbnail-corporate-image" src="images/swimming.jpg"
-                                        alt="" width="370" height="464"/>
-                                    <div class="thumbnail-corporate-caption">
-                                        <p class="thumbnail-corporate-title"><a href="#">Swiming Day</a></p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur
-                                            dolore et facere.
-                                        </p>
-                                        <div class="row">
-                                            <div class="col">
-                                                <a class="thumbnail-corporate-link" href="images/swimming.jpg"
-                                                   data-lightgallery="item">
-                                                    <span class="icon mdi mdi-magnify"></span>
-                                                    <span class="icon mdi mdi-magnify"></span>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a class="thumbnail-corporate-link" href="event.php?event=Swimming">
-                                                    <span class="icon mdi mdi-cursor-pointer"></span>
-                                                    <span class="icon mdi mdi-cursor-pointer"></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="thumbnail-corporate-dummy"></div>
-                                </article>';
-    echo '
-                            </div>
-                            <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
-                                <!-- Thumbnail Corporate-->
-                                <article class="thumbnail-corporate wow slideInUp"><img
-                                        class="thumbnail-corporate-image" src="images/equitation.jpg"
-                                        alt="" width="370" height="256"/>
-                                    <div class="thumbnail-corporate-caption">
-                                        <p class="thumbnail-corporate-title"><a href="#">Hippoclub Riding Class</a></p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur
-                                            dolore et facere.
-                                        </p>
-                                        <div class="row">
-                                            <div class="col">
-                                                <a class="thumbnail-corporate-link" href="images/equitation.jpg"
-                                                   data-lightgallery="item">
-                                                    <span class="icon mdi mdi-magnify"></span>
-                                                    <span class="icon mdi mdi-magnify"></span>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a class="thumbnail-corporate-link" href="event.php?event=Swimming">
-                                                    <span class="icon mdi mdi-cursor-pointer"></span>
-                                                    <span class="icon mdi mdi-cursor-pointer"></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="thumbnail-corporate-dummy"></div>
-                                </article>
-                            </div>
-                            <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
-                                <!-- Thumbnail Corporate-->
-                                <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInUp"><img
-                                        class="thumbnail-corporate-image" src="images/golf.jpg"
-                                        alt="" width="370" height="464"/>
-                                    <div class="thumbnail-corporate-caption">
-                                        <p class="thumbnail-corporate-title"><a href="#">The Residence Golf fest.</a>
-                                        </p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur
-                                            dolore et facere.
-                                        </p>
-                                        <div class="row">
-                                            <div class="col">
-                                                <a class="thumbnail-corporate-link" href="images/golf.jpg"
-                                                   data-lightgallery="item">
-                                                    <span class="icon mdi mdi-magnify"></span>
-                                                    <span class="icon mdi mdi-magnify"></span>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a class="thumbnail-corporate-link" href="event.php?event=Swimming">
-                                                    <span class="icon mdi mdi-cursor-pointer"></span>
-                                                    <span class="icon mdi mdi-cursor-pointer"></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="thumbnail-corporate-dummy"></div>
-                                </article>
-                            </div>
-                            ';
-    echo '
-                            <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
-                                <!-- Thumbnail Corporate-->
-                                <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInDown"><img
-                                        class="thumbnail-corporate-image" src="images/kickbox.jpg"
-                                        alt="" width="370" height="464"/>
-                                    <div class="thumbnail-corporate-caption">
-                                        <p class="thumbnail-corporate-title"><a href="#">Gym Box Fight Day</a></p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur
-                                            dolore et facere.
-                                        </p>
-                                        <div class="row">
-                                            <div class="col">
-                                                <a class="thumbnail-corporate-link" href="images/kickbox.jpg"
-                                                   data-lightgallery="item">
-                                                    <span class="icon mdi mdi-magnify"></span>
-                                                    <span class="icon mdi mdi-magnify"></span>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a class="thumbnail-corporate-link" href="event.php?event=Swimming">
-                                                    <span class="icon mdi mdi-cursor-pointer"></span>
-                                                    <span class="icon mdi mdi-cursor-pointer"></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="thumbnail-corporate-dummy"></div>
-                                </article>
-                            </div>
-                            <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
-                                <!-- Thumbnail Corporate-->
-                                <article class="thumbnail-corporate wow slideInDown"><img
-                                        class="thumbnail-corporate-image" src="images/tennis.jpg"
-                                        alt="" width="370" height="256"/>
-                                    <div class="thumbnail-corporate-caption">
-                                        <p class="thumbnail-corporate-title"><a href="#">Game set and match</a></p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur
-                                            dolore et facere.
-                                        </p>
-                                        <div class="row">
-                                            <div class="col">
-                                                <a class="thumbnail-corporate-link" href="images/tennis.jpg"
-                                                   data-lightgallery="item">
-                                                    <span class="icon mdi mdi-magnify"></span>
-                                                    <span class="icon mdi mdi-magnify"></span>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a class="thumbnail-corporate-link" href="event.php?event=Swimming">
-                                                    <span class="icon mdi mdi-cursor-pointer"></span>
-                                                    <span class="icon mdi mdi-cursor-pointer"></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="thumbnail-corporate-dummy"></div>
-                                </article>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -551,7 +335,7 @@ try {
             <div class="row justify-content-center">
                 <div class="col-sm-10 col-md-12">
                     <div class="box-cta-thin">
-                        <h4 class="wow-outer"><span class="wow slideInRight">À la recherche des  <span class="text-italic">Actions honorables ?</span> </span>
+                        <h4 class="wow-outer"><span class="wow slideInRight">À la recherche d\'  <span class="text-italic">Actions honorables ?</span> </span>
                         </h4>
                         <div class="wow-outer button-outer"><a
                                 class="button button-primary button-winona wow slideInLeft" href="Loging.php">Rejoignez-nous</a>
@@ -570,42 +354,30 @@ try {
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/amiassurances-new-logo.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Ami Assurances</a></h4>
-                    </article>
-                </div>
-                <div class="col-sm-6 col-lg-4 wow-outer">
-                    <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
-                            src="images/HyundaiLogoStacked_4cblk-1024x659.gif" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Hyundai</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/download.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">L\'Académie des chefs</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/indigo.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Indigo</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/msjus.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Ms Jus</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/logo-geeks.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Ensit Geeks Club</a></h4>
                     </article>
                 </div>
             </div>'.'
@@ -614,42 +386,36 @@ try {
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/mozaique.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Mozaïque FM</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/Express.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Express FM</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/diwen.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Diwen FM</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/Logo_négatif_avec_contour.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">IFM</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/shems-fm.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Shems FM</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/Radio_Jeunes.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Radio Jeunes</a></h4>
                     </article>
                 </div>
             </div>'.'
@@ -658,56 +424,48 @@ try {
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/AS-Marsa.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">AS Marsa</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/kendo.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Tunisian Kendo League</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/FTTT-logo-retina-300x99.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">FTTT</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/fta.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">FTA</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/Tunisian_Esports_Federation_darkmode.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">TUNESF</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/unnamed.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">FTE</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/hippoclub.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Hippo Club</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/arena.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Arena Gym Premium</a></h4>
                     </article>
                 </div>
             </div>'.'
@@ -716,42 +474,36 @@ try {
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/MondeNews-LAssociation-Tunisienne-des-Villages-dEnfants.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">SOS Villages D\'enfants Tunisie</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/rose_espoir.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Rose de l\'espoir</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/ASDD.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">ANSDA</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/downlqsdfqsdfoad.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">ATPPT21</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/atel.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">ATEL</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/Logotype_du_ministère_de_l\'éducation_Tunisie.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Ministère de l\'éducation</a></h4>
                     </article>
                 </div>
             </div>
@@ -903,7 +655,7 @@ try {
             </div>
         </div>
         <div class="container">
-            <div class="footer-standard-aside"><a class="brand" href="index.php"><img
+            <div class="footer-standard-aside"><a class="brand" href="/"><img
                     src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                 <!-- Rights-->
                 <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Tous les droits sont réservés.</span><span>&nbsp;</span><br

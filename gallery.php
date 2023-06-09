@@ -76,14 +76,14 @@ try {
                             <!-- RD Navbar Toggle-->
                             <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span>
                             </button>
-                            <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.php"><img
+                            <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="/"><img
                                 src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                         </div>
                         <div class="rd-navbar-main-element">
                             <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Acceuil</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="/">Acceuil</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">À propos TSU</a>
                                     </li>
@@ -130,7 +130,7 @@ try {
                     <h1 class="breadcrumbs-custom-title">Galerie</h1>
                 </div>
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="index.php">Acceuil</a></li>
+                    <li><a href="/">Acceuil</a></li>
                     <li class="active">Galerie</li>
                 </ul>
             </div>
@@ -139,7 +139,7 @@ try {
 ';
     echo '
     <section class="section section-lg bg-default">
-        <button class="mx-auto btn btn-primary" onclick="window.location.href=\'http://localhost/TSU/addEvent.php\';" id="btnAddEvent">Ajouter Événement</button>
+        <button class="mx-auto btn btn-primary" onclick="window.location.href=\'/addEvent.php\';" id="btnAddEvent">Ajouter Événement</button>
         <div class="container">
             <div class="row row-50">
                 <div class="col-12 text-center">
@@ -156,21 +156,21 @@ try {
         <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
             <!-- Thumbnail Corporate-->
             <article class="thumbnail-corporate  wow slideInDown" style="cursor: pointer;" onclick=\'window.location.href = `event.php?event=';
-            echo $item['titleEvent'];
-            echo '`;\'><img
+        echo $item['titleEvent'];
+        echo '`;\'><img
                     class="thumbnail-corporate-image" src="events/';
-                    echo $item['titleEvent'].'/'.$item['titleEvent'].'.jpg"';
-                    echo '
+        echo $item['titleEvent'].'/'.$item['titleEvent'].'.jpg"';
+        echo '
                     alt="" width="370" height="256"/>
                 <div class="thumbnail-corporate-caption">
                     <p class="thumbnail-corporate-title"><a href="#">';
-                    echo $item['titleEvent'];
-                    echo '
+        echo $item['titleEvent'];
+        echo '
                     </a></p>
                     <h5>';
-                    echo 'Type d\'Événements : '.$item['typeEvent'].'<br>';
-                    echo 'Date : '.$item['startingDate'].'<br>';
-                    echo'
+        echo 'Type d\'Événements : '.$item['typeEvent'].'<br>';
+        echo 'Date : '.$item['startingDate'].'<br>';
+        echo'
                     </p>
                 </div>
                 <div class="thumbnail-corporate-dummy"></div>
@@ -230,7 +230,7 @@ try {
             </div>
         </div>
         <div class="container">
-            <div class="footer-standard-aside"><a class="brand" href="index.php"><img
+            <div class="footer-standard-aside"><a class="brand" href="/"><img
                     src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                 <!-- Rights-->
                 <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Tous les droits sont réservés.</span><span>&nbsp;</span><br

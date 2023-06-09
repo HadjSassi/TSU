@@ -127,14 +127,14 @@ try {
                             <!-- RD Navbar Toggle-->
                             <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span>
                             </button>
-                            <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.php"><img
+                            <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="/"><img
                                 src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                         </div>
                         <div class="rd-navbar-main-element">
                             <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Acceuil</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="/">Acceuil</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">À propos TSU</a>
                                     </li>
@@ -337,7 +337,7 @@ try {
                                         if (xhr.status === 200) {
                                             console.log(xhr.responseText);
                                             console.log("event.php?event=';echo $lastEvent['titleEvent']; echo'");
-                                            window.location.href = "/TSU/event.php?event=';echo $lastEvent['titleEvent']; echo'";} else {   
+                                            window.location.href = "/event.php?event=';echo $lastEvent['titleEvent']; echo'";} else {   
                                             console.error(xhr.statusText);
                                         }
                                     }
@@ -384,7 +384,7 @@ try {
                                     .then(response => response.text())
                                     .then(text => {
                                         // Extract the file names from the response HTML
-                                        const fileNames = Array.from(text.matchAll(/<a href="(.+?\.(?:jpe?g|png|gif))"/g)).map(match => match[1]);
+                                        const fileNames = Array.from(text.matchAll(/<a href="(.+?\.(?:jpe?g|png|gif))"/g)).map(match => match[1]).filter(fileName => !fileName.includes(\'../\') && !fileName.includes(\'?C=\'));
                                         numberPic = fileNames.length;
                                         // Loop through each image file and create a div with the corresponding HTML code
                                         fileNames.forEach((fileName) => {
@@ -399,7 +399,7 @@ try {
             <div class="thumbnail-corporate-dummy"></div>
         </article>
     </a>';
-                                            echo'
+    echo'
     <div class="close-btn" ondblclick="supprimer(\'events/${eventName}/img/${fileName}\')" 
     style=\'display: ${sessionStorage.getItem("user")!== null && sessionStorage.getItem("user").split(",")[2] === "admin" ? "block" : "none"}\'>&times;</div>`;
                                             imageGallery.appendChild(div);
@@ -418,7 +418,7 @@ try {
                                     .then(response => response.text())
                                     .then(text => {
                                         // Extract the file names from the response HTML
-                                        const fileNames = Array.from(text.matchAll(/<a href="(.+?\.(?:mp4|webm))"/g)).map(match => match[1]);
+                                        const fileNames = Array.from(text.matchAll(/<a href="(.+?\.(?:mp4|webm))"/g)).map(match => match[1]).filter(fileName => !fileName.includes(\'../\') && !fileName.includes(\'?C=\'));
                                         numberVid = fileNames.length;
                                         // Loop through each video file and create a div with the corresponding HTML code
                                         fileNames.forEach((fileName) => {
@@ -503,7 +503,7 @@ try {
             </div>
         </div>
         <div class="container">
-            <div class="footer-standard-aside"><a class="brand" href="index.php"><img
+            <div class="footer-standard-aside"><a class="brand" href="/"><img
                     src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                 <!-- Rights-->
                 <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Tous les droits sont réservés.</span><span>&nbsp;</span><br

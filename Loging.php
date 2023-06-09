@@ -26,13 +26,13 @@ if (isset($_POST['login_submit'])) {
             echo '
             <script>
             sessionStorage.setItem("user",'.$user_json.');   
-            window.location.href="http://localhost/TSU/";
+            window.location.href="/";
             </script>
             ';
 //            $_SESSION['user'] = serialize($user);
 //            $serializedObj = $_SESSION['user'];
 //            $myObj = unserialize($serializedObj);
-//            header("Location: http://localhost/TSU/");
+//            header("Location: /");
 //            exit;
         }
     } catch (PDOException $exception) {
@@ -58,11 +58,11 @@ if (isset($_POST['login_submit'])) {
             echo '
             <script>
             sessionStorage.setItem("user",' . $user_json . ');      
-            window.location.href="http://localhost/TSU/";
+            window.location.href="/";
 
             </script>
             ';
-//            header("Location: http://localhost/TSU/");
+//            header("Location: /");
 //            exit;
         }
     } catch (PDOException $exception) {

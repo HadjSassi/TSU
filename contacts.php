@@ -64,14 +64,14 @@ echo'
                             <!-- RD Navbar Toggle-->
                             <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span>
                             </button>
-                            <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.php"><img
+                            <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="/"><img
                                 src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                         </div>
                         <div class="rd-navbar-main-element">
                             <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Acceuil</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="/">Acceuil</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">À propos TSU</a>
                                     </li>
@@ -119,7 +119,7 @@ echo'
               <h1 class="breadcrumbs-custom-title">Contacts</h1>
             </div>
             <ul class="breadcrumbs-custom-path">
-              <li><a href="index.php">Acceuil</a></li>
+              <li><a href="/">Acceuil</a></li>
               <li class="active">Contacts</li>
             </ul>
           </div>
@@ -155,7 +155,7 @@ echo'
             <div class="row">
               <div class="col-lg-9 cell-inner">
                 <div class="section-lg">
-                  <h3 class="wow-outer"><span class="wow slideInDown">2022/23 saison</span></h3>
+                  <h3 class="wow-outer"><span class="wow slideInDown">Saison 2022/23</span></h3>
                   <video controls width="100%" height="auto" autoplay muted>
                     <source src="images/tsu1m.mp4" type="video/mp4">
                     </video>
@@ -212,7 +212,7 @@ echo'
             </div>
         </div>
         <div class="container">
-            <div class="footer-standard-aside"><a class="brand" href="index.php"><img
+            <div class="footer-standard-aside"><a class="brand" href="/"><img
                     src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                 <!-- Rights-->
                 <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Tous les droits sont réservés.</span><span>&nbsp;</span><br

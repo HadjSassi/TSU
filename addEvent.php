@@ -81,7 +81,7 @@ if (isset($_POST['submit'])) {
                 }*/
                 echo '
             <script>
-            window.location.href="http://localhost/TSU/gallery.php";
+            window.location.href="/gallery.php";
             </script>
             ';
             } catch (PDOException $PDOException) {
@@ -159,14 +159,14 @@ echo '
                             <!-- RD Navbar Toggle-->
                             <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span>
                             </button>
-                            <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.php"><img
+                            <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="/"><img
                                 src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                         </div>
                         <div class="rd-navbar-main-element">
                             <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Acceuil</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="/">Acceuil</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">À propos TSU</a>
                                     </li>
@@ -284,7 +284,7 @@ else {
         </div>
     </section>
 ';}
-    echo '
+echo '
 
     <!-- Page Footer-->
 <footer class="section footer-standard text-justify">
@@ -329,7 +329,7 @@ else {
             </div>
         </div>
         <div class="container">
-            <div class="footer-standard-aside"><a class="brand" href="index.php"><img
+            <div class="footer-standard-aside"><a class="brand" href="/"><img
                     src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                 <!-- Rights-->
                 <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Tous les droits sont réservés.</span><span>&nbsp;</span><br

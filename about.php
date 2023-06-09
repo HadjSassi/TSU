@@ -64,14 +64,14 @@ echo'
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span>
                   </button>
-                  <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.php"><img
+                  <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="/"><img
                         src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                 </div>
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Acceuil</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/">Acceuil</a>
                       </li>
                       <li class="rd-nav-item active"><a class="rd-nav-link" href="about.php">À propos  TSU</a>
                       </li>
@@ -117,7 +117,7 @@ echo'
               <h1 class="breadcrumbs-custom-title">À propos TSU</h1>
             </div>
             <ul class="breadcrumbs-custom-path">
-              <li><a href="index.php">Acceuil</a></li>
+              <li><a href="/">Acceuil</a></li>
               <li class="active">À propos TSU</li>
             </ul>
           </div>
@@ -389,42 +389,30 @@ echo '
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/amiassurances-new-logo.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Ami Assurances</a></h4>
-                    </article>
-                </div>
-                <div class="col-sm-6 col-lg-4 wow-outer">
-                    <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
-                            src="images/HyundaiLogoStacked_4cblk-1024x659.gif" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Hyundai</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/download.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">L\'Académie des chefs</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/indigo.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Indigo</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/msjus.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Ms Jus</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/logo-geeks.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Ensit Geeks Club</a></h4>
                     </article>
                 </div>
             </div>'.'
@@ -433,42 +421,36 @@ echo '
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/mozaique.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Mozaïque FM</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/Express.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Express FM</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/diwen.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Diwen FM</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/Logo_négatif_avec_contour.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">IFM</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/shems-fm.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Shems FM</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/Radio_Jeunes.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Radio Jeunes</a></h4>
                     </article>
                 </div>
             </div>'.'
@@ -477,56 +459,48 @@ echo '
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/AS-Marsa.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">AS Marsa</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/kendo.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Tunisian Kendo League</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/FTTT-logo-retina-300x99.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">FTTT</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/fta.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">FTA</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/Tunisian_Esports_Federation_darkmode.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">TUNESF</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/unnamed.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">FTE</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/hippoclub.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Hippo Club</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/arena.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Arena Gym Premium</a></h4>
                     </article>
                 </div>
             </div>'.'
@@ -535,42 +509,36 @@ echo '
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/MondeNews-LAssociation-Tunisienne-des-Villages-dEnfants.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">SOS Villages D\'enfants Tunisie</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/rose_espoir.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Rose de l\'espoir</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/ASDD.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">ANSDA</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/downlqsdfqsdfoad.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">ATPPT21</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/atel.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">ATEL</a></h4>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
                             src="images/Logotype_du_ministère_de_l\'éducation_Tunisie.png" width="500"  alt=""/></a>
-                        <h4 class="post-classic-title text-center"><a href="#" target="_blank">Ministère de l\'éducation</a></h4>
                     </article>
                 </div>
             </div>
@@ -722,7 +690,7 @@ echo '
             </div>
         </div>
         <div class="container">
-            <div class="footer-standard-aside"><a class="brand" href="index.php"><img
+            <div class="footer-standard-aside"><a class="brand" href="/"><img
                     src="images/navbarTsu.png" alt="" width="176" height="28"/></a>
                 <!-- Rights-->
                 <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Tous les droits sont réservés.</span><span>&nbsp;</span><br

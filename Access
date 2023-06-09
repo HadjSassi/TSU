@@ -1,0 +1,16 @@
+TSU coordinates:
+TSU :
+login :
+tsutnny
+passowrd :
+Tsu012345
+FTP port:
+21
+SFTP port:
+22
+SSH port:
+22
+FTP and SFTP server:
+ftp.cluster027.hosting.ovh.net
+SSH server:
+ssh.cluster027.hosting.ovh.net
