@@ -73,7 +73,7 @@ echo'
                     <ul class="rd-navbar-nav">
                       <li class="rd-nav-item"><a class="rd-nav-link" href="/">Acceuil</a>
                       </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="about.php">À propos  TSU</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="about.php">À propos de TSU</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.php">Galerie</a>
                       </li>
@@ -113,145 +113,16 @@ echo'
         <div class="breadcrumbs-custom-inner">
           <div class="container breadcrumbs-custom-container">
             <div class="breadcrumbs-custom-main">
-              <h6 class="breadcrumbs-custom-subtitle title-decorated">À propos TSU</h6>
-              <h1 class="breadcrumbs-custom-title">À propos TSU</h1>
+              <h6 class="breadcrumbs-custom-subtitle title-decorated">-</h6>
+              <h1 class="breadcrumbs-custom-title">À propos de TSU</h1>
             </div>
             <ul class="breadcrumbs-custom-path">
+            <li></li>
               <li><a href="/">Acceuil</a></li>
-              <li class="active">À propos TSU</li>
             </ul>
           </div>
         </div>
       </section>
-      <section class="section section-md">
-        <div class="container">
-          <!-- Profile Modern-->
-          <article class="profile-modern">
-            <div class="profile-modern-figure"><img class="profile-modern-image" src="images/favicon.png" alt="" style="width: 65%"/></div>
-            <div class="profile-modern-main">
-              <div class="profile-modern-header">
-                <div class="profile-modern-header-item">
-                  <h3>Tunis Sports University</h3>
-                </div>
-                <div class="profile-modern-item" style="margin-right: 15%;">
-                  <div class="group group-xs group-middle"><a class="icon icon-sm icon-creative mdi mdi-facebook" href="https://www.facebook.com/profile.php?id=100057545556860"></a><a class="icon icon-sm icon-creative mdi mdi-instagram" href="https://www.instagram.com/tunissportuniversity/"></a><a class="icon icon-sm icon-creative mdi mdi-google" href="mailto:benabdallahmehdi1920@gmail.com"></a></div>
-                </div>
-              </div>
-              <div class="row row-30">
-                <div class="col-lg-6">
-                    <p class="text-justify">
-                        Le professeur Mehdi Ben Abdallah a créé le concept de Tunis Sports University, une institution avec plus de 45 ans d\'expérience dans les sports civils et plus de 20 ans dans les sports universitaires. L\'Université organise des événements sportifs à caractère social et humanitaire depuis la saison universitaire 2017/18 à l\'ENSIT, qui ont ensuite été étendus à l\'IHEC Carthage et à l\'ENAU Sidi-Bou-Saïd. Le concept consiste à associer 20 étudiants motivés avec 20 enfants issus de milieux défavorisés ou d\'associations, en créant des liens et en luttant contre l\'extrémisme à travers le sport et le bénévolat.
-                    </p>
-                </div>
-                <div class="col-lg-6 text-center">
-                  <a href="#">
-                  <div style="width: 200px; height: 200px; overflow: hidden; border-radius: 50%; margin-left: 22%;">
-                    <img class="wow fadeSlideInUp" src="images/mehdi.jpg" alt=""
-                         style="width: 100%; height: 100%; object-fit: cover;"/>
-                  </div>
-                  </a>
-                  <h3><a href="#">Mehdi Ben Abdallah</a></h3>
-                  <!--
-                        &lt;!&ndash; Linear progress bar&ndash;&gt;
-                        <article class="progress-linear">
-                          <div class="progress-header">
-                            <p>Photography</p><span class="progress-value">90</span>
-                          </div>
-                          <div class="progress-bar-linear-wrap">
-                            <div class="progress-bar-linear"></div>
-                          </div>
-                        </article>
-                        &lt;!&ndash; Linear progress bar&ndash;&gt;
-                        <article class="progress-linear">
-                          <div class="progress-header">
-                            <p>Creativity</p><span class="progress-value">65</span>
-                          </div>
-                          <div class="progress-bar-linear-wrap">
-                            <div class="progress-bar-linear progress-red"></div>
-                          </div>
-                        </article>
-                        &lt;!&ndash; Linear progress bar&ndash;&gt;
-                        <article class="progress-linear">
-                          <div class="progress-header">
-                            <p>Retouching</p><span class="progress-value">100</span>
-                          </div>
-                          <div class="progress-bar-linear-wrap">
-                            <div class="progress-bar-linear progress-blue"></div>
-                          </div>
-                        </article>-->
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-      ';
-echo'
-      <!-- Nathan’s Projects-->
-    <section class="section section-lg text-center bg-default">
-        <div class="container">
-            <h3 class="section-title wow-outer"><span class="wow slideInUp">À propos Tunis Sports University</span></h3>
-            <p class="wow-outer"><span class="text-width-1 wow slideInDown text-justify">
-            Jouissant d’une <b>expérience de plus de 45 ans</b> dans le domaine du sport civil et 
-            de <b>plus de 20 ans dans celui du sport universitaire</b>, nous nous sommes lancés dans le cadre
-             de notre profession en tant qu’enseignant d’éducation physique et sportive dans l’organisation 
-             d’événements sportifs depuis la saison universitaire <b>2017/18 à l’Ecole Nationale Supérieure d’Ingénieurs de Tunis (ENSIT).</b>
-            Depuis la saison universitaire <b>2018/19</b> nous avons choisi de nous spécialiser dans les 
-            <b>événements sportifs à caractère social et humanitaire</b> et cette expérience s’est poursuivie l
-            ors de <b>la saison universitaire 2019/20 à l’IHEC Carthage</b> puis à <b>l’ENAU Sidi-Bou-SaÏd</b>
-             en <b>2020/21</b> puis de nouveau à <b>l’ENSIT</b> depuis <b>Décembre 2022</b> où nous avons été 
-             respectivement affectés.
-             Depuis la saison écoulée nous avons également introduit en plus des événements sportifs à caractère
-              social et humanitaire, une journée <b>d’initiation au simulateur de pilotage avion</b> et des <b>Master Class</b>
-               en pâtisserie & <b>Cooking Class</b> avec l’équipe des chefs ayant représenté la Tunisie aux derniers 
-               <b>Bocuse d’Or 202</b>.
-
-            </span>
-            </p>
-            <div class="row row-50">
-                <div class="col-6 col-md-3 wow-outer">
-                    <!-- Counter Minimal-->
-                    <article class="counter-minimal wow slideInUp" data-wow-delay=".1s">
-                        <div class="counter-minimal-icon linearicons-loading3"></div>
-                        <div class="counter-minimal-main">
-                            <div class="counter">60</div>
-                        </div>
-                        <h5 class="counter-minimal-title">Événement</h5>
-                    </article>
-                </div>
-                <div class="col-6 col-md-3 wow-outer">
-                    <!-- Counter Minimal-->
-                    <article class="counter-minimal wow slideInUp" data-wow-delay=".1s">
-                        <div class="counter-minimal-icon linearicons-history"></div>
-                        <div class="counter-minimal-main">
-                            <div class="counter">2017</div>
-                        </div>
-                        <h5 class="counter-minimal-title">Années</h5>
-                    </article>
-                </div>
-                <div class="col-6 col-md-3 wow-outer">
-                    <!-- Counter Minimal-->
-                    <article class="counter-minimal wow slideInUp" data-wow-delay=".1s">
-                        <div class="counter-minimal-icon linearicons-man-woman"></div>
-                        <div class="counter-minimal-main">
-                            <div class="counter">100</div>
-                        </div>
-                        <h5 class="counter-minimal-title">Membres étudiants</h5>
-                    </article>
-                </div>
-                <div class="col-6 col-md-3 wow-outer">
-                    <!-- Counter Minimal -->
-                    <article class="counter-minimal wow slideInUp" data-wow-delay=".1s">
-                        <div class="counter-minimal-icon linearicons-basketball"></div>
-                        <div class="counter-minimal-main">
-                            <div class="counter">25</div>
-                        </div>
-                        <h5 class="counter-minimal-title">Sports</h5>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="section section-lg text-center bg-default">
         <div class="container">
             <h3 class="section-title wow-outer"><span class="wow slideInUp">Présentation du concept</span></h3>
@@ -261,16 +132,18 @@ echo'
                     <source src="images/tsu1m.mp4" type="video/mp4">
                     </video>
                 </div>
-                <div class="col-md-6"><br>
+                <div class="col-md-6" style="margin-top: -3%"><br>
                     <p class="wow-outer"><span class="text-width-1 wow slideInDown text-justify">
-                    Lors de nos <b>évènements à caractère social et humanitaire</b>, nous commençons par choisir une 
+                    Depuis 2017, le club Tunis Sports University s’est lancé dans l’organisation <b>d’événements sportifs à caractère social et humanitaire.</b>
+                    <br>
+                    Lors de ces évènements, nous commençons par choisir une 
                     <b>activité innovante</b> pour nos étudiants et nos invités ainsi qu’un <b>cadre attrayant</b>
                      pour sa pratique.
-        
+                    <br<
                     Nous sélectionnons par la suite <b>20 de nos étudiants</b> les plus motivés qui seront chacun 
                     <b>parrain ou marraine des 20 enfants</b> (d’une association, d’une école primaire d’une zone 
                     défavorisée ou autres…) que nous invitons lors de chaque évènement.
-                    
+                    <br>
                     Nous formons ainsi des binômes (étudiant-enfant) qui seront <b>ensemble tout le long de l’évènement</b>
                      s’achevant par une réception au cours de laquelle chaque étudiant offrira un cadeau et une 
                      <b>médaille commémorative à l’enfant</b> qu’il a parrainé.
@@ -305,77 +178,30 @@ echo '
       <!-- Nathan’s Blog Posts-->
       <section class="section section-lg bg-gray-100">
         <div class="container">
-          <h3 class="wow-outer section-title text-center"><span class="wow slideInUp">Passage TV & Radio</span></h3>
+          <h3 class="wow-outer section-title text-center"><span class="wow slideInUp">Passages TV & Radio</span></h3>
           <div class="row row-50 justify-content-center justify-content-lg-between">
-            <div class="col-md-10 col-lg-5 wow-outer">
-              <div class="owl-carousel wow slideInLeft" data-items="1" data-dots="true" data-nav="false" data-loop="true" data-margin="30" data-stage-padding="0" data-mouse-drag="false">
-                <blockquote class="quote-modern">
-                  <span class="icon quote-modern-mark linearicons-quote-open"></span>
-                  <div class="quote-modern-text">
-                    <p>Je viens juste de recevoir mes magnifiques photos aujourd\'hui et je suis émerveillé(e) de voir à quel point mon fils est beau sur les photos ! Merci beaucoup pour ces souvenirs exceptionnels ! Je vous recommanderai à mes amis.</p>
-                  </div>
-                  <span class="icon quote-modern-mark linearicons-quote-close"></span>
-                  <div class="quote-modern-meta">
-                    <div class="quote-modern-avatar">
-                      <div style="width: 96px; height: 96px; overflow: hidden; border-radius: 50%;">
-                        <img class="wow slideInLeft" src="images/mahd.jpg" alt=""
-                             style="width: 100%; height: 100%; object-fit: cover;"/>
-                      </div>
-                    </div>
-                    <div class="quote-modern-info">
-                      <cite class="quote-modern-cite">Hadj Sassi Mahdi</cite>
-                      <p class="quote-modern-caption">Ensit Student</p>
-                    </div>
-                  </div>
-                </blockquote>
-                <blockquote class="quote-modern">
-                  <span class="icon quote-modern-mark linearicons-quote-open"></span>
-                  <div class="quote-modern-text">
-                    <p>Just received my beautiful pictures today and I am in awe of how handsome my son looks in the pictures!Just received my beautiful pictures today and I am in awe of how handsome my son looks in the pictures! Thank you so much for such great memories!  I will recommend you to my friends.</p>
-                  </div>
-                  <span class="icon quote-modern-mark linearicons-quote-close"></span>
-                  <div class="quote-modern-meta">
-                    <div class="quote-modern-avatar">
-                      <div style="width: 96px; height: 96px; overflow: hidden; border-radius: 50%;">
-                        <img class="wow slideInLeft" src="images/mah.jpg" alt=""
-                             style="width: 100%; height: 100%; object-fit: cover;"/>
-                      </div>
-                    </div>
-                    <div class="quote-modern-info">
-                      <cite class="quote-modern-cite">Hadj Sassi Mahdi</cite>
-                      <p class="quote-modern-caption">Ensit Student</p>
-                    </div>
-                  </div>
-                </blockquote>
-                <blockquote class="quote-modern">
-                  <span class="icon quote-modern-mark linearicons-quote-open"></span>
-                  <div class="quote-modern-text">
-                    <p>Just received my beautiful pictures today and I am in awe of how handsome my son looks in the pictures! Thank you so much for such great memories!  I will recommend you to my friends.</p>
-                  </div>
-                  <span class="icon quote-modern-mark linearicons-quote-close"></span>
-                  <div class="quote-modern-meta">
-                    <div class="quote-modern-avatar">
-                      <div style="width: 96px; height: 96px; overflow: hidden; border-radius: 50%;">
-                        <img class="wow slideInLeft" src="images/mahdi%20hadj%20sassi.jpg" alt=""
-                             style="width: 100%; height: 100%; object-fit: cover;"/>
-                      </div>
-                    </div>
-                    <div class="quote-modern-info">
-                      <cite class="quote-modern-cite">Hadj Sassi Mahdi</cite>
-                      <p class="quote-modern-caption">Ensit Student</p>
-                    </div>
-                  </div>
-                </blockquote>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tLyfsWACj1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  </div>              
               </div>
             </div>
             <div class="col-md-10 col-lg-6 wow-outer">
               <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fmosaiquefm%2Fvideos%2F282146063297329%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>                </div>
-                <div class="thumbnail-video__overlay video-overlay" style="background-image: url(images/interview.jpg)">
-                  <div class="button-video"></div>
-                  <h5>Montrer la vidéo de témoignages</h5>
-                </div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/CJadEbctBoE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>      </div>          
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FDiwanFM%2Fvideos%2F219631304114298%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>        </div>        
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FShemsFM%2Fvideos%2F1020495219326447%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe></div>
               </div>
             </div>
           </div>
@@ -387,31 +213,31 @@ echo '
             <div class="row row-50" id="partner-slider1">
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/amiassurances-new-logo.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/download.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/indigo.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/msjus.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/logo-geeks.png" width="500"  alt=""/></a>
                     </article>
                 </div>
@@ -419,37 +245,37 @@ echo '
             <div class="row row-50" id="partner-slider2">
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/mozaique.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/Express.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/diwen.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/Logo_négatif_avec_contour.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/shems-fm.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/Radio_Jeunes.png" width="500"  alt=""/></a>
                     </article>
                 </div>
@@ -457,49 +283,49 @@ echo '
             <div class="row row-50" id="partner-slider3">
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/AS-Marsa.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/kendo.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/FTTT-logo-retina-300x99.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/fta.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/Tunisian_Esports_Federation_darkmode.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/unnamed.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/hippoclub.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/arena.png" width="500"  alt=""/></a>
                     </article>
                 </div>
@@ -507,37 +333,37 @@ echo '
             <div class="row row-50" id="partner-slider4">
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/MondeNews-LAssociation-Tunisienne-des-Villages-dEnfants.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/rose_espoir.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/ASDD.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/downlqsdfqsdfoad.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/atel.png" width="500"  alt=""/></a>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
-                    <article class="post-classic wow slideInLeft"><a class="post-classic-media" href="#"><img
+                    <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
                             src="images/Logotype_du_ministère_de_l\'éducation_Tunisie.png" width="500"  alt=""/></a>
                     </article>
                 </div>
@@ -652,13 +478,12 @@ echo '
         <div class="footer-standard-main">
             <div class="container">
                 <div class="row row-50">
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <div class="inset-right-1">
-                            <h4>À propos TSU</h4>
-                            <p>Le professeur Mehdi Ben Abdallah a créé Tunis Sports University, une institution avec plus de 45 ans d\'expérience dans les sports civils et plus de 20 ans dans les sports universitaires. L\'Université organise des événements sportifs à caractère social et humanitaire impliquant des étudiants et des enfants défavorisés pour former de futurs citoyens tunisiens responsables et lutter contre l\'extrémisme. </p>
+                            <img src="images/favicon.png" width="80%">    
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-5 col-lg-4">
+                    <div class="col">
                         <div class="box-1">
                             <h4>Coordonnées</h4>
                             <ul class="list-sm">
@@ -677,7 +502,7 @@ echo '
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-7 col-lg-4">
+                    <div class="col">
                         <h4>Alimenté par Geeks Ensit Club</h4>
                         <div class="">
                             <a href="https://www.ensitgeeksclub.com" style="float: left;" target="_blank"><img

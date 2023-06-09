@@ -125,7 +125,7 @@ try {
                                 <ul class="rd-navbar-nav">
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="/">Acceuil</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">À propos TSU</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">À propos de TSU</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.php">Galerie</a>
                                     </li>
@@ -258,13 +258,12 @@ try {
         <div class="footer-standard-main">
             <div class="container">
                 <div class="row row-50">
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <div class="inset-right-1">
-                            <h4>À propos TSU</h4>
-                            <p>Le professeur Mehdi Ben Abdallah a créé Tunis Sports University, une institution avec plus de 45 ans d\'expérience dans les sports civils et plus de 20 ans dans les sports universitaires. L\'Université organise des événements sportifs à caractère social et humanitaire impliquant des étudiants et des enfants défavorisés pour former de futurs citoyens tunisiens responsables et lutter contre l\'extrémisme. </p>
+                            <img src="images/favicon.png" width="80%">    
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-5 col-lg-4">
+                    <div class="col">
                         <div class="box-1">
                             <h4>Coordonnées</h4>
                             <ul class="list-sm">
@@ -283,7 +282,7 @@ try {
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-7 col-lg-4">
+                    <div class="col">
                         <h4>Alimenté par Geeks Ensit Club</h4>
                         <div class="">
                             <a href="https://www.ensitgeeksclub.com" style="float: left;" target="_blank"><img
@@ -304,7 +303,8 @@ try {
                 </p>
             </div>
         </div>
-    </footer>    </div>
+    </footer>   
+     </div>
     ';
     echo '
     <div class="preloader">
