@@ -162,7 +162,7 @@ try {
              respectivement affectés.
             <br>Depuis la saison 2020/21 nous avons également introduit en plus des événements sportifs à caractère social 
             et humanitaire, des journées <b>d’initiation au simulateur de pilotage avion</b> et des <b>Master Class </b>en 
-            pâtisserie & <b>Cooking Class</b> avec l’équipe des chefs ayant représenté la Tunisie aux <b>Bocuse d’Or 2022.</b>
+            pâtisserie & <b>Cooking Class</b> avec l’équipe des chefs ayant représenté la Tunisie au <b>Bocuse d’Or 2022.</b>
             <br>À partir de la saison prochaine, nous poursuivrons notre mission avec les étudiants de l’Académie des 
             Chefs qui ont intégré nos actions depuis la saison écoulée et qui auront pour tâche d’assurer dorénavant 
             aussi bien le parrainage et accompagnement des enfants que la préparation du cocktail que nous organisons
@@ -232,7 +232,7 @@ try {
     <section class="section section-lg bg-gray-100 text-center">
         <div class="container">
             <h3 class="section-title wow-outer"><span class="wow slideInDown">Les partenaires</span></h3>
-            <div class="row row-50" id="partner-slider1">
+            <div class="row row-50" style="margin-bottom: 10%" id="partner-slider1">
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
@@ -264,7 +264,7 @@ try {
                     </article>
                 </div>
             </div>'.'
-            <div class="row row-50" id="partner-slider2">
+            <div class="row row-50" style="margin-bottom: 10%" id="partner-slider2">
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img
@@ -302,7 +302,7 @@ try {
                     </article>
                 </div>
             </div>'.'
-            <div class="row row-50" id="partner-slider3">
+            <div class="row row-50" style="margin-bottom: 10%" id="partner-slider3">
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
                     <article class="post-classic wow slideInLeft w-75"><a class="post-classic-media" href="#"><img

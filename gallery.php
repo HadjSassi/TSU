@@ -36,24 +36,82 @@ try {
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-    <style>.ie-panel {
-        display: none;
-        background: #212121;
-        padding: 10px 0;
-        box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
-        clear: both;
-        text-align: center;
-        position: relative;
-        z-index: 1;
-    }
-    
-  .geeks:hover{
-    transform: rotate(-5deg);
-  }
+    <style>
+    .ie-panel {
+            display: none;
+            background: #212121;
+            padding: 10px 0;
+            box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
+            clear: both;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
 
-    html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
-        display: block;
-    }</style>
+        .geeks:hover {
+            transform: rotate(-5deg);
+        }
+
+        html.ie-10 .ie-panel,
+        html.lt-ie-10 .ie-panel {
+            display: block;
+        }
+        
+        /* Custom styles for events section */
+        .events-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .event-card {
+            width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .event-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .event-details {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            transition: opacity 0.3s ease;
+            border-radius: 5px;
+        }
+        
+        .event-card:hover .event-details {
+            opacity: 1;
+        }
+        
+        .event-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .event-info {
+            font-size: 14px;
+            text-align: center;
+        }
+        </style>
 </head>
 ';
     echo '
@@ -126,8 +184,8 @@ try {
         <div class="breadcrumbs-custom-inner">
             <div class="container breadcrumbs-custom-container">
                 <div class="breadcrumbs-custom-main">
-                    <h6 class="breadcrumbs-custom-subtitle title-decorated">-</h6>
-                    <h1 class="breadcrumbs-custom-title">Galerie</h1>
+                    <h6 class="breadcrumbs-custom-subtitle title-decorated">Galerie</h6>
+                    <h1 class="breadcrumbs-custom-title">Événements TSU</h1>
                 </div>
                 <ul class="breadcrumbs-custom-path">
                     <li></li>
@@ -141,49 +199,77 @@ try {
     <section class="section section-lg bg-default">
         <button class="mx-auto btn btn-primary" onclick="window.location.href=\'/addEvent.php\';" id="btnAddEvent">Ajouter Événement</button>
         <div class="container">
-            <div class="row row-50">
-                <div class="col-12 text-center">
-                    <h3 class="section-title wow-outer"><span class="wow slideInUp">Événements TSU</span></h3>
-                </div>
-                <div class="col-12 isotope-wrap">
-                    <div class="isotope offset-top-2" data-isotope-layout="masonry" data-lightgallery="group"
-                         data-lg-thumbnail="false">
-                        <div class="row row-30">
+            <div class="events-section">
                         ';
 
+    $seasons = array();
+
     foreach ($listeEvent as $item) {
-        echo '
-        <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
-            <!-- Thumbnail Corporate-->
-            <article class="thumbnail-corporate  wow slideInDown" style="cursor: pointer;" onclick=\'window.location.href = `event.php?event=';
-        echo $item['titleEvent'];
-        echo '`;\'><img
-                    class="thumbnail-corporate-image" src="events/';
-        echo $item['titleEvent'].'/'.$item['titleEvent'].'.jpg"';
-        echo '
-                    alt="" width="370" height="256"/>
-                <div class="thumbnail-corporate-caption">
-                    <p class="thumbnail-corporate-title"><a href="#">';
-        echo $item['titleEvent'];
-        echo '
-                    </a></p>
-                    <h5>';
-        echo 'Type d\'Événements : '.$item['typeEvent'].'<br>';
-        echo 'Date : '.$item['startingDate'].'<br>';
-        echo'
-                    </p>
-                </div>
-                <div class="thumbnail-corporate-dummy"></div>
-            </article>
-        </div>
-        ';
+        // Get the starting year and month from the starting date
+        $startingYear = date('Y', strtotime($item['startingDate']));
+        $startingMonth = date('n', strtotime($item['startingDate']));
+
+        // Determine the season year range
+        if ($startingMonth >= 8) {
+            $seasonYear = $startingYear . '/' . substr(($startingYear + 1), -2);
+        } else {
+            $seasonYear = ($startingYear - 1) . '/' . substr($startingYear, -2);
+        }
+
+        // Check if a season array already exists for the season year range
+        if (!isset($seasons[$seasonYear])) {
+            $seasons[$seasonYear] = array();
+        }
+
+        // Add the event to the corresponding season
+        $seasons[$seasonYear][] = $item;
     }
 
-    echo '
-                        </div>
-                    </div>
-                </div>
+// Sort seasons in descending order
+    krsort($seasons);
+
+// Display events grouped by season
+    foreach ($seasons as $seasonYear => $events) {
+        // Sort the events by starting date in ascending order
+        usort($events, function ($a, $b) {
+            return strtotime($a['startingDate']) - strtotime($b['startingDate']);
+        });
+
+        echo '<div class="col-12 text-center">
+        <h3 class="section-title wow-outer"><span class="wow slideInUp">'."Saison ".$seasonYear.'</span></h3>
+    </div>';
+
+        foreach ($events as $item) {
+            echo '
+        <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer my-2">
+            <!-- Thumbnail Corporate-->
+            <article class="thumbnail-corporate  wow slideInDown" style="cursor: pointer;" onclick=\'window.location.href = `event.php?event=';
+            echo $item['titleEvent'];
+            echo '`;\'><img
+                class="thumbnail-corporate-image" src="events/';
+            echo $item['titleEvent'] . '/' . $item['titleEvent'] . '.jpg"';
+            echo '
+                alt="" width="370" height="256"/>
+            <div class="thumbnail-corporate-caption">
+                <p class="thumbnail-corporate-title"><a href="#">';
+            echo $item['titleEvent'];
+            echo '
+                </a></p>
+                <h5>';
+            echo 'Type d\'Événements : ' . $item['typeEvent'] . '<br>';
+            echo 'Date : ' . $item['startingDate'] . '<br>';
+            echo '
+                </p>
             </div>
+            <div class="thumbnail-corporate-dummy"></div>
+        </article>
+    </div>
+    ';
+        }
+    }
+
+
+    echo '
         </div>
     </section>
 ';
@@ -239,7 +325,7 @@ try {
         </div>
     </footer>
 </div>
-<div class="preloader">
+<!--<div class="preloader">
   <div class="preloader-logo"><img src="images/loading%20tsu.png" alt="" width="" height=""/>
   </div>
   <div class="preloader-body" >
@@ -247,7 +333,7 @@ try {
       <div class="loadingProgressG" style="background: #138a91" id="loadingProgressG_1"></div>
     </div>
   </div>
-</div>
+</div>-->
 <!-- Global Mailform Output-->
 <div class="snackbars" id="form-output-global"></div>
 <!-- Javascript-->
