@@ -86,6 +86,10 @@ try {
   .geeks:hover{
     transform: rotate(-5deg);
   }
+  
+  .thumbnail-corporate-image {
+        border: 2px solid black; /* Add border to the video element */
+    }
         .close-btn {
             position: absolute;
             bottom: -10px;
@@ -139,6 +143,8 @@ try {
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">À propos de TSU</a>
                                     </li>
                                     <li class="rd-nav-item active"><a class="rd-nav-link" href="gallery.php">Galerie</a>
+                                    </li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="temoignages.php">Témoignages</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.php">Contacts</a>
                                     </li>
@@ -426,20 +432,19 @@ try {
                                             const div = document.createElement("div");
                                             div.classList.add("col-12", "col-sm-6", "col-lg-4", "isotope-item");
                                             div.innerHTML = `
-                                        <a class=""  onclick="playVideo(\'events/${eventName}/vid/${fileName}\')" data-lightgallery="item">
-                                            <article class="thumbnail-corporate wow fadeIn">
-                                                <video class="thumbnail-corporate-image" width="370" height="256" loop muted>
-                                                    <source src="events/${eventName}/vid/${fileName}" type="video/mp4">
-                                                </video>
-                                                <div class="thumbnail-corporate-caption" style="cursor: pointer"></div>
-                                                <div class="thumbnail-corporate-dummy"></div>
-                                            </article>
-                                        </a>
-                                            <div class="close-btn" ondblclick="supprimer(\'events/${eventName}/vid/${fi}\')" 
-                                            style=\'display: ${sessionStorage.getItem("user") !== null && sessionStorage.getItem("user").split(",")[2] === "admin" ? "block" : "none"}\'
-                                            >&times;</div>
-
-                                        `;
+    <a class="" onclick="playVideo(\'events/${eventName}/vid/${fileName}\')" data-lightgallery="item">
+        <article class="thumbnail-corporate wow fadeIn">
+            <video class="thumbnail-corporate-image" width="370" height="256" loop muted>
+                <source src="events/${eventName}/vid/${fileName}" type="video/mp4">
+            </video>
+            <div class="thumbnail-corporate-caption" style="cursor: pointer"></div>
+            <div class="thumbnail-corporate-dummy"></div>
+        </article>
+    </a>
+    <div class="close-btn" ondblclick="supprimer(\'events/${eventName}/vid/${fi}\')" 
+        style=\'display: ${sessionStorage.getItem("user") !== null && sessionStorage.getItem("user").split(",")[2] === "admin" ? "block" : "none"}\'
+    >&times;</div>
+`;
                                             videoGallery.appendChild(div);
                                         });
 

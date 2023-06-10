@@ -1,57 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 echo '
-<script>
-var user = sessionStorage.getItem("user");
-if(user === null ||user.split(",")[1].length === 0){
-    window.location.href="404.php";
-}
-</script>
-
-';
-$dbh = new PDO('mysql:host=localhost;port=3306;dbname=TSU', 'root', 'Magali_1984');
-try {
-    $mail = $_GET['mail'];
-    $stmt = $dbh->prepare("SELECT * FROM users WHERE mailUser = ?");
-    $stmt->execute(array($mail));
-    $User = $stmt->fetchAll();
-    $User = end($User);
-    try{
-        if (isset($_POST['user'])) {
-            $username = $_POST['username'];
-            $firstName = $_POST['firstNme'];
-            $lastName = $_POST['lastNme'];
-            $phone = $_POST['phonee'];
-            $job = $_POST['functionss'];
-            $pass = $_POST['passs'];
-            $email = $_GET['mail'];
-
-            $sql = "UPDATE users SET 
-          username = '$username', 
-          firstName = '$firstName',
-          lastName = '$lastName',
-          tel = '$phone',
-          job = '$job',
-          pass = '$pass'
-        WHERE mailUser = '$email'";
-
-            $stmt = $dbh->prepare($sql);
-            $stmt->execute();
-            $user = [$email,$username,$User['functionality']];
-            $user_json = json_encode($user);
-            echo '
-            <script>
-            sessionStorage.setItem("user",' . $user_json . ');      
-            window.location.href="/";
-            </script>
-            ';
-        }
-    }catch (PDOException $PDOException){
-        echo $PDOException->getMessage();
-    }
-    echo '
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 <head>
@@ -74,7 +22,8 @@ try {
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <style>.ie-panel {
     display: none;
     background: #212121;
@@ -95,7 +44,7 @@ try {
   }</style>
 </head>
 ';
-    echo '
+echo'
   <body>
     <div class="page">
       <!-- Page Header-->
@@ -129,7 +78,7 @@ try {
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.php">Galerie</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="temoignages.php">Témoignages</a>
+                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="temoignages.php">Témoignages</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.php">Contacts</a>
                                     </li>
@@ -160,102 +109,99 @@ try {
         </div>
         
         ';
-    echo '
+echo '
     </header>
       ';
-    echo '
+echo'
       <!-- Breadcrumbs-->
-      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/prof.jpg);">
-    <div class="breadcrumbs-custom-inner">
-        <div class="container breadcrumbs-custom-container">
+      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/115.jpg);">
+        <div class="breadcrumbs-custom-inner">
+          <div class="container breadcrumbs-custom-container">
             <div class="breadcrumbs-custom-main">
-                <h6 class="breadcrumbs-custom-subtitle title-decorated">Paramètres</h6>
-                <h1 class="breadcrumbs-custom-title">Mon Profil</h1>
+              <h6 class="breadcrumbs-custom-subtitle title-decorated">-</h6>
+              <h1 class="breadcrumbs-custom-title">Témoignages</h1>
             </div>
             <ul class="breadcrumbs-custom-path">
-                <li><a href="/">Paramètres</a></li>
-                <li class="active">Mon Profil</li>
+            <li></li>
+              <li><a href="/">Acceuil</a></li>
             </ul>
-        </div>
-    </div>
-</section>
-      <section class="section bg-gray-100">
-        <div class="range text-center">
-          <div class="cell align-self-center container">
-            <div class="row">
-              <div class="col cell-inner">
-                <div class="section-lg">
-                  <h3 class="wow-outer"><span class="wow slideInDown">Salut ';
-    echo $User['username'];
-    echo '!</span></h3>
-
-                  <!-- RD Mailform-->
-                  <form class="rd-form " action="profile.php?mail='; echo $User['mailUser'];  echo '" method="post">
-  <div class="row row-10">
-    <div class="col-md-6 wow-outer">
-      <div class="form-wrap wow fadeSlideInUp">
-        <label class="form-label-outside" for="contact-user-name">Nom d\'utilisateur</label>
-        <input class="form-input" id="contact-user-name" name="username" onkeyup="userNames()" required value="'; echo $User['username']; echo '" type="text" data-constraints="@Required">
-      </div>
-    </div>
-    <div class="col-md-6 wow-outer">
-      <div class="form-wrap wow fadeSlideInUp">
-        <label class="form-label-outside" for="contact-email">E-mail <em>(Contacter l\'administrateur pour le modifier)</em></label>
-        <input class="form-input" id="contact-email"  name="email" type="email" disabled  data-constraints="@Required @Email" value="'; echo $User['mailUser'];  echo '">
-      </div>
-    </div>
-    <div class="col-md-6 wow-outer">
-      <div class="form-wrap wow fadeSlideInUp">
-        <label class="form-label-outside" for="contact-first-name">Prénom</label>
-        <input class="form-input" id="contact-first-name" name="firstNme" onkeyup="firstNames()" required  type="text"  data-constraints="@Required" value="'; echo $User['firstName']; echo '">
-      </div>
-    </div>
-    <div class="col-md-6 wow-outer">
-      <div class="form-wrap wow fadeSlideInUp">
-        <label class="form-label-outside" for="contact-last-name">Nom de famille</label>
-        <input class="form-input" id="contact-last-name" name="lastNme" value="'; echo $User['lastName']; echo '" type="text">
-      </div>
-    </div>
-    <div class="col-md-6 wow-outer">
-      <div class="form-wrap wow fadeSlideInUp">
-        <label class="form-label-outside" for="contact-phone">Téléphone</label>
-        <input class="form-input" id="contact-phone" onkeyup="phones()" name="phonee" required type="text"  data-constraints="@Required @PhoneNumber" value="'; echo $User['tel'];  echo '">
-      </div>
-    </div>
-    <div class="col-md-6 wow-outer">
-      <div class="form-wrap wow fadeSlideInUp">
-        <label class="form-label-outside" for="contact-function">Fonction</label>
-        <input class="form-input" name="functionss" id="contact-function" type="text" value="'; echo $User['job']; echo '">
-      </div>
-    </div>
-    <div class="col-md-6 wow-outer">
-      <div class="form-wrap wow fadeSlideInUp">
-        <label class="form-label-outside" for="contact-pass">Mot de passe</label>
-        <input class="form-input" name="passs" id="contact-pass" onkeyup="passsed()" type="password" value="';echo $User['pass']; echo '"  data-constraints="@Required">
-      </div>
-    </div>
-                      <div class="col-md-6 wow-outer">
-                        <div class="form-wrap wow fadeSlideInUp">
-                          <label class="form-label-outside" for="contact-pass2">Confirmation du mot de passe </label>
-                          <input class="form-input" id="contact-pass2" placeholder="Veuillez confirmer le mot de passe!" type="password" onkeyup="passsed()" name="phone" data-constraints="@Required">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="text-center mt-5">
-                        <h5 class="wow slideInUp text-danger mb-3" id="error"></h5>
-                        <div class="wow">
-                            <input type="submit" class="btn button-primary wow slideInUp"  value="Mettre à jour le profil" id="usersubmit" name="user"/> 
-                        </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
           </div>
-          <div class="cell-xl-5 height-fill wow fadeIn">
         </div>
       </section>
+      <section class="section section-lg bg-default">
+        <div class="container">
+            <div class="row row-50">
+                <div class="col-12 ">
+                    <div class="isotope offset-top-2" data-isotope-layout="masonry" data-lightgallery="group"
+                         data-lg-thumbnail="false">
+                        <div id="image-gallery" class="row row-30"></div>
+                        <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                <div class="" style="background-color: transparent">
+                                    <div class="">
+                                        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <img id="modalImage" src="" alt="Image Description">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>                            
+                            
+
+                            
+                            function openPic(imgsrc) {
+                                $(\'#modalImage\').attr(\'src\', imgsrc);
+                                $(\'#imageModal\').modal(\'show\');
+
+                            }
+
+
+                            // Wait for all the images to load
+                            numberPic = 0
+                            window.onload = () => {
+                                // Get the div where you want to add the images
+                                const imageGallery = document.getElementById("image-gallery");
+
+                                // Fetch a list of all the image files in the events/aviron/img folder
+                                fetch(`images/tem`)
+                                    .then(response => response.text())
+                                    .then(text => {
+                                        // Extract the file names from the response HTML
+                                        const fileNames = Array.from(text.matchAll(/<a href="(.+?\.(?:jpe?g|png|gif))"/g)).map(match => match[1]).filter(fileName => !fileName.includes(\'../\') && !fileName.includes(\'?C=\'));
+                                        numberPic = fileNames.length;
+                                        // Loop through each image file and create a div with the corresponding HTML code
+                                        fileNames.forEach((fileName) => {
+                                            const div = document.createElement("div");
+                                            div.classList.add("col-12", "col-sm-6", "col-lg-4", "isotope-item");
+                                             div.innerHTML = `
+                                                <a href="images/tem/${fileName}" data-lightbox="image-gallery">
+                                                    <article class="thumbnail-corporate wow fadeIn">
+                                                        <img class="thumbnail-corporate-image" src="images/tem/${fileName}" alt="" width="370" height="256"/>
+                                                        <div class="thumbnail-corporate-caption" style="cursor: pointer">
+                                                        </div>
+                                                        <div class="thumbnail-corporate-dummy"></div>
+                                                    </article>
+                                                </a>`
+                                                imageGallery.appendChild(div);});
+                                        // Trigger the Isotope layout
+                                        new Isotope(imageGallery, {
+                                            itemSelector: \'.isotope-item\',
+                                            layoutMode: \'fitRows\'
+                                        });
+                                        document.getElementById("numPic").textContent = numberPic;
+                                    });
+                            };
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
       <!-- Page Footer-->
+      ';echo'
 <footer class="section footer-standard text-justify">
         <div class="footer-standard-main">
             <div class="container">
@@ -305,10 +251,10 @@ try {
                 </p>
             </div>
         </div>
-    </footer>   
-     </div>
+    </footer>
+        </div>
     ';
-    echo '
+echo'
     <div class="preloader">
       <div class="preloader-logo"><img src="images/loading%20tsu.png" alt="" width="" height=""/>
       </div>
@@ -319,51 +265,15 @@ try {
       </div>
     </div>
     <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
     
 <script>
-var diUserName = false;
-var difirName = false;
-var diphone = false;
-var dipass = true;
-var disabledd = document.getElementById("usersubmit");
-disabledd.disabled = (diUserName || difirName || diphone || dipass);
-function userNames() {
-    var contact = document.getElementById("contact-user-name");
-    diUserName = (contact.value.length === 0);
-    disabledd.disabled = diUserName || difirName || diphone || dipass;
-}
-
-function firstNames() {
-    var contact = document.getElementById("contact-first-name");
-    difirName = (contact.value.length === 0);
-    disabledd.disabled = (diUserName || difirName || diphone || dipass);
-}
-
-function phones() {
-    var contact = document.getElementById("contact-phone");
-    diphone = (contact.value.length === 0);
-    disabledd.disabled = (diUserName || difirName || diphone || dipass);
-}
-
-function passsed() {
-    var contact = document.getElementById("contact-pass");
-    var contact2 = document.getElementById("contact-pass2");
-    dipass = (contact.value !== contact2.value);
-    if (dipass){
-        document.getElementById("error").textContent = "Please Verify your password!";
-    } else {
-        document.getElementById("error").textContent = "";
-    }
-    disabledd.disabled = (diUserName || difirName || diphone || dipass);
-}
-
-</script>
-<script>
     var user = sessionStorage.getItem("user");
     var connectede = document.getElementById("Connected");
+    var buttonAdd = document.getElementById("btnAddEvent");
     var profile = document.getElementById("profile");
     var notconnectede = document.getElementById("notConnected");
     if (user != null && user.split(",")[1].length > 0) {
@@ -373,15 +283,14 @@ function passsed() {
         profile.style.display = "block";
         profile.href = "profile.php?mail="+user.split(",")[0];
         notconnectede.style.display = "none";
+        buttonAdd.style.display = "block";
     }else if (user == null){
        connectede.style.display = "none";
        profile.style.display = "none";
        notconnectede.style.display = "block";
+       buttonAdd.style.display = "none";
     }
 </script>
   </body>
 </html>';
-} catch (PDOException $PDOException) {
-    echo $PDOException->getMessage();
-}
 ?>

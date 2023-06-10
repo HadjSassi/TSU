@@ -86,6 +86,8 @@ try {
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="gallery.php">Galerie</a>
                                     </li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="temoignages.php">Témoignages</a>
+                                    </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.php">Contacts</a>
                                     </li>
                                 </ul>
