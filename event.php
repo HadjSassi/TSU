@@ -87,7 +87,7 @@ try {
     transform: rotate(-5deg);
   }
   
-  .thumbnail-corporate-image {
+  .thumbnail-corporate-image2 {
         border: 2px solid black; /* Add border to the video element */
     }
         .close-btn {
@@ -434,7 +434,7 @@ try {
                                             div.innerHTML = `
     <a class="" onclick="playVideo(\'events/${eventName}/vid/${fileName}\')" data-lightgallery="item">
         <article class="thumbnail-corporate wow fadeIn">
-            <video class="thumbnail-corporate-image" width="370" height="256" loop muted>
+            <video class="thumbnail-corporate-image thumbnail-corporate-image2 " width="370" height="256" loop muted>
                 <source src="events/${eventName}/vid/${fileName}" type="video/mp4">
             </video>
             <div class="thumbnail-corporate-caption" style="cursor: pointer"></div>
