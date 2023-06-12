@@ -212,9 +212,10 @@ try {
                             <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="/">Acceuil</a>
+                                    
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">À propos</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">À propos de TSU</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="program.php">Programme</a>
                                     </li>
                                     <li class="rd-nav-item active"><a class="rd-nav-link" href="gallery.php">Galerie</a>
                                     </li>

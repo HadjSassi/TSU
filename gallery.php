@@ -141,9 +141,10 @@ try {
                             <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="/">Acceuil</a>
+                                    
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">À propos</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.php">À propos de TSU</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="program.php">Programme</a>
                                     </li>
                                     <li class="rd-nav-item active"><a class="rd-nav-link" href="gallery.php">Galerie</a>
                                     </li>
@@ -327,7 +328,7 @@ try {
         </div>
     </footer>
 </div>
-<!--<div class="preloader">
+<div class="preloader">
   <div class="preloader-logo"><img src="images/loading%20tsu.png" alt="" width="" height=""/>
   </div>
   <div class="preloader-body" >
@@ -335,7 +336,7 @@ try {
       <div class="loadingProgressG" style="background: #138a91" id="loadingProgressG_1"></div>
     </div>
   </div>
-</div>-->
+</div>
 <!-- Global Mailform Output-->
 <div class="snackbars" id="form-output-global"></div>
 <!-- Javascript-->
