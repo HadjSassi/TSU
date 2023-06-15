@@ -43,7 +43,7 @@ echo '
   }</style>
 </head>
 ';
-echo'
+echo '
   <body>
     <div class="page">
       <!-- Page Header-->
@@ -109,7 +109,7 @@ echo'
         </div>
       </header>
       ';
-echo'
+echo '
       <!-- Breadcrumbs-->
       <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/gyymn.jpg);">
         <div class="breadcrumbs-custom-inner">
@@ -180,30 +180,215 @@ echo '
       <!-- Nathan’s Blog Posts-->
       <section class="section section-lg bg-gray-100">
         <div class="container">
-          <h3 class="wow-outer section-title text-center"><span class="wow slideInUp">Passages TV & Radio</span></h3>
+          <h3 class="wow-outer section-title text-center"><span class="wow slideInUp h1">Passages TV & Radio & Web</span></h3>
+          <h3 class="wow-outer section-title text-center"><span class="wow slideInUp">Passages TV</span></h3>
           <div class="row row-50 justify-content-center justify-content-lg-between">
             <div class="col-md-10 col-lg-6 wow-outer">
               <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
                 <div class="embed-responsive embed-responsive-16by9">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/tLyfsWACj1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  </div>              
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FPentaprodtn.CarthagePlus%2Fvideos%2F924488518958413%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                 </div>              
+                <span>GYM BOX FIGHT DAY - by CARTHAGE +</span>
               </div>
             </div>
             <div class="col-md-10 col-lg-6 wow-outer">
               <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
                 <div class="embed-responsive embed-responsive-16by9">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/CJadEbctBoE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>      </div>          
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FAttessiaTV%2Fvideos%2F5479142675502284%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>                      
+                </div>          
+                <span>RESIDENCE GOLF FEST - by Tv 9</span>
               </div>
             </div>
             <div class="col-md-10 col-lg-6 wow-outer">
               <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
                 <div class="embed-responsive embed-responsive-16by9">
-                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FDiwanFM%2Fvideos%2F219631304114298%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>        </div>        
+                <iframe src="https://www.facebook.com/plugins/video.php?height=308&href=https%3A%2F%2Fwww.facebook.com%2F100057545556860%2Fvideos%2F380091410844773%2F&show_text=false&width=560&t=0" width="560" height="308" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                </div>        
+                <span>MARTYRS\' SAILING DAY - by Wataniya 1</span>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fhannibaltvcomtn%2Fvideos%2F544255130559320%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                </div>
+                <span> MARTYRS\' SAILING DAY - by Hannibal Tv</span>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FAttessiaTV%2Fvideos%2F585115992467964%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe><iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FAttessiaTV%2Fvideos%2F585115992467964%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                </div>
+                <span> CHAMPIONS FLIGHT DAY - by Tv 9</span>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FTunisnaTV.Officielle%2Fvideos%2F339815498061493%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                </div>
+                <span> Festival Tunisian International Balloons - by Tounesna Tv</span>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FAttessiaTV%2Fvideos%2F897494047621178%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                </div>
+                <span> ENAU Swimming Day - by Tv 9</span>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FAttessiaTV%2Fvideos%2F192512458831515%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                </div>
+                <span> IHEC MECANIC SPORT DAY - by Tv 9</span>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FAttessiaTV%2Fvideos%2F2135547933201222%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                </div>
+                <span> INDEPENDANCE MOTOR DAY - by Tv 9</span>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FAttessiaTV%2Fvideos%2F324686164856687%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>  
+                </div>
+                <span> GOLF CITRUS DAY - by Tv 9</span>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <h3 class="wow-outer section-title text-center"><span class="wow slideInUp">Passages Radio</span></h3>
+          <div class="row row-50 justify-content-center justify-content-lg-between">
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fmosaiquefm%2Fvideos%2F282146063297329%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                  </div>              
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F100057545556860%2Fvideos%2F751305325901135%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                 </div>          
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FRadio.JawharaFM%2Fvideos%2F3139337326295500%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>        </div>        
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FIFMSport%2Fvideos%2F804025159964488%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe></div>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fradioifmnews%2Fvideos%2F1079803352777793%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe></div>
+              </div>
+            </div><div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FRadioExpressFm%2Fvideos%2F616758826604253%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe></div>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FShemsFM%2Fvideos%2F1305613543529801%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe></div>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FRadioExpressFm%2Fvideos%2F482518500617304%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe></div>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FDiwanFM%2Fvideos%2F618999389650699%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe></div>
               </div>
             </div>
             <div class="col-md-10 col-lg-6 wow-outer">
               <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
                 <div class="embed-responsive embed-responsive-16by9">
                 <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FShemsFM%2Fvideos%2F1020495219326447%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe></div>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FDiwanFM%2Fvideos%2F219631304114298%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe></div>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FIFMSport%2Fvideos%2F804025159964488%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe></div>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/CJadEbctBoE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tLyfsWACj1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+              </div>
+            </div>' .
+    '
+          </div>
+          <br>
+          <br>
+          <h3 class="wow-outer section-title text-center"><span class="wow slideInUp">Passages Web</span></h3>
+          <div class="row row-50 justify-content-center justify-content-lg-between">
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Ftounsi.television%2Fvideos%2F3303571509968979%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                 </div>              
+                <span>MARTYRS SAILING DAY - Reportage Tounsi Tv</span>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Ftunisieco%2Fvideos%2F438223000736036%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                 </div>          
+                <span>ENAU MASTER CLASS - Reportage TUNISCOPE</span>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Ftunisieco%2Fvideos%2F448908679695263%2F&show_text=false&width=476&t=0" width="476" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe><iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Ftunisieco%2Fvideos%2F448908679695263%2F&show_text=false&width=476&t=0" width="476" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                 </div>        
+                <span>Interview TUNISIE CO</span>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer">
+              <div class="thumbnail-video-1 bg-gray-700 wow slideInLeft">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Vu7juS5w5-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <span>Interview TUNISCOPE</span>
               </div>
             </div>
           </div>
@@ -243,7 +428,7 @@ echo '
                             src="images/logo-geeks.png" width="500"  alt=""/></a>
                     </article>
                 </div>
-            </div>'.'
+            </div>' . '
             <div class="row row-50" style="margin-bottom: 10%"  id="partner-slider2">
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
@@ -281,7 +466,7 @@ echo '
                             src="images/Radio_Jeunes.png" width="500"  alt=""/></a>
                     </article>
                 </div>
-            </div>'.'
+            </div>' . '
             <div class="row row-50" style="margin-bottom: 10%"  id="partner-slider3">
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
@@ -331,7 +516,7 @@ echo '
                             src="images/arena.png" width="500"  alt=""/></a>
                     </article>
                 </div>
-            </div>'.'
+            </div>' . '
             <div class="row row-50" id="partner-slider4">
                 <div class="col-sm-6 col-lg-4 wow-outer">
                     <!-- Post Classic-->
@@ -528,7 +713,7 @@ echo '
     </footer>
     </div>
     ';
-echo'
+echo '
     <div class="preloader">
       <div class="preloader-logo"><img src="images/loading%20tsu.png" alt="" width="" height=""/>
       </div>
